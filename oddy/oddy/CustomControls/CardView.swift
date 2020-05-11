@@ -8,11 +8,8 @@
 
 import UIKit
 enum CornerType:Int{
-    case roundLeftBottom = 1
-    case roundRightTop = 2
-    case roundLeftTop = 3
-    case roundRightBottom = 4
-    case roundNone = 5
+    case rounded = 1
+    case none = 0
 }
 @IBDesignable class CardView: UIView {
     
@@ -54,39 +51,40 @@ enum CornerType:Int{
     
     @IBInspectable var borderWidth:CGFloat = 0 {
         didSet{
+            self.borderWidth *= 1.25
             self.setNeedsDisplay()
         }
     }
     
-    var cornerLeftTop:CornerType = .roundNone
-    @IBInspectable var _cornerLeftTop:Int = 5 {
+    var cornerLeftTop:CornerType = .none
+    @IBInspectable var _cornerLeftTop:Int = 0 {
         didSet{
-            self.cornerLeftTop = CornerType.init(rawValue: _cornerLeftTop) ?? .roundNone
+            self.cornerLeftTop = CornerType.init(rawValue: _cornerLeftTop) ?? .none
             self.setNeedsDisplay()
         }
     }
     
     
-    var cornerRightTop:CornerType = .roundNone
-    @IBInspectable  var _cornerRightTop:Int = 5 {
+    var cornerRightTop:CornerType = .none
+    @IBInspectable  var _cornerRightTop:Int = 0 {
         didSet{
-            self.cornerRightTop = CornerType.init(rawValue: _cornerRightTop) ?? .roundNone
+            self.cornerRightTop = CornerType.init(rawValue: _cornerRightTop) ?? .none
             self.setNeedsDisplay()
         }
     }
     
-    var cornerRightBottom:CornerType = .roundNone
-    @IBInspectable  var _cornerRightBottom:Int = 5 {
+    var cornerRightBottom:CornerType = .none
+    @IBInspectable  var _cornerRightBottom:Int = 0 {
         didSet{
-            self.cornerRightBottom = CornerType.init(rawValue: _cornerRightBottom) ?? .roundNone
+            self.cornerRightBottom = CornerType.init(rawValue: _cornerRightBottom) ?? .none
             self.setNeedsDisplay()
         }
     }
     
-    var cornerLeftBottom:CornerType = .roundNone
-    @IBInspectable var _cornerLeftBottom:Int = 5 {
+    var cornerLeftBottom:CornerType = .none
+    @IBInspectable var _cornerLeftBottom:Int = 0 {
         didSet{
-            self.cornerLeftBottom = CornerType.init(rawValue: _cornerLeftBottom) ?? .roundNone
+            self.cornerLeftBottom = CornerType.init(rawValue: _cornerLeftBottom) ?? .none
             self.setNeedsDisplay()
         }
     }
@@ -121,7 +119,7 @@ enum CornerType:Int{
     
     fileprivate func getCardPath(forRect rect:CGRect)->UIBezierPath{
         let cardPath = UIBezierPath()
-        if self.cornerLeftTop == .roundLeftTop {
+        if self.cornerLeftTop == .rounded {
             let origin = CGPoint(x: 0, y: self.cornerRadius)
             cardPath.move(to: origin)
             let originTop = CGPoint(x: self.cornerRadius, y: 0)
@@ -131,7 +129,7 @@ enum CornerType:Int{
             cardPath.move(to: .zero)
         }
         cardPath.addLine(to: CGPoint(x: rect.width - self.cornerRadius, y: 0))
-        if self.cornerRightTop == .roundRightTop {
+        if self.cornerRightTop == .rounded {
             let originRight = CGPoint(x: rect.width, y: self.cornerRadius)
             let controlPoint = CGPoint(x: rect.width, y: 0)
             cardPath.addQuadCurve(to: originRight, controlPoint: controlPoint)
@@ -139,7 +137,7 @@ enum CornerType:Int{
             cardPath.addLine(to: CGPoint(x: rect.width, y: 0))
         }
         cardPath.addLine(to: CGPoint(x: rect.width, y: rect.height - self.cornerRadius))
-        if self.cornerRightBottom == .roundRightBottom {
+        if self.cornerRightBottom == .rounded {
             let originBottom = CGPoint(x: rect.width - self.cornerRadius, y: rect.height)
             let controlPoint = CGPoint(x: rect.width, y: rect.height)
             cardPath.addQuadCurve(to: originBottom, controlPoint: controlPoint)
@@ -147,7 +145,7 @@ enum CornerType:Int{
             cardPath.addLine(to: CGPoint(x: rect.width, y: rect.height))
         }
         cardPath.addLine(to: CGPoint(x: self.cornerRadius, y: rect.height))
-        if self.cornerLeftBottom == .roundLeftBottom {
+        if self.cornerLeftBottom == .rounded {
             let originLeft = CGPoint(x: 0, y: rect.height - self.cornerRadius)
             let controlPoint = CGPoint(x: 0, y: rect.height)
             cardPath.addQuadCurve(to: originLeft, controlPoint: controlPoint)
@@ -155,7 +153,7 @@ enum CornerType:Int{
             cardPath.addLine(to: CGPoint(x: 0, y: rect.height))
         }
         cardPath.addLine(to: CGPoint(x: 0, y: self.cornerRadius))
-        if self.cornerLeftTop != .roundLeftTop {
+        if self.cornerLeftTop != .rounded {
             cardPath.addLine(to: CGPoint(x: 0, y: 0))
         }
         cardPath.close()

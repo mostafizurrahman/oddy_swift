@@ -399,6 +399,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktd-h9-48K" customClass="CardView" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="-31" width="414" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="hpq-bA-Rni"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="28"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftTop">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="cardInnerColor">
+                                        <color key="value" white="0.8984375" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightTop">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JpH-2u-M7P" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                                 <rect key="frame" x="16" y="52" width="40" height="40"/>
                                 <constraints>
@@ -411,9 +453,6 @@
                                 </state>
                                 <state key="highlighted" image="radial_gradient"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="leftGradientColor">
-                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -430,7 +469,7 @@
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="4"/>
@@ -444,49 +483,93 @@
                                     <action selector="exitGame:" destination="iD3-8x-hPu" eventType="touchUpInside" id="ZPZ-zn-g2d"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktd-h9-48K" customClass="CardView" customModule="ODDY" customModuleProvider="target">
-                                <rect key="frame" x="134.5" y="406.5" width="145" height="93"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="is4-uc-ju8" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="358" y="52" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="93" id="hpq-bA-Rni"/>
-                                    <constraint firstAttribute="width" constant="145" id="vcG-ne-Csv"/>
+                                    <constraint firstAttribute="width" constant="40" id="UJ4-Ve-HeR"/>
+                                    <constraint firstAttribute="height" constant="40" id="rDD-Lg-vp3"/>
                                 </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="chevron.right" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="radial_gradient"/>
                                 <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="innerRadialColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                        <real key="value" value="16"/>
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="12"/>
+                                        <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
-                                        <real key="value" value="2"/>
+                                        <real key="value" value="0.25"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftTop">
-                                        <integer key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightBottom">
-                                        <integer key="value" value="4"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closLetterViewControlelr:" destination="nbP-v6-15l" eventType="touchUpInside" id="XmV-oO-Agw"/>
+                                    <action selector="exitGame:" destination="iD3-8x-hPu" eventType="touchUpInside" id="d1w-5K-BEn"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-Og-C7J" customClass="CardView" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="72" y="52" width="270" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="uAg-t0-kqk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="cardInnerColor">
-                                        <color key="value" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.73476012323943662" green="0.027371258802816902" blue="0.33403939260563381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftTop">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightTop">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ktd-h9-48K" firstAttribute="centerY" secondItem="K8J-hf-O9J" secondAttribute="centerY" id="ozg-9M-ZTL"/>
+                            <constraint firstItem="hZg-Og-C7J" firstAttribute="top" secondItem="K8J-hf-O9J" secondAttribute="top" constant="8" id="0Ws-KM-TIk"/>
+                            <constraint firstItem="K8J-hf-O9J" firstAttribute="trailing" secondItem="Ktd-h9-48K" secondAttribute="trailing" id="1Qb-5L-odE"/>
+                            <constraint firstItem="Ktd-h9-48K" firstAttribute="top" secondItem="K8J-hf-O9J" secondAttribute="top" constant="-75" id="HWz-PB-JTK"/>
+                            <constraint firstItem="hZg-Og-C7J" firstAttribute="leading" secondItem="JpH-2u-M7P" secondAttribute="trailing" constant="16" id="MND-EG-MAD"/>
+                            <constraint firstItem="is4-uc-ju8" firstAttribute="top" secondItem="K8J-hf-O9J" secondAttribute="top" constant="8" id="R5i-9v-cS8"/>
+                            <constraint firstItem="is4-uc-ju8" firstAttribute="leading" secondItem="hZg-Og-C7J" secondAttribute="trailing" constant="16" id="gjM-po-7Be"/>
+                            <constraint firstItem="Ktd-h9-48K" firstAttribute="leading" secondItem="K8J-hf-O9J" secondAttribute="leading" id="nf0-FB-IJL"/>
                             <constraint firstItem="JpH-2u-M7P" firstAttribute="leading" secondItem="K8J-hf-O9J" secondAttribute="leading" constant="16" id="rfe-u5-Z0N"/>
-                            <constraint firstItem="Ktd-h9-48K" firstAttribute="centerX" secondItem="K8J-hf-O9J" secondAttribute="centerX" id="vST-CN-v2C"/>
+                            <constraint firstItem="K8J-hf-O9J" firstAttribute="trailing" secondItem="is4-uc-ju8" secondAttribute="trailing" constant="16" id="rwS-X3-Us2"/>
                             <constraint firstItem="JpH-2u-M7P" firstAttribute="top" secondItem="K8J-hf-O9J" secondAttribute="top" constant="8" id="zm0-SZ-hoK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K8J-hf-O9J"/>
@@ -500,6 +583,7 @@
     </scenes>
     <resources>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="radial_gradient" width="350" height="350"/>
         <image name="settings" width="20" height="20"/>
         <image name="shopping" width="20" height="20"/>
