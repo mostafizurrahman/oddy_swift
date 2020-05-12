@@ -13,6 +13,8 @@ enum CornerType:Int{
 }
 @IBDesignable class CardView: UIView {
     
+    private(set) var borderPath:UIBezierPath = UIBezierPath()
+    
     @IBInspectable var shadowColor:UIColor = UIColor.black {
         didSet{
             self.setNeedsDisplay()
@@ -103,10 +105,7 @@ enum CornerType:Int{
         cardContext.addPath(cardPath.cgPath)
         cardContext.setFillColor(self.cardInnerColor.cgColor)
         cardContext.fillPath(using: CGPathFillRule.evenOdd)
-        let borderPath = self.getCardPath(forRect: CGRect(origin: CGPoint(x: self.borderWidth,
-                                                                          y: self.borderWidth),
-                                                          size: CGSize(width: rect.width ,
-                                                                       height: rect.height )))
+        borderPath = self.getCardPath(forRect: self.getBound(inRect:rect))
         cardContext.addPath(cardPath.cgPath)
         cardContext.clip()
         cardContext.addPath(borderPath.cgPath)
@@ -116,6 +115,13 @@ enum CornerType:Int{
         self.layer.shadowRadius = self.shadowRadius
     }
     
+    
+    func getBound(inRect rect:CGRect)->CGRect{
+        return CGRect(origin: CGPoint(x: self.borderWidth,
+                        y: self.borderWidth),
+        size: CGSize(width: rect.width ,
+                     height: rect.height ))
+    }
     
     fileprivate func getCardPath(forRect rect:CGRect)->UIBezierPath{
         let cardPath = UIBezierPath()

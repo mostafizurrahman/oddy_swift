@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kP0-px-hlQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iD3-8x-hPu">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -413,7 +413,7 @@
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="28"/>
@@ -525,10 +525,23 @@
                                     <action selector="exitGame:" destination="iD3-8x-hPu" eventType="touchUpInside" id="d1w-5K-BEn"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-Og-C7J" customClass="CardView" customModule="ODDY" customModuleProvider="target">
-                                <rect key="frame" x="72" y="52" width="270" height="40"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZg-Og-C7J" customClass="CardAnimationView" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="70" y="52" width="274" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGu-rZ-OPN" customClass="LTMorphingLabel" customModule="ODDY" customModuleProvider="target">
+                                        <rect key="frame" x="101.5" y="7" width="71.5" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="morphingEnabled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="pGu-rZ-OPN" firstAttribute="centerX" secondItem="hZg-Og-C7J" secondAttribute="centerX" id="MFK-4l-gol"/>
+                                    <constraint firstItem="pGu-rZ-OPN" firstAttribute="centerY" secondItem="hZg-Og-C7J" secondAttribute="centerY" id="S0N-J6-wQ2"/>
                                     <constraint firstAttribute="height" constant="40" id="uAg-t0-kqk"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -536,7 +549,7 @@
                                         <real key="value" value="22"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="cardInnerColor">
-                                        <color key="value" red="0.73476012323943662" green="0.027371258802816902" blue="0.33403939260563381" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" cyan="0.64846500880281688" magenta="0.13625110035211269" yellow="0.095373019366197187" black="0.32950846354166669" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftTop">
                                         <integer key="value" value="1"/>
@@ -551,7 +564,7 @@
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="4"/>
@@ -564,9 +577,9 @@
                             <constraint firstItem="hZg-Og-C7J" firstAttribute="top" secondItem="K8J-hf-O9J" secondAttribute="top" constant="8" id="0Ws-KM-TIk"/>
                             <constraint firstItem="K8J-hf-O9J" firstAttribute="trailing" secondItem="Ktd-h9-48K" secondAttribute="trailing" id="1Qb-5L-odE"/>
                             <constraint firstItem="Ktd-h9-48K" firstAttribute="top" secondItem="K8J-hf-O9J" secondAttribute="top" constant="-75" id="HWz-PB-JTK"/>
-                            <constraint firstItem="hZg-Og-C7J" firstAttribute="leading" secondItem="JpH-2u-M7P" secondAttribute="trailing" constant="16" id="MND-EG-MAD"/>
+                            <constraint firstItem="hZg-Og-C7J" firstAttribute="leading" secondItem="JpH-2u-M7P" secondAttribute="trailing" constant="14" id="MND-EG-MAD"/>
                             <constraint firstItem="is4-uc-ju8" firstAttribute="top" secondItem="K8J-hf-O9J" secondAttribute="top" constant="8" id="R5i-9v-cS8"/>
-                            <constraint firstItem="is4-uc-ju8" firstAttribute="leading" secondItem="hZg-Og-C7J" secondAttribute="trailing" constant="16" id="gjM-po-7Be"/>
+                            <constraint firstItem="is4-uc-ju8" firstAttribute="leading" secondItem="hZg-Og-C7J" secondAttribute="trailing" constant="14" id="gjM-po-7Be"/>
                             <constraint firstItem="Ktd-h9-48K" firstAttribute="leading" secondItem="K8J-hf-O9J" secondAttribute="leading" id="nf0-FB-IJL"/>
                             <constraint firstItem="JpH-2u-M7P" firstAttribute="leading" secondItem="K8J-hf-O9J" secondAttribute="leading" constant="16" id="rfe-u5-Z0N"/>
                             <constraint firstItem="K8J-hf-O9J" firstAttribute="trailing" secondItem="is4-uc-ju8" secondAttribute="trailing" constant="16" id="rwS-X3-Us2"/>
@@ -575,6 +588,9 @@
                         <viewLayoutGuide key="safeArea" id="K8J-hf-O9J"/>
                     </view>
                     <navigationItem key="navigationItem" id="DKQ-1b-Mh6"/>
+                    <connections>
+                        <outlet property="animationBar" destination="hZg-Og-C7J" id="xlG-YA-dKB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdM-0C-MaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

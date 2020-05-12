@@ -10,14 +10,21 @@ import UIKit
 
 class OddLetterViewController: UIViewController {
 
+    @IBOutlet weak var animationBar:CardAnimationView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.animationBar.configureGradient()
+    }
+    
     @IBAction func exitGame(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+//        self.animationBar.createAnimationGroup()
     }
     
     /*
