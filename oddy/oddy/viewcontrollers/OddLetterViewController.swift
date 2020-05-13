@@ -12,8 +12,9 @@ class OddLetterViewController: UIViewController {
     
     var sourceLetter:[String] = []
     var letterArray:[String] = []
-    let columnCount = 6
+    let columnCount = 8
     var rowCount = 0
+    var shouldConfigure = true
 
     @IBOutlet weak var animationBar:CardAnimationView!
     @IBOutlet weak var winButton:IARadialButton!
@@ -34,28 +35,59 @@ class OddLetterViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        debugPrint("t0a")
-        self.letterLabel.text = self.sourceLetter[3]
-        self.animationBar.configureGradient()
-        let _cellWidth = self.letterContainer.frame.width / CGFloat(self.columnCount)
-        self.rowCount = Int(self.letterContainer.frame.height / _cellWidth)
-        let extra = self.letterContainer.bounds.height - CGFloat(self.rowCount) * _cellWidth
-        for _layout in self.spaceLayout {
-            _layout.constant += extra / 2
+        
+        if self.shouldConfigure {
+            self.shouldConfigure = false
+            self.letterLabel.text = self.sourceLetter[3]
+            self.animationBar.configureGradient(delegate: self)
+            let _cellWidth = self.letterContainer.frame.width / CGFloat(self.columnCount)
+            self.rowCount = Int(self.letterContainer.frame.height / _cellWidth)
+            let extra = self.letterContainer.bounds.height - CGFloat(self.rowCount) * _cellWidth
+            for _layout in self.spaceLayout {
+                _layout.constant += extra / 2
+            }
+            self.letterContainer.configure(withData: self.letterArray,
+                                           row: self.rowCount,
+                                           column: self.columnCount,
+                                           dimension:_cellWidth,
+                                           source: self.sourceLetter[3])
+            self.view.layoutIfNeeded()
+            self.animationBar.startAnimation(withDuration: 30)
         }
-        self.letterContainer.configure(withData: self.letterArray,
-                                       row: self.rowCount,
-                                       column: self.columnCount,
-                                       dimension:_cellWidth,
-                                       source: self.sourceLetter[3])
-//        self.view.layoutIfNeeded()
-        
-        
-//        for _hexagon in self.hexagonButtons {
-//            _hexagon.setNeedsDisplay()
-//            _hexagon.setLayers(hasLabelAnimation: false)
-//        }
     }
+    
+    fileprivate func checkGameStatus(){
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+//        if self.letterContainer.isGameOver {
+//            debugPrint("SES! GAME OVER!!!!")
+//        } else {
+//            debugPrint("choluk! GAME ON!")
+//        }
+        
+        self.letterContainer.isGameOver = true
+        if let _touch = touches.first {
+            let _locatoin = _touch.location(in: self.letterContainer)
+            for _view in self.letterContainer.subviews {
+                if _view.frame.contains(_locatoin){
+                    if let _label = _view.subviews.first as? UILabel {
+                        if _label.text == self.sourceLetter[3] {
+                            self.letterContainer.isGameOver = false
+                            self.letterContainer.generateIndices()
+                            self.letterContainer.generateViews()
+                            
+                        }
+                    }
+                    break
+                }
+            }
+        }
+    }
+    
+    
     
     @IBAction func exitGame(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -87,4 +119,21 @@ class OddLetterViewController: UIViewController {
     }
     */
 
+}
+
+
+extension OddLetterViewController : AnimationDelegate {
+    func onAnimationCompleted() {
+        debugPrint("game over")
+    }
+    
+    func onAnimationStarted() {
+        
+    }
+    
+    func onAnimationStoped() {
+        
+    }
+    
+    
 }
