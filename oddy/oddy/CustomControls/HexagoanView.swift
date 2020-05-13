@@ -46,7 +46,7 @@ class HexagoanView: UIView,CAAnimationDelegate {
     }
 
     
-    func setLayers( hasLabelAnimation:Bool = false){
+    func setLayers( hasLabelAnimation:Bool = true){
         self.hasLabelAnimation = hasLabelAnimation
         let rect = self.bounds
         let path = UIBezierPath()

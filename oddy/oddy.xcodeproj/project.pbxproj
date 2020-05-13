@@ -47,6 +47,7 @@
 		BE96972E24657826006BDBC8 /* LettersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE96972D24657826006BDBC8 /* LettersViewController.swift */; };
 		BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */; };
 		BE969732246586BD006BDBC8 /* UtilityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE969731246586BD006BDBC8 /* UtilityExtension.swift */; };
+		BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC88216246BE90400B35C68 /* LetterGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		BE96972D24657826006BDBC8 /* LettersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LettersViewController.swift; sourceTree = "<group>"; };
 		BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAViewAnimation.swift; sourceTree = "<group>"; };
 		BE969731246586BD006BDBC8 /* UtilityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtension.swift; sourceTree = "<group>"; };
+		BEC88216246BE90400B35C68 /* LetterGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				BE9696FB2464D562006BDBC8 /* IARadialButton.swift */,
 				BE18FB1D24674388008F7FC5 /* CardView.swift */,
 				BE14FCCF2469DB3300E1B2F9 /* CardAnimationView.swift */,
+				BEC88216246BE90400B35C68 /* LetterGameView.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */,
 				BE96971E2464DCA9006BDBC8 /* LTEmitterView.swift in Sources */,
 				BE96972624653AD1006BDBC8 /* IAGradientButton.swift in Sources */,
+				BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */,
 				BE9697182464DCA9006BDBC8 /* LTCharacterDiffResult.swift in Sources */,
 				BE18FB1C2467360A008F7FC5 /* OddLetterViewController.swift in Sources */,
 				BE9697192464DCA9006BDBC8 /* LTMorphingLabel+Evaporate.swift in Sources */,

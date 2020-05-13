@@ -9,21 +9,48 @@
 import UIKit
 
 class OddLetterViewController: UIViewController {
+    
+    var sourceLetter:[String] = []
+    var letterArray:[String] = []
+    let columnCount = 6
+    var rowCount = 0
 
     @IBOutlet weak var animationBar:CardAnimationView!
+    @IBOutlet weak var winButton:IARadialButton!
+    @IBOutlet weak var coinButton:IARadialButton!
+    @IBOutlet weak var letterLabel:UILabel!
+    @IBOutlet weak var letterContainer:LetterGameView!
+    
+    @IBOutlet var spaceLayout:[NSLayoutConstraint]!
     
 //    @IBOutlet var hexagonButtons: [HexagoanView]!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
     override var prefersStatusBarHidden: Bool {
         return true
-    } 
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        debugPrint("t0a")
+        self.letterLabel.text = self.sourceLetter[3]
         self.animationBar.configureGradient()
+        let _cellWidth = self.letterContainer.frame.width / CGFloat(self.columnCount)
+        self.rowCount = Int(self.letterContainer.frame.height / _cellWidth)
+        let extra = self.letterContainer.bounds.height - CGFloat(self.rowCount) * _cellWidth
+        for _layout in self.spaceLayout {
+            _layout.constant += extra / 2
+        }
+        self.letterContainer.configure(withData: self.letterArray,
+                                       row: self.rowCount,
+                                       column: self.columnCount,
+                                       dimension:_cellWidth,
+                                       source: self.sourceLetter[3])
+//        self.view.layoutIfNeeded()
+        
+        
 //        for _hexagon in self.hexagonButtons {
 //            _hexagon.setNeedsDisplay()
 //            _hexagon.setLayers(hasLabelAnimation: false)
@@ -33,6 +60,20 @@ class OddLetterViewController: UIViewController {
     @IBAction func exitGame(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
 //        self.animationBar.createAnimationGroup()
+    }
+    
+    @IBAction func nextCombination(_ sender:IARadialButton){
+        
+    }
+    
+    
+    @IBAction func openCoins(_ sender:IARadialButton){
+        
+    }
+    
+    
+    @IBAction func openWins(_ sender:IARadialButton){
+        
     }
 
     

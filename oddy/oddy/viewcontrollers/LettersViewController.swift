@@ -69,9 +69,11 @@ class LettersViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if let _idf = segue.identifier {
             if _idf.elementsEqual("start_game") {
-//                if let _dest = segue.destination as? SpotLatterViewController {
-//
-//                }
+                if let _dest = segue.destination as? OddLetterViewController {
+
+                    _dest.sourceLetter = sender as! [String]
+                    _dest.letterArray = self.letterArray
+                }
             }
         }
         
