@@ -11,21 +11,30 @@ import UIKit
 class OddLetterViewController: UIViewController {
 
     @IBOutlet weak var animationBar:CardAnimationView!
+    
+//    @IBOutlet var hexagonButtons: [HexagoanView]!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    } 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.animationBar.configureGradient()
+//        for _hexagon in self.hexagonButtons {
+//            _hexagon.setNeedsDisplay()
+//            _hexagon.setLayers(hasLabelAnimation: false)
+//        }
     }
     
     @IBAction func exitGame(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
 //        self.animationBar.createAnimationGroup()
     }
+
     
     /*
     // MARK: - Navigation
