@@ -15,6 +15,7 @@ class OddLetterViewController: UIViewController {
     let columnCount = 8
     var rowCount = 0
     var shouldConfigure = true
+    let gm = GameManager.shared
 
     @IBOutlet weak var animationBar:CardAnimationView!
     @IBOutlet weak var winButton:IARadialButton!
@@ -37,8 +38,9 @@ class OddLetterViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if self.shouldConfigure {
+            guard let _source = self.sourceLetter.last else {return}
             self.shouldConfigure = false
-            self.letterLabel.text = self.sourceLetter[3]
+            self.letterLabel.text = _source
             self.animationBar.configureGradient(delegate: self)
             let _cellWidth = self.letterContainer.frame.width / CGFloat(self.columnCount)
             self.rowCount = Int(self.letterContainer.frame.height / _cellWidth)
@@ -50,35 +52,28 @@ class OddLetterViewController: UIViewController {
                                            row: self.rowCount,
                                            column: self.columnCount,
                                            dimension:_cellWidth,
-                                           source: self.sourceLetter[3])
+                                           source: self.sourceLetter)
             self.view.layoutIfNeeded()
             self.animationBar.startAnimation(withDuration: 30)
         }
     }
     
-    fileprivate func checkGameStatus(){
-        
-    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-//        if self.letterContainer.isGameOver {
-//            debugPrint("SES! GAME OVER!!!!")
-//        } else {
-//            debugPrint("choluk! GAME ON!")
-//        }
-        
+        guard let _source = self.sourceLetter.last else {return}
         self.letterContainer.isGameOver = true
         if let _touch = touches.first {
             let _locatoin = _touch.location(in: self.letterContainer)
             for _view in self.letterContainer.subviews {
                 if _view.frame.contains(_locatoin){
                     if let _label = _view.subviews.first as? UILabel {
-                        if _label.text == self.sourceLetter[3] {
-                            self.letterContainer.isGameOver = false
-                            self.letterContainer.generateIndices()
-                            self.letterContainer.generateViews()
-                            
+                        if _label.text == _source {
+                            self.updateGamerResult()
+                            self.gm.setTimerCounter()
+                            self.letterContainer.configureGame()
+                            self.animationBar.startAnimation(withDuration: gm.timeCounter)
                         }
                     }
                     break
@@ -118,7 +113,14 @@ class OddLetterViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    fileprivate func updateGamerResult(){
+        self.gm.writeAnserCount += 1
+        self.winButton.setTitle("\(self.gm.writeAnserCount)", for: UIControl.State.normal)
+        GameManager.shared.coinCounter += self.gm.getCointCount()
+        self.coinButton.setTitle("\(self.gm.coinCounter)", for: UIControl.State.normal)
+    }
+    
 }
 
 

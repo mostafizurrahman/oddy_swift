@@ -12,7 +12,7 @@ class LetterGameView: UIView {
     
     
     var letterArray:[String] = []
-    var indexArray:[Int] = []
+    var dataArray:[String] = []
     var data:String = ""
     var _row = 0
     var _col = 0
@@ -20,44 +20,68 @@ class LetterGameView: UIView {
     var _cellWidth:CGFloat = 0
     var isGameOver = false
     
+    let gm = GameManager.shared
+    
+    
+    
     func configure(withData array:[String],
                    row:Int,
                    column:Int,
                    dimension:CGFloat,
-                   source:String) {
-        self.data = source
+                   source:[String]) {
+        self.dataArray = source
+        self.data = source.last ?? ""
         self._row  = row
         self._col = column
         self._cellWidth = dimension
         self.letterArray = array
-        self._index = array.firstIndex(where: { $0 == source}) ?? 0
-        self.generateIndices()
-        self.generateViews()
+        self._index = array.firstIndex(where: { $0 == self.data}) ?? 0
+        self.configureGame()
+    }
+    
+    func configureGame(){
+        self.isGameOver = false
+        let indices = self.generateIndices()
+        self.generateViews(forIndices:indices)
     }
     
     
-    func generateIndices(){
-        self.indexArray.removeAll()
-         var r = Int.random(in: 0...self.letterArray.count-1)
+    fileprivate func generateIndices()->[Int]{
+        var indexArray = [Int]()
+        var r = Int.random(in: 0...self.letterArray.count-1)
         let _cellCount = self._row * self._col
-         while _cellCount - 1 > self.indexArray.count {
-             if r != self._index {
-                 self.indexArray.append(r)
-             }
-             r = Int.random(in: 1...self.letterArray.count - 1)
-         }
-         self.indexArray.append(self._index)
-         self.indexArray = self.indexArray.shuffled()
-         debugPrint(self.indexArray.count)
+        while _cellCount - 1 > indexArray.count {
+            if r != self._index {
+                indexArray.append(r)
+            }
+            r = Int.random(in: 1...self.letterArray.count - 1)
+        }
+        indexArray.append(self._index)
+        indexArray = indexArray.shuffled()
+        return indexArray
     }
     
-    func generateViews(){
+    fileprivate func generateViews(forIndices indexArray:[Int]){
         for _view in self.subviews {
             IAViewAnimation.animate(view: _view, shouldVisible: false) { (_FINISHED) in
                 _view.removeFromSuperview()
             }
         }
         let _size = CGSize(width: _cellWidth, height: _cellWidth)
+        var isSimilar = self.gm.isSimilarChar()
+        let similarData = self.dataArray.count > 2 ?
+            self.gm.getChar(fromArray: self.dataArray) :
+            self.gm.getChar(fromArray: self.letterArray)
+        if similarData.elementsEqual(self.data) {
+            isSimilar = false
+        } else if let index = self.dataArray.firstIndex(of: similarData), isSimilar{
+            self.dataArray.remove(at: index)
+            debugPrint("removed ___ \(similarData)")
+            
+        }
+        
+        
+        let dataIndex = Int.random(in: 0...self._row * self._col - 1)
         for i in 0...self._row-1 {
             for j in 0...self._col-1 {
                 
@@ -72,8 +96,16 @@ class LetterGameView: UIView {
                 _cellView.layer.borderColor = UIColor.lightGray.cgColor
                 _cellView.isUserInteractionEnabled = true
                 let _label = UILabel(frame: CGRect(origin: .zero, size: _size))
-                let indexing = i * (self._col) + j
-                _label.text = self.letterArray[self.indexArray[indexing]]
+                if isSimilar {
+                    if dataIndex ==  i * (self._col) + j {
+                        _label.text = self.data
+                    } else {
+                        _label.text = similarData
+                    }
+                } else {
+                    let indexing = i * (self._col) + j
+                    _label.text = self.letterArray[indexArray[indexing]]
+                }
                 _label.textAlignment = NSTextAlignment.center
                 _label.font = UIFont(name:"Copperplate-Bold", size: self._cellWidth * 0.65)
                 _cellView.addSubview(_label)

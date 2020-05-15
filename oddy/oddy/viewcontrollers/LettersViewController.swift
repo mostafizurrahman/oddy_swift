@@ -185,12 +185,25 @@ extension LettersViewController:SelectionDelegate{
         _inst.layer.cornerRadius = 35
         _inst.layer.masksToBounds = true
         _inst.instructionDelegate = nil
-        var _data = _inst.sampleLables.map({$0.text})
-        _data.append(_inst.selectedLabel.text)
+        var _tough = [String]()
+        if let _text = self.instrucitonView?.selectedLabel.text {
+            if let _index = self.letterArray.firstIndex(of: _text) {
+                let startIndex = _index < 5 ? 0 :
+                    (_index > self.letterArray.count - 5 ?
+                    self.letterArray.count - 11 : _index - 5)
+                for i in startIndex...startIndex + 10 {
+                    let _data = self.letterArray[i]
+                    if !_data.elementsEqual(_text) {
+                        _tough.append(_data)
+                    }
+                }
+            }
+            _tough.append(_text)
+        }
         IAViewAnimation.animate(view: _inst, shouldVisible: false) { (_finished) in
             _inst.removeFromSuperview()
             if shouldPlay{
-                self.performSegue(withIdentifier: "start_game", sender: _data)
+                self.performSegue(withIdentifier: "start_game", sender: _tough)
             }
         }
     }

@@ -17,6 +17,7 @@
 		BE18B68C2464B28400ABFE31 /* oddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18B68B2464B28400ABFE31 /* oddyUITests.swift */; };
 		BE18FB1C2467360A008F7FC5 /* OddLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */; };
 		BE18FB1E24674388008F7FC5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18FB1D24674388008F7FC5 /* CardView.swift */; };
+		BE868E09246DEC3D00C83F4F /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE868E08246DEC3D00C83F4F /* GameManager.swift */; };
 		BE9696F52464D42C006BDBC8 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9696F32464D42C006BDBC8 /* InstructionView.xib */; };
 		BE9696F62464D42C006BDBC8 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9696F42464D42C006BDBC8 /* InstructionView.swift */; };
 		BE9696F82464D43A006BDBC8 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9696F72464D439006BDBC8 /* ShadowView.swift */; };
@@ -84,6 +85,7 @@
 		BE18B68D2464B28400ABFE31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddLetterViewController.swift; sourceTree = "<group>"; };
 		BE18FB1D24674388008F7FC5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BE868E08246DEC3D00C83F4F /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		BE9696F32464D42C006BDBC8 /* InstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
 		BE9696F42464D42C006BDBC8 /* InstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
 		BE9696F72464D439006BDBC8 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				BE18B6722464B28400ABFE31 /* Assets.xcassets */,
 				BE18B6742464B28400ABFE31 /* LaunchScreen.storyboard */,
 				BE18B6772464B28400ABFE31 /* Info.plist */,
+				BE868E08246DEC3D00C83F4F /* GameManager.swift */,
 			);
 			path = oddy;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				BE18FB1E24674388008F7FC5 /* CardView.swift in Sources */,
 				BE14FCD02469DB3300E1B2F9 /* CardAnimationView.swift in Sources */,
 				BE9697202464DCA9006BDBC8 /* LTMorphingEffect.swift in Sources */,
+				BE868E09246DEC3D00C83F4F /* GameManager.swift in Sources */,
 				BE9697132464DCA9006BDBC8 /* LTStringDiffResult.swift in Sources */,
 				BE9696FA2464D46D006BDBC8 /* HexagoanView.swift in Sources */,
 				BE96971D2464DCA9006BDBC8 /* LTMorphingLabel.swift in Sources */,
