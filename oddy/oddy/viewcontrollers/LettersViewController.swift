@@ -11,6 +11,7 @@ import UIKit
 class LettersViewController: UIViewController {
 
     typealias IAVA = IAViewAnimation
+    typealias GM = GameManager
     @IBOutlet weak var segments: UISegmentedControl!
     @IBOutlet weak var titleLabel: LTMorphingLabel!
     let screenSize = UIScreen.main.bounds.size
@@ -127,8 +128,13 @@ class LettersViewController: UIViewController {
             if _idf.elementsEqual("start_game") {
                 if let _dest = segue.destination as? OddLetterViewController {
 
-                    _dest.sourceLetter = sender as! [String]
-                    _dest.letterArray = self.letterArray
+                    if self.isHard {
+                        _dest.sourceLetter = [GM.shared.toughChar]
+                        _dest.letterArray = sender as! [String]
+                    } else {
+                        _dest.sourceLetter = sender as! [String]
+                        _dest.letterArray = self.letterArray
+                    }
                 }
             }
         }
@@ -236,29 +242,16 @@ extension LettersViewController:UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-        if UserDefaults.standard.bool(forKey: "never_ask") {
-            var _data:[String] = []
-            if  indexPath.row == 0 ||
-                indexPath.row == 1 ||
-                indexPath.row == 2{
-                for i in indexPath.row+3...indexPath.row+5{
-                    _data.append(self.letterArray[i])
-                }
-            } else if indexPath.row == self.letterArray.count - 1 ||
-                indexPath.row == self.letterArray.count - 2 ||
-                indexPath.row == self.letterArray.count - 3 {
-                for i in self.letterArray.count -
-                    6...self.letterArray.count - 4 {
-                    _data.append(self.letterArray[i])
-                }
-            } else {
-                _data.append(self.letterArray[indexPath.row+1])
-                _data.append(self.letterArray[indexPath.row+2])
-                _data.append(self.letterArray[indexPath.row-1])
+        if self.isHard {
+            
+            guard let _value = self.getLetterArray(inSection: indexPath.section) else {
+                return
             }
-            _data.append(self.letterArray[indexPath.row])
-            self.performSegue(withIdentifier: "start_game", sender: _data)
+            GM.shared.isHardGame = true
+            GM.shared.toughChar = _value[indexPath.row]
+            self.performSegue(withIdentifier: "start_game", sender: _value)
         } else {
+            GM.shared.isHardGame = false
             self.openInstructions(indexPath: indexPath)
         }
     }

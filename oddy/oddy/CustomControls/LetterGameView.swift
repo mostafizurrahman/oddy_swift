@@ -107,7 +107,7 @@ class LetterGameView: UIView {
                     _label.text = self.letterArray[indexArray[indexing]]
                 }
                 _label.textAlignment = NSTextAlignment.center
-                _label.font = UIFont(name:"Copperplate-Bold", size: self._cellWidth * 0.65)
+                _label.font = UIFont(name:"System-Bold", size: self._cellWidth * 0.65)
                 _cellView.addSubview(_label)
                 self.addSubview(_cellView)
                 UIView.animate(withDuration: 0.3) {

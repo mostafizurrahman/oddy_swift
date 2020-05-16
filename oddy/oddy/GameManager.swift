@@ -10,9 +10,11 @@ import UIKit
 
 class GameManager: NSObject {
     
+    var toughChar:String = ""
     var coinCounter = 0
     var writeAnserCount = 0
     var timeCounter:Double = 0
+    var isHardGame = false
     
     static let shared = GameManager()
     override init() {

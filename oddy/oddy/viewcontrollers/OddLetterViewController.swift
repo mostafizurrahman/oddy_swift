@@ -12,7 +12,7 @@ class OddLetterViewController: UIViewController {
     
     var sourceLetter:[String] = []
     var letterArray:[String] = []
-    let columnCount = 8
+    let columnCount = GameManager.shared.isHardGame ? 10 : 8
     var rowCount = 0
     var shouldConfigure = true
     let gm = GameManager.shared
