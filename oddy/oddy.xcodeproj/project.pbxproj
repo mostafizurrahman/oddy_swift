@@ -49,6 +49,7 @@
 		BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */; };
 		BE969732246586BD006BDBC8 /* UtilityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE969731246586BD006BDBC8 /* UtilityExtension.swift */; };
 		BEC39545246F192600C5F497 /* hard_data.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC39544246F192600C5F497 /* hard_data.json */; };
+		BEC39549247058F800C5F497 /* GameResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC39548247058F800C5F497 /* GameResultView.xib */; };
 		BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC88216246BE90400B35C68 /* LetterGameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAViewAnimation.swift; sourceTree = "<group>"; };
 		BE969731246586BD006BDBC8 /* UtilityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtension.swift; sourceTree = "<group>"; };
 		BEC39544246F192600C5F497 /* hard_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hard_data.json; sourceTree = "<group>"; };
+		BEC39548247058F800C5F497 /* GameResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameResultView.xib; sourceTree = "<group>"; };
 		BEC88216246BE90400B35C68 /* LetterGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +218,7 @@
 				BE18FB1D24674388008F7FC5 /* CardView.swift */,
 				BE14FCCF2469DB3300E1B2F9 /* CardAnimationView.swift */,
 				BEC88216246BE90400B35C68 /* LetterGameView.swift */,
+				BEC39548247058F800C5F497 /* GameResultView.xib */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				BE9697212464DCA9006BDBC8 /* Fire.png in Resources */,
 				BE9697122464DCA9006BDBC8 /* Fragment.png in Resources */,
 				BE96972C24657809006BDBC8 /* ImageEmog.json in Resources */,
+				BEC39549247058F800C5F497 /* GameResultView.xib in Resources */,
 				BEC39545246F192600C5F497 /* hard_data.json in Resources */,
 				BE18B6762464B28400ABFE31 /* LaunchScreen.storyboard in Resources */,
 				BE9696F52464D42C006BDBC8 /* InstructionView.xib in Resources */,
