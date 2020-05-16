@@ -8,11 +8,6 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AdventPro-Regular.ttf">
-            <string>AdventPro-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="wgP-Ln-SYu">
@@ -62,10 +57,6 @@
                                 <state key="normal" image="settings"/>
                                 <state key="highlighted" image="radial_gradient"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isotherButton" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="dimension">
-                                        <real key="value" value="50"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -108,10 +99,6 @@
                                 <state key="normal" image="shopping"/>
                                 <state key="highlighted" image="radial_gradient"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isotherButton" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="dimension">
-                                        <real key="value" value="50"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -272,13 +259,13 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XI2-4g-bG2">
                                     <size key="itemSize" width="128" height="107"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emoji" id="VoJ-yf-r1S">
-                                        <rect key="frame" x="10" y="10" width="128" height="107"/>
+                                        <rect key="frame" x="10" y="60" width="128" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="q4v-p6-HhN">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="107"/>
@@ -311,6 +298,49 @@
                                         <size key="customSize" width="128" height="107"/>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="_header" id="bqf-s8-11r">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7M-lN-8Pt" customClass="IALinearButton" customModule="ODDY" customModuleProvider="target">
+                                            <rect key="frame" x="24" y="13" width="366" height="24"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="leftGradientColor">
+                                                    <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="rightGradientColor">
+                                                    <color key="value" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                                    <real key="value" value="0.34999999999999998"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1234" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwC-Jj-qZU" customClass="LTMorphingLabel" customModule="ODDY" customModuleProvider="target">
+                                            <rect key="frame" x="192" y="15.5" width="30" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="o7M-lN-8Pt" firstAttribute="leading" secondItem="bqf-s8-11r" secondAttribute="leading" constant="24" id="GSH-nb-H5F"/>
+                                        <constraint firstItem="kwC-Jj-qZU" firstAttribute="centerY" secondItem="bqf-s8-11r" secondAttribute="centerY" id="HHU-2x-l1c"/>
+                                        <constraint firstItem="o7M-lN-8Pt" firstAttribute="top" secondItem="bqf-s8-11r" secondAttribute="top" constant="13" id="OVm-7G-6Qx"/>
+                                        <constraint firstAttribute="bottom" secondItem="o7M-lN-8Pt" secondAttribute="bottom" constant="13" id="QL0-uG-KAG"/>
+                                        <constraint firstAttribute="trailing" secondItem="o7M-lN-8Pt" secondAttribute="trailing" constant="24" id="qgn-vF-1K7"/>
+                                        <constraint firstItem="kwC-Jj-qZU" firstAttribute="centerX" secondItem="bqf-s8-11r" secondAttribute="centerX" id="ySA-hE-8sq"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="nbP-v6-15l" id="28W-sU-Npj"/>
                                     <outlet property="delegate" destination="nbP-v6-15l" id="cee-Jp-zOb"/>
@@ -328,9 +358,6 @@
                                 </state>
                                 <state key="highlighted" image="radial_gradient"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="leftGradientColor">
-                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                         <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -361,17 +388,31 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCF-cX-YuN" customClass="LTMorphingLabel" customModule="ODDY" customModuleProvider="target">
-                                <rect key="frame" x="207" y="74" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="22"/>
+                                <rect key="frame" x="72" y="74" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="TiK-YD-Xt4">
+                                <rect key="frame" x="287" y="58.5" width="111" height="32"/>
+                                <segments>
+                                    <segment title="EASY"/>
+                                    <segment title="HARD"/>
+                                </segments>
+                                <color key="tintColor" red="0.20392156859999999" green="0.68582196299999998" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentChanged:" destination="nbP-v6-15l" eventType="valueChanged" id="jmm-hS-Ulb"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="aCF-cX-YuN" firstAttribute="centerY" secondItem="u1X-sz-UV8" secondAttribute="centerY" id="3C6-8W-ex5"/>
+                            <constraint firstItem="U14-pa-TIO" firstAttribute="trailing" secondItem="TiK-YD-Xt4" secondAttribute="trailing" constant="16" id="48q-Xh-5Gz"/>
+                            <constraint firstItem="aCF-cX-YuN" firstAttribute="leading" secondItem="u1X-sz-UV8" secondAttribute="trailing" constant="16" id="5zJ-bf-h33"/>
                             <constraint firstItem="u1X-sz-UV8" firstAttribute="leading" secondItem="U14-pa-TIO" secondAttribute="leading" constant="16" id="6Wp-Q7-Nro"/>
-                            <constraint firstItem="aCF-cX-YuN" firstAttribute="centerX" secondItem="U14-pa-TIO" secondAttribute="centerX" id="Uzp-dr-FZR"/>
+                            <constraint firstItem="TiK-YD-Xt4" firstAttribute="centerY" secondItem="u1X-sz-UV8" secondAttribute="centerY" id="QWp-LJ-Y5o"/>
                             <constraint firstItem="MoV-cn-1Mq" firstAttribute="top" secondItem="U14-pa-TIO" secondAttribute="top" constant="60" id="ZGI-2D-GFd"/>
                             <constraint firstItem="U14-pa-TIO" firstAttribute="trailing" secondItem="MoV-cn-1Mq" secondAttribute="trailing" id="hV0-tM-guY"/>
                             <constraint firstItem="MoV-cn-1Mq" firstAttribute="leading" secondItem="U14-pa-TIO" secondAttribute="leading" id="sPt-Rz-tcq"/>
@@ -383,13 +424,14 @@
                     <navigationItem key="navigationItem" id="IsD-UB-k6d"/>
                     <connections>
                         <outlet property="letterCollectioinView" destination="MoV-cn-1Mq" id="TLD-1e-Aen"/>
+                        <outlet property="segments" destination="TiK-YD-Xt4" id="6Gf-2k-ARh"/>
                         <outlet property="titleLabel" destination="aCF-cX-YuN" id="Goj-tQ-zOO"/>
                         <segue destination="iD3-8x-hPu" kind="show" identifier="start_game" id="XvF-L5-B2a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4Y-r5-KNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="138"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="137.94642857142856"/>
         </scene>
         <!--Odd Letter View Controller-->
         <scene sceneID="lfl-RY-vp7">
