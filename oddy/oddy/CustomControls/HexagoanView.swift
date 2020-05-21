@@ -12,6 +12,8 @@ class HexagoanView: UIView,CAAnimationDelegate {
     @IBOutlet var titleLabel:LTMorphingLabel?
     
     fileprivate var gl:CAGradientLayer?
+    
+    var hasLabelAnimation = true
 
     var colorAnimation : CABasicAnimation? = CABasicAnimation(keyPath: "colors")
     
@@ -44,7 +46,8 @@ class HexagoanView: UIView,CAAnimationDelegate {
     }
 
     
-    func setLayers(){
+    func setLayers( hasLabelAnimation:Bool = true){
+        self.hasLabelAnimation = hasLabelAnimation
         let rect = self.bounds
         let path = UIBezierPath()
         let width: CGFloat = rect.width
@@ -91,7 +94,9 @@ class HexagoanView: UIView,CAAnimationDelegate {
         self.layer.mask = mask
         self.layer.masksToBounds = true
         self.animateLayer()
-        self.setAnimatedLabel()
+        if self.hasLabelAnimation {
+            self.setAnimatedLabel()
+        }
     }
     
     func clearAnimation(){
@@ -128,7 +133,9 @@ class HexagoanView: UIView,CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         self.animateLayer()
-        self.setAnimatedLabel()
+        if self.hasLabelAnimation {
+            self.setAnimatedLabel()
+        }
     }
     
     

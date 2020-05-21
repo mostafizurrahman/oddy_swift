@@ -9,9 +9,17 @@
 
 import UIKit
 
+protocol AnimationDelegate : NSObjectProtocol {
+    
+    func onAnimationCompleted()
+    func onAnimationStarted()
+    func onAnimationStoped()
+}
+
+
 @IBDesignable class CardAnimationView: CardView {
 
-    
+    weak var animationDelegate:AnimationDelegate?
     let gradientLayer = CAGradientLayer()
     var animationGroup:CAAnimationGroup?
     var animationDuration:TimeInterval = 30
@@ -26,7 +34,8 @@ import UIKit
         super.init(coder: coder)
     }
     
-    func configureGradient() {
+    func configureGradient(delegate:AnimationDelegate) {
+        self.animationDelegate = delegate
         self.gradientLayer.backgroundColor = UIColor.init(rgb: 0x3958a8).cgColor
         self.gradientLayer.locations = [0, 1]
         self.gradientLayer.startPoint = CGPoint(x:0.0, y:0.5)
@@ -36,7 +45,7 @@ import UIKit
         self.gradientLayer.borderWidth = super.borderWidth / 2.0
         self.gradientLayer.borderColor = super.borderColor.cgColor
         self.gradientLayer.cornerRadius = super.cornerRadius - self.borderWidth / 2
-        self.endTime = Date().addingTimeInterval(self.animationDuration)
+        
         guard let timeLabel = self.viewWithTag(1111) as? LTMorphingLabel else {
             return
         }
@@ -44,18 +53,17 @@ import UIKit
         var cardBound = super.getBound(inRect: self.bounds)
         cardBound.size.width = 0
         self.gradientLayer.frame = cardBound
-        self.layer.insertSublayer(self.gradientLayer, at: 0)
+        
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = super.borderPath.cgPath
         self.gradientLayer.masksToBounds = true
         self.gradientLayer.mask = shapeLayer
         self.layer.insertSublayer(self.gradientLayer, at: 0)
-        self.createAnimationGroup()
-        self.createAnimationTimer()
         self.bringSubviewToFront(timeLabel)
     }
     
     fileprivate func createAnimationTimer(){
+        self.endTime = Date().addingTimeInterval(self.animationDuration)
         self.updateTimer = Timer.scheduledTimer(timeInterval: 1.0,
                                                 target: self,
                                                 selector: #selector(updateTime),
@@ -113,6 +121,25 @@ import UIKit
         self.animationGroup?.duration = CFTimeInterval(self.animationDuration)
         self.animationGroup?.delegate = self
         self.animationGroup?.fillMode = CAMediaTimingFillMode.forwards
+        
+    }
+    
+    func startAnimation(withDuration duration:TimeInterval){
+        self.animationDuration = duration
+        self.animationGroup?.duration = CFTimeInterval(self.animationDuration)
+        if let _animations = self.animationGroup?.animations {
+            for _animation in _animations {
+                _animation.duration = duration
+            }
+        }
+        if self.animationGroup == nil {
+            self.createAnimationGroup()
+        }
+        if self.updateTimer != nil {
+            self.updateTimer?.invalidate()
+        }
+        self.createAnimationTimer()
+        
         if let _animationGroup = self.animationGroup {
             self.gradientLayer.add(_animationGroup, forKey: "animation")
         }
@@ -123,11 +150,17 @@ import UIKit
 extension CardAnimationView:CAAnimationDelegate {
     func animationDidStart(_ anim: CAAnimation) {
         debugPrint("iko")
+        self.animationDelegate?.onAnimationStarted()
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        
+        if flag {
+            self.animationDelegate?.onAnimationCompleted()
+        } else {
+            self.animationDelegate?.onAnimationStoped()
+        }
     }
+    
 }
 extension TimeInterval {
     var time: String {
