@@ -91,6 +91,22 @@ class GameManager: NSObject {
         }
     }
     
+    func getAnimalName()->String {
+        let _unit = Int(58.0 / 5.0)
+      
+        if self.writeAnserCount > _unit * 4 {
+            return "Hawk"
+        } else if self.writeAnserCount > _unit * 3 {
+            return "Cheetah"
+        } else if self.writeAnserCount > _unit * 2 {
+            return "Cat"
+        } else if self.writeAnserCount > _unit  {
+            return "Fox"
+        } else {
+            return "Rat"
+        }
+    }
+    
     func getBoxDimension()->Int{
         if self.writeAnserCount < 3 {
             return 2

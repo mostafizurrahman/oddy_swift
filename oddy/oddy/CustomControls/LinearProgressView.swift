@@ -43,7 +43,7 @@ class LinearProgressView: UIView, CAAnimationDelegate {
         colorLayer.masksToBounds = true
         colorLayer.cornerRadius = self.bounds.height / 2
         
-        self.layer.addSublayer(self.colorLayer)
+        self.layer.insertSublayer(self.colorLayer, at: 0)
         
     }
     

@@ -774,9 +774,19 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWU-vT-a91" customClass="LinearProgressView" customModule="ODDY" customModuleProvider="target">
                                         <rect key="frame" x="11.5" y="77" width="367" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRg-mc-qLr">
+                                                <rect key="frame" x="170" y="5.5" width="27.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="uRg-mc-qLr" firstAttribute="centerY" secondItem="hWU-vT-a91" secondAttribute="centerY" id="47t-Vz-KDP"/>
                                             <constraint firstAttribute="height" constant="25" id="iTD-xy-ojZ"/>
+                                            <constraint firstItem="uRg-mc-qLr" firstAttribute="centerX" secondItem="hWU-vT-a91" secondAttribute="centerX" id="ymv-sh-Uuk"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -909,12 +919,24 @@
                                     <action selector="skipColorCombinations:" destination="XRG-pn-iQY" eventType="touchUpInside" id="ccj-RE-uaQ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbj-fI-Bq4">
+                                <rect key="frame" x="318" y="58" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="RDx-RP-GgR"/>
+                                    <constraint firstAttribute="width" constant="36" id="cGJ-ea-Gs7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="STU-9T-QLm" firstAttribute="leading" secondItem="3Fe-kq-pxh" secondAttribute="leading" constant="12" id="1jd-Me-a7q"/>
+                            <constraint firstItem="CxN-tu-CXZ" firstAttribute="leading" secondItem="kbj-fI-Bq4" secondAttribute="trailing" constant="8" id="7uF-E7-kRf"/>
                             <constraint firstItem="3Fe-kq-pxh" firstAttribute="trailing" secondItem="Yie-oE-Xdp" secondAttribute="trailing" constant="12" id="8iS-vM-bQ9"/>
                             <constraint firstItem="CxN-tu-CXZ" firstAttribute="centerY" secondItem="1g6-y4-RqX" secondAttribute="centerY" id="9wS-t3-lXr"/>
+                            <constraint firstItem="kbj-fI-Bq4" firstAttribute="centerY" secondItem="CxN-tu-CXZ" secondAttribute="centerY" id="A9g-qS-IsO"/>
                             <constraint firstItem="mOs-g3-HfB" firstAttribute="leading" secondItem="1g6-y4-RqX" secondAttribute="trailing" constant="16" id="HrP-ED-ef6"/>
                             <constraint firstItem="Yie-oE-Xdp" firstAttribute="leading" secondItem="3Fe-kq-pxh" secondAttribute="leading" constant="12" id="Nrf-lX-l7h"/>
                             <constraint firstItem="mOs-g3-HfB" firstAttribute="centerY" secondItem="1g6-y4-RqX" secondAttribute="centerY" id="PLG-Oo-A2Q"/>
@@ -932,11 +954,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="smI-qm-n1A"/>
                     <connections>
+                        <outlet property="animalLabel" destination="uRg-mc-qLr" id="0ga-3z-L6D"/>
                         <outlet property="boardHeightLayout" destination="eOK-59-aG1" id="XJv-W1-xEc"/>
                         <outlet property="boardView" destination="Yie-oE-Xdp" id="c2O-vQ-vQZ"/>
                         <outlet property="cardAnimationView" destination="kr1-DS-IsO" id="2P3-Xi-Js3"/>
                         <outlet property="countDownLabel" destination="sP7-zr-KjF" id="51a-1x-y3Z"/>
                         <outlet property="linearProgressView" destination="hWU-vT-a91" id="515-sx-Nrw"/>
+                        <outlet property="skipLabel" destination="kbj-fI-Bq4" id="qQl-mA-uNZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9m-Bv-yC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

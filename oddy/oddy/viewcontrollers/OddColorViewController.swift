@@ -18,13 +18,15 @@ class OddColorViewController: UIViewController {
     @IBOutlet weak var cardAnimationView: CardAnimationView!
     @IBOutlet weak var boardView:CardView!
     @IBOutlet weak var linearProgressView:LinearProgressView!
+    @IBOutlet weak var skipLabel: UILabel!
+    @IBOutlet weak var animalLabel: UILabel!
     
     let gameManager = GM.shared
     
     var dimension = 2
     var coinCounter = 0
     var rightColorIndex = -1
-    var skipCount = 5
+    var skipCount = 3
     override var prefersStatusBarHidden: Bool {
            return true
        }
@@ -44,6 +46,11 @@ class OddColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.skipLabel.layer.cornerRadius = self.skipLabel.frame.width / 2
+        self.skipLabel.layer.borderColor = UIColor.systemPink.cgColor
+        self.skipLabel.layer.borderWidth = 4
+        self.skipLabel.layer.masksToBounds = true
+        self.linearProgressView.bringSubviewToFront(self.skipLabel)
         self.gameManager.writeAnserCount = 0
         self.gameManager.coinCounter = 0
         self.gameManager.timeCounter = 31
@@ -94,6 +101,7 @@ class OddColorViewController: UIViewController {
     
     fileprivate func onCorrectAnswerGiven(){
         self.gameManager.writeAnserCount += 1
+        self.animalLabel.text = self.gameManager.getAnimalName()
         let _dimension = self.gameManager.getBoxDimension()
         if _dimension != self.dimension {
             self.dimension = _dimension
@@ -110,6 +118,7 @@ class OddColorViewController: UIViewController {
         } else {
             self.changeColorViews()
         }
+        
         self.coinCounter += self.gameManager.getColorCoin()
         self.linearProgressView.animateCircleColors(atIndex:
             self.gameManager.writeAnserCount)
@@ -165,8 +174,9 @@ class OddColorViewController: UIViewController {
     
     @IBAction func skipColorCombinations(_ sender: Any) {
         
-        if self.skipCount > 1 {
+        if self.skipCount > 0 {
             self.skipCount -= 1
+            self.skipLabel.text = "\(self.skipCount)"
             self.changeColorViews()
         }
     }
