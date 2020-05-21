@@ -16,6 +16,9 @@ class HomeViewController: UIViewController {
     @IBOutlet var hexagonButtons: [HexagoanView]!
     
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let _layer = AV.createParticles(forRect: AV.SCREEN_BOUND)

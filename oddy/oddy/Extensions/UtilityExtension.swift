@@ -7,7 +7,20 @@
 //
 
 import UIKit
+enum AnswerType {
+    case wrong
+    case right
+    case timeout
+    case unknown
+}
 
+enum EyePerformance:Int {
+    case poor = 20
+    case average = 35
+    case good = 45
+    case best = 60
+    
+}
 class UtilityExtension: NSObject {
 
 }
@@ -46,5 +59,13 @@ extension Int {
         } else {
             return Int.random(in: range)
         }
+    }
+    
+    static func urandArray(count: Int, minNum: Int, maxNum: UInt32) -> [Int] {
+        var uniqueNumbers = Set<Int>()
+        while uniqueNumbers.count < count {
+            uniqueNumbers.insert(Int(arc4random_uniform(maxNum + 1)) + minNum)
+        }
+        return Array(uniqueNumbers)
     }
 }

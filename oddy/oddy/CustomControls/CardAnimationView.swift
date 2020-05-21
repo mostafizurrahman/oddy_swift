@@ -83,6 +83,17 @@ protocol AnimationDelegate : NSObjectProtocol {
             self.updateTimer?.invalidate()
         }
     }
+    
+    func removeAnimations(){
+        self.animationGroup?.delegate = nil
+        self.gradientLayer.removeAllAnimations()
+    }
+    
+    deinit {
+        self.animationGroup?.delegate = nil
+        self.gradientLayer.removeAllAnimations()
+    }
+    
     fileprivate func createAnimationGroup(){
         let boundAnimation = CABasicAnimation.init(keyPath: "bounds")
         let positionAnimation = CABasicAnimation.init(keyPath: "position")

@@ -35,7 +35,7 @@ extension UIColor {
             blue: rgb & 0xFF
         )
     }
-    convenience init(random:Int){
+    convenience init(random:Bool){
         let r = CGFloat(Double(arc4random_uniform(256)) / 255.0)
         let g = CGFloat(Double(arc4random_uniform(256)) / 255.0)
         let b = CGFloat(Double(arc4random_uniform(256)) / 255.0)
@@ -43,7 +43,7 @@ extension UIColor {
         self.init(red: r, green: g, blue: b, alpha: 1.0)
     }
     
-    convenience init(baseColor:UIColor, difference:CGFloat, hardcore:Bool){
+    convenience init(baseColor:UIColor, difference:CGFloat){
         var a:CGFloat = 0
         var r:CGFloat = 0
         var g:CGFloat = 0

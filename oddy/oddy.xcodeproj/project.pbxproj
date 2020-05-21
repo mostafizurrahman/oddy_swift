@@ -48,8 +48,10 @@
 		BE96972E24657826006BDBC8 /* LettersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE96972D24657826006BDBC8 /* LettersViewController.swift */; };
 		BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */; };
 		BE969732246586BD006BDBC8 /* UtilityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE969731246586BD006BDBC8 /* UtilityExtension.swift */; };
+		BEC362DD2474615E001ED842 /* OddColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC362DC2474615E001ED842 /* OddColorViewController.swift */; };
 		BEC39545246F192600C5F497 /* hard_data.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC39544246F192600C5F497 /* hard_data.json */; };
 		BEC39549247058F800C5F497 /* GameResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC39548247058F800C5F497 /* GameResultView.xib */; };
+		BEC3954B2470965800C5F497 /* GameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3954A2470965800C5F497 /* GameResultView.swift */; };
 		BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC88216246BE90400B35C68 /* LetterGameView.swift */; };
 /* End PBXBuildFile section */
 
@@ -118,8 +120,10 @@
 		BE96972D24657826006BDBC8 /* LettersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LettersViewController.swift; sourceTree = "<group>"; };
 		BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAViewAnimation.swift; sourceTree = "<group>"; };
 		BE969731246586BD006BDBC8 /* UtilityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtension.swift; sourceTree = "<group>"; };
+		BEC362DC2474615E001ED842 /* OddColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddColorViewController.swift; sourceTree = "<group>"; };
 		BEC39544246F192600C5F497 /* hard_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hard_data.json; sourceTree = "<group>"; };
 		BEC39548247058F800C5F497 /* GameResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameResultView.xib; sourceTree = "<group>"; };
+		BEC3954A2470965800C5F497 /* GameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
 		BEC88216246BE90400B35C68 /* LetterGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,7 +185,6 @@
 				BE18B6722464B28400ABFE31 /* Assets.xcassets */,
 				BE18B6742464B28400ABFE31 /* LaunchScreen.storyboard */,
 				BE18B6772464B28400ABFE31 /* Info.plist */,
-				BE868E08246DEC3D00C83F4F /* GameManager.swift */,
 			);
 			path = oddy;
 			sourceTree = "<group>";
@@ -215,10 +218,11 @@
 				BE96972524653AD1006BDBC8 /* IAGradientButton.swift */,
 				BE96972324652C23006BDBC8 /* IALinearButton.swift */,
 				BE9696FB2464D562006BDBC8 /* IARadialButton.swift */,
-				BE18FB1D24674388008F7FC5 /* CardView.swift */,
 				BE14FCCF2469DB3300E1B2F9 /* CardAnimationView.swift */,
+				BE18FB1D24674388008F7FC5 /* CardView.swift */,
 				BEC88216246BE90400B35C68 /* LetterGameView.swift */,
 				BEC39548247058F800C5F497 /* GameResultView.xib */,
+				BEC3954A2470965800C5F497 /* GameResultView.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -229,6 +233,7 @@
 				BE9696FE2464D5C1006BDBC8 /* ColorExtension.swift */,
 				BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */,
 				BE969731246586BD006BDBC8 /* UtilityExtension.swift */,
+				BE868E08246DEC3D00C83F4F /* GameManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				BE96972824656C09006BDBC8 /* HomeViewController.swift */,
 				BE96972D24657826006BDBC8 /* LettersViewController.swift */,
 				BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */,
+				BEC362DC2474615E001ED842 /* OddColorViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -418,11 +424,13 @@
 				BE9696FC2464D562006BDBC8 /* IARadialButton.swift in Sources */,
 				BE9696F62464D42C006BDBC8 /* InstructionView.swift in Sources */,
 				BE9696FF2464D5C1006BDBC8 /* ColorExtension.swift in Sources */,
+				BEC3954B2470965800C5F497 /* GameResultView.swift in Sources */,
 				BE96971F2464DCA9006BDBC8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				BE18B66A2464B28200ABFE31 /* AppDelegate.swift in Sources */,
 				BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */,
 				BE96971E2464DCA9006BDBC8 /* LTEmitterView.swift in Sources */,
 				BE96972624653AD1006BDBC8 /* IAGradientButton.swift in Sources */,
+				BEC362DD2474615E001ED842 /* OddColorViewController.swift in Sources */,
 				BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */,
 				BE9697182464DCA9006BDBC8 /* LTCharacterDiffResult.swift in Sources */,
 				BE18FB1C2467360A008F7FC5 /* OddLetterViewController.swift in Sources */,
@@ -550,7 +558,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -604,7 +612,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
