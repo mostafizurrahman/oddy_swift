@@ -17,13 +17,14 @@ class OddColorViewController: UIViewController {
     @IBOutlet weak var boardHeightLayout:NSLayoutConstraint!
     @IBOutlet weak var cardAnimationView: CardAnimationView!
     @IBOutlet weak var boardView:CardView!
+    @IBOutlet weak var linearProgressView:LinearProgressView!
     
     let gameManager = GM.shared
     
-    var dimension = 6
-    
-    
-    
+    var dimension = 2
+    var coinCounter = 0
+    var rightColorIndex = -1
+    var skipCount = 5
     override var prefersStatusBarHidden: Bool {
            return true
        }
@@ -43,7 +44,11 @@ class OddColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.boardHeightLayout.constant = IAV.SCREEN_WIDTH - 48
+        self.gameManager.writeAnserCount = 0
+        self.gameManager.coinCounter = 0
+        self.gameManager.timeCounter = 31
+        let _out = self.boardView.frame.origin.x * 2
+        self.boardHeightLayout.constant = IAV.SCREEN_WIDTH - _out
         self.view.layoutIfNeeded()
         // Do any additional setup after loading the view.
     }
@@ -59,28 +64,66 @@ class OddColorViewController: UIViewController {
     
     
     
-    fileprivate func removeColorViews(){
+    fileprivate func changeColorViews(){
+        self.gameManager.setColorTimer()
+        self.cardAnimationView.startAnimation(withDuration: self.gameManager.timeCounter)
+        self.rightColorIndex = Int.random(in: 0...self.dimension*self.dimension-1)
+        debugPrint(self.rightColorIndex)
+        let (_sourceColor, _differentColor) = self.gameManager.createColors()
         for _view in self.boardView.subviews {
             if let _colorView = _view as? CardView {
+                let originalFrame = _colorView.frame
                 var _colorViewFrame = _colorView.frame
-                _colorViewFrame.origin.x = IAV.SCREEN_WIDTH
-                UIView.animate(withDuration: 0.4, animations: {
+                _colorViewFrame.origin.x = -IAV.SCREEN_WIDTH
+                UIView.animate(withDuration: 0.35, animations: {
                     _colorView.frame = _colorViewFrame
                 }) { (_finished) in
-                    _colorView.removeFromSuperview()
+                    _colorViewFrame.origin.x = IAV.SCREEN_WIDTH
+                    _colorView.frame = _colorViewFrame
+                    _colorView.cardInnerColor =
+                        self.rightColorIndex == _colorView.tag ?
+                            _differentColor : _sourceColor
+                    UIView.animate(withDuration: 0.4) {
+                        _colorView.frame = originalFrame
+                    }
                 }
             }
         }
     }
     
+    
+    fileprivate func onCorrectAnswerGiven(){
+        self.gameManager.writeAnserCount += 1
+        let _dimension = self.gameManager.getBoxDimension()
+        if _dimension != self.dimension {
+            self.dimension = _dimension
+            for _view in self.boardView.subviews {
+                var originalFrame = _view.frame
+                originalFrame.origin.x = -(IAV.SCREEN_WIDTH + _view.bounds.width)
+                UIView.animate(withDuration: 0.4, animations: {
+                    _view.frame = originalFrame
+                }) { (_finished) in
+                    _view.removeFromSuperview()
+                }
+            }
+            self.addColorViews()
+        } else {
+            self.changeColorViews()
+        }
+        self.coinCounter += self.gameManager.getColorCoin()
+        self.linearProgressView.animateCircleColors(atIndex:
+            self.gameManager.writeAnserCount)
+    }
+    
     fileprivate func addColorViews(){
+        
         let _space:CGFloat = 10
         let _fDimension = CGFloat(self.dimension)
         let _width:CGFloat = (self.boardView.frame.width - (_space * (_fDimension + 1.0))) / _fDimension
         
         let _size = CGSize(width: _width, height: _width)
         var _orgY = _space
-        let _colorIndex = Int.random(in: 0...self.dimension*self.dimension-1)
+        self.rightColorIndex = Int.random(in: 0...self.dimension*self.dimension-1)
         let (_sourceColor, _differentColor) = self.gameManager.createColors()
         for i in 0...self.dimension - 1{
             var _orgX:CGFloat = _space
@@ -104,66 +147,47 @@ class OddColorViewController: UIViewController {
                 _colorView.shadowColor = UIColor.black
                 _colorView.cornerRadius = 8
                 _colorView.cardInnerColor =
-                    _colorIndex == _viewID ?
+                    self.rightColorIndex == _viewID ?
                     _differentColor : _sourceColor
                 UIView.animate(withDuration: 0.4, animations: {
                     _colorView.frame = _colorViewRect
+                    _colorView.originX = _orgX
                 }) { (_finished) in
                     _colorView.setNeedsDisplay()
                 }
                 _orgX = _orgX + _width + _space
+                
             }
             _orgY = _orgY + _width + _space
         }
     }
     
-//    fileprivate func o
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-
-extension OddColorViewController : AnimationDelegate {
-    func onAnimationCompleted() {
-        debugPrint("game over")
-        let _resultView = GameResultView(frame: self.view.bounds)
-        _resultView.resultDelegate = self
-        _resultView.isHidden = true
-        _resultView.coinLabel.text = "\(self.gameManager.coinCounter)"
-        _resultView.winsLabel.text = "\(self.gameManager.writeAnserCount)"
-        if let _text = _resultView.congratsLabel.text {
-            _resultView.congratsLabel.text = _text
-                .replacingOccurrences(of: "_",
-                                      with: _resultView.winsLabel.text ?? "")
+    @IBAction func skipColorCombinations(_ sender: Any) {
+        
+        if self.skipCount > 1 {
+            self.skipCount -= 1
+            self.changeColorViews()
         }
-        IAViewAnimation.animate(view: _resultView)
     }
     
-    func onAnimationStarted() {
-        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let _touch = touches.first {
+            let _location = _touch.location(in: self.boardView)
+            for _view in self.boardView.subviews {
+                if _view.frame.contains(_location){
+                    if self.rightColorIndex == _view.tag {
+                        self.onCorrectAnswerGiven()
+                    }
+                    break
+                }
+            }
+        }
     }
-    
-    func onAnimationStoped() {
-        
-    }
-    
-    
+
 }
 
-extension OddColorViewController :GameEndDelegate{
-    func dismissSelf() {
-        self.navigationController?.popViewController(animated: true)
-    }
-}
+
+
 

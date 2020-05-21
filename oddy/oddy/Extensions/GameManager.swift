@@ -54,6 +54,19 @@ class GameManager: NSObject {
         }
     }
     
+    
+    func setColorTimer(){
+        if self.writeAnserCount < 2 {
+            self.timeCounter = 31
+        } else if self.writeAnserCount < 20 {
+            self.timeCounter = 26
+        } else if self.writeAnserCount < 40 {
+            self.timeCounter = 21
+        } else {
+            self.timeCounter = 16
+        }
+    }
+    
     func getCointCount( )->Int{
         switch Int(self.timeCounter-1) {
         case 25,30,20:
@@ -64,6 +77,17 @@ class GameManager: NSObject {
             return 10
         default:
             return 5
+        }
+    }
+    
+    func getColorCoin( )->Int{
+        switch Int(self.timeCounter-1) {
+        case 30:
+            return 0
+        case 20 :
+             return 5
+        default:
+            return 10
         }
     }
     
@@ -83,16 +107,20 @@ class GameManager: NSObject {
         return 6
     }
     
-    fileprivate func _getDifference()->CGFloat{
-        let _difference:CGFloat = 255
+    fileprivate func _getDifference()->Double{
+        
         if self.writeAnserCount < EyePerformance.poor.rawValue {
-            return _difference * 0.8
+            return  15
         }else if self.writeAnserCount < EyePerformance.average.rawValue {
-            return _difference * 0.6
-        }else if  self.writeAnserCount < EyePerformance.good.rawValue {
-            return _difference * 0.4
+            return  13
+        } else if  self.writeAnserCount < EyePerformance.good.rawValue {
+            return  10
+        } else if self.writeAnserCount < 50 {
+            return  7
+        } else if self.writeAnserCount < EyePerformance.best.rawValue {
+            return 5
         } else {
-            return _difference * 0.2
+            return 4
         }
     }
     

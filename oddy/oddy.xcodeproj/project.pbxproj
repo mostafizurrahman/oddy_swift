@@ -17,6 +17,7 @@
 		BE18B68C2464B28400ABFE31 /* oddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18B68B2464B28400ABFE31 /* oddyUITests.swift */; };
 		BE18FB1C2467360A008F7FC5 /* OddLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */; };
 		BE18FB1E24674388008F7FC5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18FB1D24674388008F7FC5 /* CardView.swift */; };
+		BE21386F24770D9D00D2F764 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21386E24770D9D00D2F764 /* LinearProgressView.swift */; };
 		BE868E09246DEC3D00C83F4F /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE868E08246DEC3D00C83F4F /* GameManager.swift */; };
 		BE9696F52464D42C006BDBC8 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9696F32464D42C006BDBC8 /* InstructionView.xib */; };
 		BE9696F62464D42C006BDBC8 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9696F42464D42C006BDBC8 /* InstructionView.swift */; };
@@ -89,6 +90,7 @@
 		BE18B68D2464B28400ABFE31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddLetterViewController.swift; sourceTree = "<group>"; };
 		BE18FB1D24674388008F7FC5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BE21386E24770D9D00D2F764 /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
 		BE868E08246DEC3D00C83F4F /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		BE9696F32464D42C006BDBC8 /* InstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
 		BE9696F42464D42C006BDBC8 /* InstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				BEC88216246BE90400B35C68 /* LetterGameView.swift */,
 				BEC39548247058F800C5F497 /* GameResultView.xib */,
 				BEC3954A2470965800C5F497 /* GameResultView.swift */,
+				BE21386E24770D9D00D2F764 /* LinearProgressView.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				BEC3954B2470965800C5F497 /* GameResultView.swift in Sources */,
 				BE96971F2464DCA9006BDBC8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				BE18B66A2464B28200ABFE31 /* AppDelegate.swift in Sources */,
+				BE21386F24770D9D00D2F764 /* LinearProgressView.swift in Sources */,
 				BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */,
 				BE96971E2464DCA9006BDBC8 /* LTEmitterView.swift in Sources */,
 				BE96972624653AD1006BDBC8 /* IAGradientButton.swift in Sources */,

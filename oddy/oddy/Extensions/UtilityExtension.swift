@@ -18,7 +18,7 @@ enum EyePerformance:Int {
     case poor = 20
     case average = 35
     case good = 45
-    case best = 60
+    case best = 55
     
 }
 class UtilityExtension: NSObject {
@@ -67,5 +67,39 @@ extension Int {
             uniqueNumbers.insert(Int(arc4random_uniform(maxNum + 1)) + minNum)
         }
         return Array(uniqueNumbers)
+    }
+}
+
+
+extension UIViewController : AnimationDelegate {
+    func onAnimationCompleted() {
+        debugPrint("game over")
+        let _resultView = GameResultView(frame: self.view.bounds)
+        _resultView.resultDelegate = self
+        _resultView.isHidden = true
+        _resultView.coinLabel.text = "\(GameManager.shared.coinCounter)"
+        _resultView.winsLabel.text = "\(GameManager.shared.writeAnserCount)"
+        if let _text = _resultView.congratsLabel.text {
+            _resultView.congratsLabel.text = _text
+                .replacingOccurrences(of: "_",
+                                      with: _resultView.winsLabel.text ?? "")
+        }
+        IAViewAnimation.animate(view: _resultView)
+    }
+    
+    func onAnimationStarted() {
+        
+    }
+    
+    func onAnimationStoped() {
+        
+    }
+    
+    
+}
+
+extension UIViewController :GameEndDelegate{
+    func dismissSelf() {
+//        self.navigationController?.popViewController(animated: true)
     }
 }

@@ -80,8 +80,8 @@ class OddLetterViewController: UIViewController {
                             self.updateGamerResult()
                             self.animationBar.removeAnimations()
                             self.gm.setTimerCounter()
-                            self.letterContainer.configureGame()
                             self.animationBar.startAnimation(withDuration: gm.timeCounter)
+                            self.letterContainer.configureGame()
                         }
                     }
                     break
@@ -143,36 +143,3 @@ class OddLetterViewController: UIViewController {
 }
 
 
-extension OddLetterViewController : AnimationDelegate {
-    func onAnimationCompleted() {
-        debugPrint("game over")
-        let _resultView = GameResultView(frame: self.view.bounds)
-        _resultView.resultDelegate = self
-        _resultView.isHidden = true
-        _resultView.coinLabel.text = "\(gm.coinCounter)"
-        _resultView.winsLabel.text = "\(gm.writeAnserCount)"
-        if let _text = _resultView.congratsLabel.text {
-            _resultView.congratsLabel.text = _text
-                .replacingOccurrences(of: "_",
-                                      with: _resultView.winsLabel.text ?? "")
-        }
-        IAViewAnimation.animate(view: _resultView)
-    }
-    
-    func onAnimationStarted() {
-        
-    }
-    
-    func onAnimationStoped() {
-        
-    }
-    
-    
-}
-
-
-extension OddLetterViewController:GameEndDelegate{
-    func dismissSelf() {
-        self.navigationController?.popViewController(animated: true)
-    }
-}

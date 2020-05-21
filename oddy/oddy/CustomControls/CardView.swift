@@ -13,6 +13,9 @@ enum CornerType:Int{
 }
 @IBDesignable class CardView: UIView {
     
+    
+    var originX:CGFloat = 0
+    
     private(set) var borderPath:UIBezierPath = UIBezierPath()
     
     @IBInspectable var shadowColor:UIColor = UIColor.black {
