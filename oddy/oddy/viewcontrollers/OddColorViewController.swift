@@ -30,6 +30,15 @@ class OddColorViewController: UIViewController {
     
     
     
+    @IBAction func exitOddColor(_ sender: IARadialButton) {
+        self.cardAnimationView.removeAnimations()
+        if let _navigator = self.navigationController {
+            _navigator.popViewController(animated: true)
+        } else {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

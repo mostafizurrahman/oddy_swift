@@ -445,7 +445,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g6-y4-RqX" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
-                                <rect key="frame" x="24" y="52" width="40" height="40"/>
+                                <rect key="frame" x="24" y="56" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="J8g-Aj-vaB"/>
                                     <constraint firstAttribute="height" constant="40" id="uGg-EJ-Z4m"/>
@@ -482,11 +482,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="closLetterViewControlelr:" destination="nbP-v6-15l" eventType="touchUpInside" id="h7S-kL-Qxt"/>
+                                    <action selector="exitOddColor:" destination="XRG-pn-iQY" eventType="touchUpInside" id="vXg-ok-9ST"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find The Odd Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOs-g3-HfB">
-                                <rect key="frame" x="80" y="63.5" width="172.5" height="17.5"/>
+                                <rect key="frame" x="80" y="67.5" width="172.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -667,11 +667,11 @@
                             <constraint firstItem="mOs-g3-HfB" firstAttribute="leading" secondItem="1g6-y4-RqX" secondAttribute="trailing" constant="16" id="HrP-ED-ef6"/>
                             <constraint firstItem="Yie-oE-Xdp" firstAttribute="leading" secondItem="3Fe-kq-pxh" secondAttribute="leading" constant="24" id="Nrf-lX-l7h"/>
                             <constraint firstItem="mOs-g3-HfB" firstAttribute="centerY" secondItem="1g6-y4-RqX" secondAttribute="centerY" id="PLG-Oo-A2Q"/>
-                            <constraint firstItem="1g6-y4-RqX" firstAttribute="top" secondItem="3Fe-kq-pxh" secondAttribute="top" constant="8" id="Qbi-xZ-YFH"/>
+                            <constraint firstItem="1g6-y4-RqX" firstAttribute="top" secondItem="3Fe-kq-pxh" secondAttribute="top" constant="12" id="Qbi-xZ-YFH"/>
                             <constraint firstItem="3Fe-kq-pxh" firstAttribute="trailing" secondItem="STU-9T-QLm" secondAttribute="trailing" constant="24" id="Thz-TV-p4G"/>
                             <constraint firstItem="3Fe-kq-pxh" firstAttribute="trailing" secondItem="cKU-7C-FjL" secondAttribute="trailing" constant="24" id="YPI-jE-Xa7"/>
                             <constraint firstItem="3Fe-kq-pxh" firstAttribute="bottom" secondItem="cKU-7C-FjL" secondAttribute="bottom" constant="24" id="caM-kA-L7E"/>
-                            <constraint firstItem="STU-9T-QLm" firstAttribute="top" secondItem="1g6-y4-RqX" secondAttribute="bottom" constant="18" id="cgU-EF-FW4"/>
+                            <constraint firstItem="STU-9T-QLm" firstAttribute="top" secondItem="1g6-y4-RqX" secondAttribute="bottom" constant="14" id="cgU-EF-FW4"/>
                             <constraint firstItem="1g6-y4-RqX" firstAttribute="leading" secondItem="3Fe-kq-pxh" secondAttribute="leading" constant="24" id="co8-AC-hif"/>
                             <constraint firstItem="Yie-oE-Xdp" firstAttribute="centerY" secondItem="3Fe-kq-pxh" secondAttribute="centerY" id="oUY-TG-NUw"/>
                             <constraint firstItem="cKU-7C-FjL" firstAttribute="leading" secondItem="3Fe-kq-pxh" secondAttribute="leading" constant="24" id="pPE-hG-i03"/>
