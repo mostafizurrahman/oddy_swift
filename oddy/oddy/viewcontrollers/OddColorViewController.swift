@@ -46,6 +46,7 @@ class OddColorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         self.skipLabel.layer.cornerRadius = self.skipLabel.frame.width / 2
         self.skipLabel.layer.borderColor = UIColor.systemPink.cgColor
         self.skipLabel.layer.borderWidth = 4
@@ -54,6 +55,7 @@ class OddColorViewController: UIViewController {
         self.gameManager.writeAnserCount = 0
         self.gameManager.coinCounter = 0
         self.gameManager.timeCounter = 31
+        self.gameManager.gameTitle = "Odd Color"
         let _out = self.boardView.frame.origin.x * 2
         self.boardHeightLayout.constant = IAV.SCREEN_WIDTH - _out
         self.view.layoutIfNeeded()

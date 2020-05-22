@@ -91,12 +91,15 @@ extension UIViewController : AnimationDelegate {
         _resultView.isHidden = true
         _resultView.coinLabel.text = "\(GameManager.shared.coinCounter)"
         _resultView.winsLabel.text = "\(GameManager.shared.writeAnserCount)"
-        if let _text = _resultView.congratsLabel.text {
-            _resultView.congratsLabel.text = _text
-                .replacingOccurrences(of: "_",
-                                      with: _resultView.winsLabel.text ?? "")
+        _resultView.bestResultLabel.text = "\(GameManager.shared.getBestResult())"
+        IAViewAnimation.animate(view: _resultView, shouldVisible: true) { (_finished) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                _resultView.gameTitle.morphingEffect = LTMorphingEffect.evaporate
+                _resultView.gameTitle.text = GameManager.shared.gameTitle
+                _resultView.gameTitle.updateProgress(progress: 0.0)
+                _resultView.gameTitle.start()
+            }
         }
-        IAViewAnimation.animate(view: _resultView)
     }
 }
 

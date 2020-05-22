@@ -17,8 +17,10 @@ class GameResultView: UIView {
     @IBOutlet var ICONVIEW:UIImageView!
      @IBOutlet var coinLabel: UILabel!
      @IBOutlet var winsLabel: UILabel!
-     @IBOutlet var congratsLabel: UILabel!
-     weak var resultDelegate:GameEndDelegate?
+    
+    @IBOutlet weak var gameTitle: LTMorphingLabel!
+    @IBOutlet weak var bestResultLabel: UILabel!
+    weak var resultDelegate:GameEndDelegate?
     
      
      

@@ -21,7 +21,7 @@ class GameManager: NSObject {
     var writeAnserCount = 0
     var timeCounter:Double = 0
     var isHardGame = false
-    
+    var gameTitle = ""
     static let shared = GameManager()
     override init() {
         super.init()
@@ -65,6 +65,15 @@ class GameManager: NSObject {
         } else {
             self.timeCounter = 16
         }
+    }
+    
+    func getBestResult() -> Int {
+        if self.gameTitle.lowercased() == "odd letter" {
+            return UserDefaults.standard.integer(forKey: "odd_letter_best_score")
+        } else if self.gameTitle.lowercased() == "odd color" {
+            return UserDefaults.standard.integer(forKey: "odd_color_best_score")
+        }
+        return 0
     }
     
     func getCointCount( )->Int{

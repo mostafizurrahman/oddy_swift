@@ -32,6 +32,7 @@ class OddLetterViewController: UIViewController {
 //    @IBOutlet var hexagonButtons: [HexagoanView]!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.gm.gameTitle = "Odd Letter"
         self.gm.writeAnserCount = 0
         self.gm.coinCounter = 0
         self.gm.timeCounter = 0
