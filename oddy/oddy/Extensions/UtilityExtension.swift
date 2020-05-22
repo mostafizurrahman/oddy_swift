@@ -74,6 +74,18 @@ extension Int {
 extension UIViewController : AnimationDelegate {
     func onAnimationCompleted() {
         debugPrint("game over")
+        self.openGameOverDialog()
+    }
+    
+    func onAnimationStarted() {
+        
+    }
+    
+    func onAnimationStoped() {
+        
+    }
+    
+    func openGameOverDialog(){
         let _resultView = GameResultView(frame: self.view.bounds)
         _resultView.resultDelegate = self
         _resultView.isHidden = true
@@ -86,16 +98,6 @@ extension UIViewController : AnimationDelegate {
         }
         IAViewAnimation.animate(view: _resultView)
     }
-    
-    func onAnimationStarted() {
-        
-    }
-    
-    func onAnimationStoped() {
-        
-    }
-    
-    
 }
 
 extension UIViewController :GameEndDelegate{

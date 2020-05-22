@@ -22,7 +22,7 @@ class OddColorViewController: UIViewController {
     @IBOutlet weak var animalLabel: UILabel!
     
     let gameManager = GM.shared
-    
+    var isGameOver = false
     var dimension = 2
     var coinCounter = 0
     var rightColorIndex = -1
@@ -173,8 +173,9 @@ class OddColorViewController: UIViewController {
     
     
     @IBAction func skipColorCombinations(_ sender: Any) {
-        
-        if self.skipCount > 0 {
+        if self.isGameOver {
+            self.openGameOverDialog()
+        } else if self.skipCount > 0 {
             self.skipCount -= 1
             self.skipLabel.text = "\(self.skipCount)"
             self.changeColorViews()
@@ -183,16 +184,47 @@ class OddColorViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
+        
         if let _touch = touches.first {
             let _location = _touch.location(in: self.boardView)
-            for _view in self.boardView.subviews {
-                if _view.frame.contains(_location){
-                    if self.rightColorIndex == _view.tag {
-                        self.onCorrectAnswerGiven()
+            let _boardLocation = _touch.location(in: self.view)
+            if self.boardView.frame.contains(_boardLocation) && !self.isGameOver{
+                self.isGameOver = true
+                for _view in self.boardView.subviews {
+                    if _view.frame.contains(_location){
+                        if self.rightColorIndex == _view.tag {
+                            self.onCorrectAnswerGiven()
+                            self.isGameOver = false
+                        } else if let _colorView = _view as? CardView {
+                            _colorView.borderWidth = 8
+                            _colorView.borderColor = UIColor.init(baseColor:
+                                _colorView.cardInnerColor, isGreen: false)
+                            if let _rightView = self.boardView
+                                .subviews
+                                .filter({$0.tag == self.rightColorIndex})
+                                .first as? CardView {
+                                _rightView.borderWidth = 8
+                                _rightView.borderColor = UIColor.init(baseColor:
+                                _colorView.cardInnerColor, isGreen: true)
+                            }
+                        }
                     }
-                    break
                 }
             }
+        }
+        if self.isGameOver {
+            
+            for _anim in self.cardAnimationView.animationGroup?.animations ?? [] {
+                    if let _basicAnim = _anim as? CABasicAnimation {
+                        if let _toRect = _basicAnim.toValue as? CGRect {
+                            self.cardAnimationView.gradientLayer.frame = _toRect
+                        } else if let _toPosition = _basicAnim.toValue as? CGPoint {
+                            self.cardAnimationView.gradientLayer.position = _toPosition
+                        }
+                    }
+                }
+            self.cardAnimationView.removeAnimations()
+            self.openGameOverDialog()
         }
     }
 

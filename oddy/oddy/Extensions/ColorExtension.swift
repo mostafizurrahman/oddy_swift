@@ -111,6 +111,26 @@ extension UIColor {
                   alpha: 1.0)
     }
     
+    convenience init(baseColor:UIColor, isGreen:Bool){
+        var red:CGFloat = 0,
+        green:CGFloat = 0,
+        blue:CGFloat = 0,
+        alpha:CGFloat = 0
+        baseColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        if isGreen {
+            self.init(red: (red / (1.0 - red))/20.0,
+                      green: green+0.5,
+            blue: (blue / (1.0 - blue))/20.0,
+            alpha: 1.0)
+        } else {
+            self.init(red: red+0.5,
+            green: (green / (1.0 - green))/20.0,
+            blue: (blue / (1.0 - blue))/20.0,
+            alpha: 1.0)
+        }
+    }
+    
+    
     func getComponents()->[CGFloat]{
         var alpha:CGFloat = 0
         var red:CGFloat = 0

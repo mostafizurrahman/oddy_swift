@@ -85,6 +85,7 @@ protocol AnimationDelegate : NSObjectProtocol {
     }
     
     func removeAnimations(){
+
         self.animationGroup?.delegate = nil
         self.gradientLayer.removeAllAnimations()
         self.updateTimer?.invalidate()
