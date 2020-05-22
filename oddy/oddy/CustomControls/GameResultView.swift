@@ -52,8 +52,8 @@ class GameResultView: UIView {
          contentView = Bundle.main.loadNibNamed(nibName, owner: self, options: nil)?[0] as? UIView
          contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
          contentView.frame = bounds
-        self.ICONVIEW.layer.cornerRadius = 24
-        self.ICONVIEW.layer.masksToBounds = true
+//        self.ICONVIEW.layer.cornerRadius = 24
+//        self.ICONVIEW.layer.masksToBounds = true
          addSubview(contentView)
         
          self.layoutIfNeeded()
