@@ -52,6 +52,7 @@ import UIKit
         guard let gradientContext = UIGraphicsGetCurrentContext() else {
             return
         }
+        gradientContext.setShouldAntialias(true)
         let gradientPath = UIBezierPath(roundedRect: rect, cornerRadius: self.cornerRadius)
         gradientPath.close()
         let locationNumber = 2
@@ -63,13 +64,17 @@ import UIKit
                                              colorComponents: gradientColors,
                                              locations: gradientLocations,
                                              count: locationNumber) else { return  }
-        gradientContext.setLineWidth(self.borderWidth)
-        gradientContext.setStrokeColor(self.borderColor.cgColor)
+
+        
         gradientContext.addPath(gradientPath.cgPath)
         gradientContext.clip()
         self.draw(colorGradient:gradient, inContext:gradientContext, inRect:rect )
+        gradientContext.setLineWidth(self.borderWidth)
+        gradientContext.setStrokeColor(self.borderColor.cgColor)
         gradientContext.addPath(gradientPath.cgPath)
+        
         gradientContext.strokePath()
+        
         self.layer.shadowColor = self.shadowColor.cgColor
         self.layer.shadowOpacity = self.shadowOpcaity
         self.layer.shadowRadius = self.shadowRadius

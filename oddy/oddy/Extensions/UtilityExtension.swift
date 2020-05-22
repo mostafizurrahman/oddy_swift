@@ -7,7 +7,20 @@
 //
 
 import UIKit
+enum AnswerType {
+    case wrong
+    case right
+    case timeout
+    case unknown
+}
 
+enum EyePerformance:Int {
+    case poor = 20
+    case average = 35
+    case good = 45
+    case best = 55
+    
+}
 class UtilityExtension: NSObject {
 
 }
@@ -47,4 +60,66 @@ extension Int {
             return Int.random(in: range)
         }
     }
+    
+    static func urandArray(count: Int, minNum: Int, maxNum: UInt32) -> [Int] {
+        var uniqueNumbers = Set<Int>()
+        while uniqueNumbers.count < count {
+            uniqueNumbers.insert(Int(arc4random_uniform(maxNum + 1)) + minNum)
+        }
+        return Array(uniqueNumbers)
+    }
 }
+
+
+extension UIViewController : AnimationDelegate {
+    func onAnimationCompleted() {
+        debugPrint("game over")
+        self.openGameOverDialog()
+    }
+    
+    func onAnimationStarted() {
+        
+    }
+    
+    func onAnimationStoped() {
+        
+    }
+    
+    func openGameOverDialog(){
+        let _resultView = GameResultView(frame: self.view.bounds)
+        _resultView.eyeCardView.isHidden = !GameManager.shared.isOddColor
+        _resultView.resultDelegate = self
+        _resultView.isHidden = true
+        _resultView.coinLabel.text = "\(GameManager.shared.coinCounter)"
+        _resultView.winsLabel.text = "\(GameManager.shared.writeAnserCount)"
+        _resultView.bestResultLabel.text = "\(GameManager.shared.getBestResult())"
+        var animalName = ""
+        if !_resultView.eyeCardView.isHidden {
+            animalName = GameManager.shared.getAnimalName().lowercased()
+            _resultView.animalView.image = UIImage(named:animalName)
+            
+        }
+        IAViewAnimation.animate(view: _resultView, shouldVisible: true) { (_finished) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                _resultView.gameTitle.morphingEffect = LTMorphingEffect.evaporate
+                _resultView.gameTitle.text = GameManager.shared.gameTitle
+                _resultView.gameTitle.updateProgress(progress: 0.0)
+                _resultView.gameTitle.start()
+                if !_resultView.eyeCardView.isHidden {
+                    _resultView.eyeStatusLabel.morphingEffect = LTMorphingEffect.evaporate
+                    _resultView.eyeStatusLabel.text = "Eye Vision Similar to \(animalName)."
+                    _resultView.eyeStatusLabel.updateProgress(progress: 0.0)
+                    _resultView.eyeStatusLabel.start()
+                }
+            }
+        }
+    }
+}
+
+extension UIViewController :GameEndDelegate{
+    @objc func dismissSelf(isPlayAgain:Bool) {
+//        self.navigationController?.popViewController(animated: true)
+    }
+}
+
+

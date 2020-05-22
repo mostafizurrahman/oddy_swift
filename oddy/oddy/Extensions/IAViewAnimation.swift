@@ -27,7 +27,6 @@ class IAViewAnimation {
                 _topController.view.addSubview(view)
             }
         }
-        view.isHidden = false
         view.layer.opacity = visible ? 0.0 : 1.0
         view.layer.transform = visible ?
             CATransform3DMakeScale(1.3, 1.3, 1.0) :
@@ -35,6 +34,7 @@ class IAViewAnimation {
 //        let transform = view.layer.transform
         let animationOption =
             UIView.AnimationOptions.curveEaseInOut
+            view.isHidden = false
         UIView.animate(withDuration: 0.45,
                        delay: 0.0,
                        options:animationOption,
