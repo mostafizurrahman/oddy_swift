@@ -24,7 +24,7 @@ class OddColorViewController: UIViewController {
     let gameManager = GM.shared
     var isGameOver = false
     var dimension = 2
-    var coinCounter = 0
+    
     var rightColorIndex = -1
     var skipCount = 3
     override var prefersStatusBarHidden: Bool {
@@ -121,7 +121,7 @@ class OddColorViewController: UIViewController {
             self.changeColorViews()
         }
         
-        self.coinCounter += self.gameManager.getColorCoin()
+        self.gameManager.coinCounter += self.gameManager.getColorCoin()
         self.linearProgressView.animateCircleColors(atIndex:
             self.gameManager.writeAnserCount)
     }
@@ -225,10 +225,40 @@ class OddColorViewController: UIViewController {
                         }
                     }
                 }
+            self.gameManager.setBest(score: self.gameManager.writeAnserCount)
             self.cardAnimationView.removeAnimations()
             self.openGameOverDialog()
         }
     }
+    
+    override func dismissSelf(isPlayAgain:Bool) {
+        debugPrint("done!")
+        if isPlayAgain {
+            self.playAgain()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    fileprivate func playAgain(){
+        self.changeColorViews()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            for _view in self.boardView.subviews {
+                _view.removeFromSuperview()
+            }
+            self.cardAnimationView.removeAnimations()
+            self.linearProgressView.animateCircleColors(atIndex: 0)
+            self.dimension = 2
+            self.skipCount = 3
+            self.skipLabel.text = "3"
+            self.gameManager.coinCounter = 0
+            self.gameManager.writeAnserCount = 0
+            self.addColorViews()
+            self.cardAnimationView.startAnimation(withDuration: 31)
+            self.isGameOver = false
+        }
+    }
+    
 
 }
 

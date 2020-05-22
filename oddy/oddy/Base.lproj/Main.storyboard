@@ -701,7 +701,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4e-95-4p6" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                                         <rect key="frame" x="245.5" y="14" width="55" height="55"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tiger" translatesAutoresizingMaskIntoConstraints="NO" id="zmL-4c-zeW">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cheetah" translatesAutoresizingMaskIntoConstraints="NO" id="zmL-4c-zeW">
                                                 <rect key="frame" x="8" y="8" width="39" height="39"/>
                                                 <color key="tintColor" red="1" green="1" blue="0.64458626760563376" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -738,7 +738,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8P-Ef-rw9" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                                         <rect key="frame" x="323.5" y="14" width="55" height="55"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eagle" translatesAutoresizingMaskIntoConstraints="NO" id="PuD-Hf-bmL">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hawk" translatesAutoresizingMaskIntoConstraints="NO" id="PuD-Hf-bmL">
                                                 <rect key="frame" x="10" y="10" width="35" height="35"/>
                                                 <color key="tintColor" red="1" green="1" blue="0.64458626760563376" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1408,17 +1408,17 @@
     </scenes>
     <resources>
         <image name="cat" width="50" height="50"/>
+        <image name="cheetah" width="50" height="50"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="coin" width="50" height="50"/>
         <image name="crown" width="50" height="50"/>
-        <image name="eagle" width="50" height="50"/>
         <image name="fox" width="50" height="50"/>
+        <image name="hawk" width="50" height="50"/>
         <image name="hearts" width="72.5" height="72.5"/>
         <image name="radial_gradient" width="350" height="350"/>
         <image name="rat" width="50" height="50"/>
         <image name="settings" width="20" height="20"/>
         <image name="shopping" width="20" height="20"/>
-        <image name="tiger" width="50" height="50"/>
     </resources>
 </document>

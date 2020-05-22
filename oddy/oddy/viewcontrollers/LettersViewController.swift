@@ -21,6 +21,9 @@ class LettersViewController: UIViewController {
     var letterArray:[String] = []
     var hardLetters:[String:[String]] =  [String : [String]]()
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
     private var isHard:Bool {
         return self.segments.selectedSegmentIndex == 1
     }

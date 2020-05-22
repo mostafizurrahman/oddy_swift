@@ -22,6 +22,11 @@ class GameManager: NSObject {
     var timeCounter:Double = 0
     var isHardGame = false
     var gameTitle = ""
+    var isOddColor:Bool {
+        get {
+            return self.gameTitle.lowercased() == "odd color"
+        }
+    }
     static let shared = GameManager()
     override init() {
         super.init()
@@ -76,6 +81,20 @@ class GameManager: NSObject {
         return 0
     }
     
+    func setBest(score:Int){
+        if self.gameTitle.lowercased() == "odd letter" {
+            let _score = UserDefaults.standard.integer(forKey: "odd_letter_best_score")
+            if _score < score {
+                UserDefaults.standard.set(score, forKey: "odd_letter_best_score")
+            }
+        } else if self.gameTitle.lowercased() == "odd color" {
+            let _score = UserDefaults.standard.integer(forKey: "odd_color_best_score")
+            if _score < score {
+                UserDefaults.standard.set(score, forKey: "odd_color_best_score")
+            }
+        }
+    }
+    
     func getCointCount( )->Int{
         switch Int(self.timeCounter-1) {
         case 25,30,20:
@@ -91,8 +110,8 @@ class GameManager: NSObject {
     
     func getColorCoin( )->Int{
         switch Int(self.timeCounter-1) {
-        case 30:
-            return 0
+        case 30,25:
+            return 1
         case 20 :
              return 5
         default:

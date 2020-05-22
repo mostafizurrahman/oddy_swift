@@ -18,12 +18,14 @@ class GameResultView: UIView {
      @IBOutlet var coinLabel: UILabel!
      @IBOutlet var winsLabel: UILabel!
     
+    @IBOutlet weak var eyeCardView: CardView!
     @IBOutlet weak var gameTitle: LTMorphingLabel!
     @IBOutlet weak var bestResultLabel: UILabel!
     weak var resultDelegate:GameEndDelegate?
     
-     
-     
+    @IBOutlet weak var animalView: UIImageView!
+    @IBOutlet weak var eyeStatusLabel: LTMorphingLabel!
+    
      var nibName: String {
          return String(describing: type(of: self))
      }
@@ -44,10 +46,25 @@ class GameResultView: UIView {
      @IBAction func skipPlaying(_ sender: Any) {
         IAViewAnimation.animate(view: self, shouldVisible: false) { _finished in
 
-            self.resultDelegate?.dismissSelf()
+            self.resultDelegate?.dismissSelf(isPlayAgain: false)
         }
          
      }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        IAViewAnimation.animate(view: self, shouldVisible: false) { (_finished) in
+            
+        }
+        
+    }
+    
+    @IBAction func playAgain(_ sender: Any) {
+       IAViewAnimation.animate(view: self, shouldVisible: false) { _finished in
+
+           self.resultDelegate?.dismissSelf(isPlayAgain: true)
+       }
+        
+    }
     
     //MARK:
     func loadViewFromNib() {

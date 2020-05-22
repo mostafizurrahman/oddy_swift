@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol GameEndDelegate:NSObjectProtocol{
-    func dismissSelf()
+    func dismissSelf(isPlayAgain:Bool)
 }
 
 class OddLetterViewController: UIViewController {
@@ -74,23 +74,29 @@ class OddLetterViewController: UIViewController {
         self.letterContainer.isGameOver = true
         if let _touch = touches.first {
             let _locatoin = _touch.location(in: self.letterContainer)
-            for _view in self.letterContainer.subviews {
-                if _view.frame.contains(_locatoin){
-                    if let _label = _view.subviews.first as? UILabel {
-                        if _label.text == _source {
-                            self.updateGamerResult()
-                            self.animationBar.removeAnimations()
-                            self.gm.setTimerCounter()
-                            self.animationBar.startAnimation(withDuration: gm.timeCounter)
-                            self.letterContainer.configureGame()
+            let _boardLocation = _touch.location(in: self.letterContainer)
+            if self.letterContainer.frame.contains(_boardLocation) &&
+            !self.letterContainer.isGameOver{
+                for _view in self.letterContainer.subviews {
+                    if _view.frame.contains(_locatoin){
+                        if let _label = _view.subviews.first as? UILabel {
+                            if _label.text == _source {
+                                self.updateGamerResult()
+                                self.animationBar.removeAnimations()
+                                self.gm.setTimerCounter()
+                                self.animationBar.startAnimation(withDuration: gm.timeCounter)
+                                self.letterContainer.configureGame()
+                            }
                         }
+                        break
                     }
-                    break
                 }
-            }
+            } 
         }
         if self.letterContainer.isGameOver {
             self.onAnimationCompleted()
+            self.animationBar.removeAnimations()
+            self.gm.setBest(score: self.gm.writeAnserCount)
         }
     }
     
@@ -105,7 +111,10 @@ class OddLetterViewController: UIViewController {
     
     
     @IBAction func nextCombination(_ sender:IARadialButton){
-        if self.skipCount < 5 {
+        if self.letterContainer.isGameOver {
+            self.onAnimationCompleted()
+        }
+        else if self.skipCount < 3 {
             self.skipCount += 1
             self.gm.setTimerCounter()
             self.letterContainer.configureGame()
@@ -139,6 +148,27 @@ class OddLetterViewController: UIViewController {
         self.winButton.setTitle("\(self.gm.writeAnserCount)", for: UIControl.State.normal)
         GameManager.shared.coinCounter += self.gm.getCointCount()
         self.coinButton.setTitle("\(self.gm.coinCounter)", for: UIControl.State.normal)
+    }
+    
+    override func dismissSelf(isPlayAgain:Bool) {
+        debugPrint("done!")
+        if isPlayAgain {
+            self.playAgain()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    fileprivate func playAgain(){
+        self.letterContainer.isGameOver = false
+        self.gm.writeAnserCount = 0
+        self.gm.coinCounter = 0
+        self.gm.timeCounter = 0
+        self.animationBar.removeAnimations()
+        self.winButton.setTitle("\(self.gm.writeAnserCount)", for: UIControl.State.normal)
+        self.coinButton.setTitle("\(self.gm.coinCounter)", for: UIControl.State.normal)
+        self.animationBar.startAnimation(withDuration: 31)
+        self.letterContainer.configureGame()
     }
     
 }
