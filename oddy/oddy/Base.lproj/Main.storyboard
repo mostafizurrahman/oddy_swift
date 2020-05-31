@@ -152,6 +152,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7g-j9-gze">
                                         <rect key="frame" x="-10" y="-10" width="120" height="130"/>
                                         <state key="highlighted" image="radial_gradient"/>
+                                        <connections>
+                                            <segue destination="wj2-lB-FGT" kind="show" id="fSn-1J-YyX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -435,6 +438,358 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4Y-r5-KNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053.6231884057972" y="137.94642857142856"/>
+        </scene>
+        <!--Color Test View Controller-->
+        <scene sceneID="8Ip-ax-qRO">
+            <objects>
+                <viewController id="wj2-lB-FGT" customClass="ColorTestViewController" customModule="ODDY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sj6-0u-7dx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JPx-Bm-09J" customClass="CardView" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="24" y="108" width="366" height="70"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGG-co-Thu" customClass="CardAnimationView" customModule="ODDY" customModuleProvider="target">
+                                        <rect key="frame" x="24" y="12.5" width="318" height="45"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" tag="1111" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKo-uS-0vF" customClass="LTMorphingLabel" customModule="ODDY" customModuleProvider="target">
+                                                <rect key="frame" x="131" y="11" width="56" height="23"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="pKo-uS-0vF" firstAttribute="centerY" secondItem="UGG-co-Thu" secondAttribute="centerY" id="SRF-o8-vGl"/>
+                                            <constraint firstAttribute="height" constant="45" id="hVU-fK-R2L"/>
+                                            <constraint firstItem="pKo-uS-0vF" firstAttribute="centerX" secondItem="UGG-co-Thu" secondAttribute="centerX" id="xdj-WJ-Rue"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.66227442780000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                                <real key="value" value="0.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftTop">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightTop">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightBottom">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="cardInnerColor">
+                                                <color key="value" red="0.20392156859999999" green="0.26152618838028169" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftBottom">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="UGG-co-Thu" firstAttribute="leading" secondItem="JPx-Bm-09J" secondAttribute="leading" constant="24" id="QTF-JV-sVQ"/>
+                                    <constraint firstItem="UGG-co-Thu" firstAttribute="centerY" secondItem="JPx-Bm-09J" secondAttribute="centerY" id="cV0-en-Fg7"/>
+                                    <constraint firstAttribute="trailing" secondItem="UGG-co-Thu" secondAttribute="trailing" constant="24" id="gF1-UW-JvP"/>
+                                    <constraint firstAttribute="height" constant="70" id="jJp-Q2-IKB"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftTop">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightTop">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="cardInnerColor">
+                                        <color key="value" white="0.43997579225352113" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2K-ku-Ssv" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="24" y="52" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="1AW-Q2-sVR"/>
+                                    <constraint firstAttribute="height" constant="40" id="Ajl-Ff-mvl"/>
+                                </constraints>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="chevron.left" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" image="radial_gradient"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="innerRadialColor">
+                                        <color key="value" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                        <real key="value" value="0.25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="exitViewController:" destination="wj2-lB-FGT" eventType="touchUpInside" id="vPo-GW-eL8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find The Object" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spX-e7-oxq">
+                                <rect key="frame" x="80" y="63.5" width="142" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYs-bh-9Dp" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="32" y="222" width="350" height="417"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WU4-VE-0PM">
+                                        <rect key="frame" x="5" y="5" width="340" height="407"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L0o-Wj-YLG">
+                                            <size key="itemSize" width="369" height="419"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="MaP-mt-Asz" customClass="ColorCollectionViewCell" customModule="ODDY" customModuleProvider="target">
+                                                <rect key="frame" x="-14.5" y="0.0" width="369" height="419"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="369" height="419"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONY-DS-WXm" customClass="ColorView" customModule="ODDY" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="369" height="419"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
+                                                    </subviews>
+                                                </view>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ONY-DS-WXm" secondAttribute="trailing" id="4Xs-Fr-b8B"/>
+                                                    <constraint firstItem="ONY-DS-WXm" firstAttribute="leading" secondItem="MaP-mt-Asz" secondAttribute="leading" id="H0o-cv-lWT"/>
+                                                    <constraint firstItem="ONY-DS-WXm" firstAttribute="top" secondItem="MaP-mt-Asz" secondAttribute="top" id="ZDG-dV-aX5"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ONY-DS-WXm" secondAttribute="bottom" id="fXB-4f-DNu"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="colorView" destination="ONY-DS-WXm" id="8tq-4v-2in"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="wj2-lB-FGT" id="oDR-dm-6II"/>
+                                            <outlet property="delegate" destination="wj2-lB-FGT" id="myr-Xo-x85"/>
+                                        </connections>
+                                    </collectionView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="WU4-VE-0PM" firstAttribute="leading" secondItem="DYs-bh-9Dp" secondAttribute="leading" constant="5" id="OSe-wr-6d2"/>
+                                    <constraint firstAttribute="height" constant="417" id="S7d-Nl-MVY"/>
+                                    <constraint firstItem="WU4-VE-0PM" firstAttribute="top" secondItem="DYs-bh-9Dp" secondAttribute="top" constant="5" id="aNM-Mq-GQx"/>
+                                    <constraint firstAttribute="trailing" secondItem="WU4-VE-0PM" secondAttribute="trailing" constant="5" id="cb6-kS-J2x"/>
+                                    <constraint firstAttribute="bottom" secondItem="WU4-VE-0PM" secondAttribute="bottom" constant="5" id="zYd-3s-2Jg"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="innerRadialColor">
+                                        <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.4399757923" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yAA-C2-5KI" customClass="CardView" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="24" y="696" width="366" height="150"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1j-bw-dxx" customClass="NumberView" customModule="ODDY" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="8" width="350" height="134"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="D1j-bw-dxx" firstAttribute="top" secondItem="yAA-C2-5KI" secondAttribute="top" constant="8" id="Isw-Z7-BKQ"/>
+                                    <constraint firstItem="D1j-bw-dxx" firstAttribute="leading" secondItem="yAA-C2-5KI" secondAttribute="leading" constant="8" id="bFk-O6-6XM"/>
+                                    <constraint firstAttribute="trailing" secondItem="D1j-bw-dxx" secondAttribute="trailing" constant="8" id="dBE-35-OCZ"/>
+                                    <constraint firstAttribute="height" constant="150" id="q5m-Sv-Thg"/>
+                                    <constraint firstAttribute="bottom" secondItem="D1j-bw-dxx" secondAttribute="bottom" constant="8" id="uPw-E5-4qC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.20392156859999999" green="0.26152618840000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="cardInnerColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftTop">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightTop">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerRightBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="_cornerLeftBottom">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-Te-svw" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="345" y="49" width="45" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vRx-bW-hPg" customClass="LTMorphingLabel" customModule="ODDY" customModuleProvider="target">
+                                        <rect key="frame" x="13" y="16.5" width="19" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="vRx-bW-hPg" firstAttribute="centerY" secondItem="XlW-Te-svw" secondAttribute="centerY" id="f5D-Ib-1yO"/>
+                                    <constraint firstAttribute="width" constant="45" id="lfS-wo-e10"/>
+                                    <constraint firstItem="vRx-bW-hPg" firstAttribute="centerX" secondItem="XlW-Te-svw" secondAttribute="centerX" id="nxY-iv-EDg"/>
+                                    <constraint firstAttribute="height" constant="45" id="wrH-CM-g1N"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
+                                        <color key="value" red="0.20392156859999999" green="0.26152618840000003" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="innerRadialColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpcaity">
+                                        <real key="value" value="0.25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XlW-Te-svw" firstAttribute="top" secondItem="yh9-r2-shF" secondAttribute="top" constant="5" id="2Qz-US-dl8"/>
+                            <constraint firstItem="DYs-bh-9Dp" firstAttribute="leading" secondItem="yh9-r2-shF" secondAttribute="leading" constant="32" id="4yj-zT-Jhf"/>
+                            <constraint firstItem="JPx-Bm-09J" firstAttribute="top" secondItem="Q2K-ku-Ssv" secondAttribute="bottom" constant="16" id="5V8-4Y-RIJ"/>
+                            <constraint firstItem="JPx-Bm-09J" firstAttribute="leading" secondItem="yh9-r2-shF" secondAttribute="leading" constant="24" id="7r4-Lr-T3S"/>
+                            <constraint firstItem="yh9-r2-shF" firstAttribute="trailing" secondItem="XlW-Te-svw" secondAttribute="trailing" constant="24" id="CFd-eA-fzJ"/>
+                            <constraint firstItem="spX-e7-oxq" firstAttribute="centerY" secondItem="Q2K-ku-Ssv" secondAttribute="centerY" id="E5d-E3-Yue"/>
+                            <constraint firstItem="yh9-r2-shF" firstAttribute="bottom" secondItem="yAA-C2-5KI" secondAttribute="bottom" constant="16" id="L5Y-C1-QnL"/>
+                            <constraint firstItem="spX-e7-oxq" firstAttribute="leading" secondItem="Q2K-ku-Ssv" secondAttribute="trailing" constant="16" id="O9t-yc-dK0"/>
+                            <constraint firstItem="Q2K-ku-Ssv" firstAttribute="leading" secondItem="yh9-r2-shF" secondAttribute="leading" constant="24" id="cOE-r1-Jv7"/>
+                            <constraint firstItem="yAA-C2-5KI" firstAttribute="leading" secondItem="yh9-r2-shF" secondAttribute="leading" constant="24" id="cnQ-35-BnU"/>
+                            <constraint firstItem="Q2K-ku-Ssv" firstAttribute="top" secondItem="yh9-r2-shF" secondAttribute="top" constant="8" id="czj-ss-DYM"/>
+                            <constraint firstItem="yh9-r2-shF" firstAttribute="trailing" secondItem="JPx-Bm-09J" secondAttribute="trailing" constant="24" id="f7P-TO-cZz"/>
+                            <constraint firstItem="DYs-bh-9Dp" firstAttribute="centerY" secondItem="yh9-r2-shF" secondAttribute="centerY" multiplier="0.95" id="lnY-hI-mtP"/>
+                            <constraint firstItem="yh9-r2-shF" firstAttribute="trailing" secondItem="yAA-C2-5KI" secondAttribute="trailing" constant="24" id="qLa-DI-aba"/>
+                            <constraint firstItem="yh9-r2-shF" firstAttribute="trailing" secondItem="DYs-bh-9Dp" secondAttribute="trailing" constant="32" id="yVW-Ro-8OL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yh9-r2-shF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dRE-t4-GI3"/>
+                    <connections>
+                        <outlet property="animationView" destination="UGG-co-Thu" id="wN3-dz-fgJ"/>
+                        <outlet property="answerLabel" destination="vRx-bW-hPg" id="pv9-hO-zMm"/>
+                        <outlet property="colorCollectionView" destination="WU4-VE-0PM" id="gBH-Le-fW3"/>
+                        <outlet property="colorContainer" destination="DYs-bh-9Dp" id="gNe-NY-uBA"/>
+                        <outlet property="imageHeightLayout" destination="S7d-Nl-MVY" id="Xrq-Yk-FLh"/>
+                        <outlet property="numberView" destination="D1j-bw-dxx" id="3W1-zW-T9V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="615-jb-prR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053.6231884057972" y="884.59821428571422"/>
         </scene>
         <!--Odd Color View Controller-->
         <scene sceneID="GAf-NA-qMl">

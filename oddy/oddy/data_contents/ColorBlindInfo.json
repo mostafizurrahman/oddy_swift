@@ -1,0 +1,62 @@
+
+{
+    "color_blind_causea": [
+                           {
+                           "blind_id" : "clor.blind.1",
+                           "title": "Inherited Color Blindness",
+                           "subtitle" : "Color Blindness from Gene Mutations",
+                           "cause_count" : 3,
+                           "premium": false,
+                           
+                           "points" : [
+                                       "Shaken Baby Syndrome: This can cause retina and brain damage and therefore can cause color blindness in infants and children. The damage is permanent so the effects will be carried on into adult life.",
+                                       
+                                       "Trauma: Similar to above, accidents and other traumas can cause swelling in the visual processing center of the brain – the occipital lobe.",
+                                       "UV Damage: Typically caused during childhood where over-exposure to UV rays causes degeneration of the retina, this is the leading cause of blindness in the world however the damage often only presents itself during a person’s mature years.",
+                                       ]
+                           },
+                           {
+                           "blind_id" : "clor.blind.0",
+                           "title": "Non Hereditary Color Blindness",
+                           "subtitle" : "Color blindness has been known to result from a number of causes:",
+                           "cause_count" : 3,
+                           "premium": false,
+                           
+                           "points" : [
+                                      "Inherited color blindness is usually the result of receiving a genetically mutated gene on the X chromosome; however research has shown that mutations that can lead to color blindness originate from in excess of 19 different chromosomes and many different genes. Gene mutation on the X chromosome is most common and also explains why (depending on nationality) some 7% of males, but less than 1% of females exhibit color blindness of some form.",
+                                       
+                                      "Males only have one X chromosome, whereas females have two. In females, if one X chromosome is defective, the normal one will protect the woman from being color blind. Females who have a defective gene are carriers, their sons have a 50% chance of being color blind, and their daughters have a 50% chance of becoming a carrier. Females who suffer color blindness as a result of mutated X chromosomes will typically have a carrier mother, and color blind father, receiving two mutated X chromosomes.",
+                                       
+                                      "Inherited color blindness can be active from birth, or manifest during childhood and early adulthood. Most people understand color blindness to be a pre-set condition that remains constant, however depending on the mutation, inherited color blindness can be progressive and unfortunately potentially lead to full blindness.",
+                                      ]
+                           },
+                           {
+                           "blind_id" : "clor.blind.2",
+                           "title": "Color Blindness from Diseases",
+                           "subtitle" : "There are a number of inherited diseases that can lead to color blindness, fortunately they are quite rare but are all eye specific illnesses, they include:",
+                           "cause_count" : 3,
+                           "premium": false,
+                           
+                           "points" : [
+                                       "Cone Dystrophy",
+                                       "Cone-rod Dystrophy",
+                                       "Achromatopsia",
+                                       "Blue cone monochromatism",
+                                       "Retinitis pigmentosa",
+                                       "Macular Degeneration",
+                                       "Retinoblastoma",
+                                       "Leber’s congenital amaurosis",
+                                       ]
+                           },
+                           {
+                           "blind_id" : "clor.blind.3",
+                           "title": "Gene Mutation of Color Blindness",
+                           "subtitle" : "Biological explanation of color blind gene mutations",
+                           "cause_count" : 3,
+                           "premium": false,
+                           
+                           "points" : ["null",]
+                           }
+                           ]
+}
+

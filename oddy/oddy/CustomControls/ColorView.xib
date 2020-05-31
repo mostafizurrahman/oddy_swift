@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorView" customModule="ODDY" customModuleProvider="target">
+            <connections>
+                <outlet property="colorContentView" destination="Mio-Vl-6dj" id="twU-ii-0wO"/>
+                <outlet property="testColorView" destination="gtK-va-4i8" id="hMs-rL-jbj"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Mio-Vl-6dj">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gtK-va-4i8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gtK-va-4i8" firstAttribute="top" secondItem="2yA-Tb-Ko0" secondAttribute="top" id="4oi-Qh-P4g"/>
+                <constraint firstItem="gtK-va-4i8" firstAttribute="leading" secondItem="2yA-Tb-Ko0" secondAttribute="leading" id="ZBF-ZA-jwR"/>
+                <constraint firstItem="2yA-Tb-Ko0" firstAttribute="bottom" secondItem="gtK-va-4i8" secondAttribute="bottom" id="enl-OE-JAF"/>
+                <constraint firstItem="2yA-Tb-Ko0" firstAttribute="trailing" secondItem="gtK-va-4i8" secondAttribute="trailing" id="nr3-dJ-C0q"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="2yA-Tb-Ko0"/>
+            <point key="canvasLocation" x="-5354.5" y="-125.5"/>
+        </view>
+    </objects>
+</document>
