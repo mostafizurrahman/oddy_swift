@@ -30,12 +30,15 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWl-sD-Qhb">
                     <rect key="frame" x="45" y="15" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFl-gP-KGC" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFl-gP-KGC" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
@@ -72,20 +75,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRK-6u-nmh">
                     <rect key="frame" x="120" y="15" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7b-im-N0s" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7b-im-N0s" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -120,20 +120,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dP9-te-pFR">
                     <rect key="frame" x="195" y="15" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4D-cF-HHe" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4D-cF-HHe" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -168,20 +165,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6N-Ss-Mb5">
                     <rect key="frame" x="270" y="15" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y5-uF-ZgM" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Y5-uF-ZgM" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -216,20 +210,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0h-0H-Gey">
                     <rect key="frame" x="7.5" y="592" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMS-Ly-Aeu" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMS-Ly-Aeu" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -264,19 +255,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0JY-k8-vvL">
                     <rect key="frame" x="82.5" y="592" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsC-86-Kuz" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsC-86-Kuz" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -311,19 +299,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WI-P4-hKI">
                     <rect key="frame" x="307.5" y="592" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Y2-xq-XLW" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Y2-xq-XLW" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -358,19 +343,16 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5OA-EO-Dxo">
                     <rect key="frame" x="232.5" y="592" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITG-u9-8kG" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITG-u9-8kG" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="19"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -405,19 +387,13 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ClX-cg-bZb">
                     <rect key="frame" x="157.5" y="592" width="60" height="60"/>
                     <subviews>
-                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkH-2l-6ok" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkH-2l-6ok" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                            <fontDescription key="fontDescription" name="AdventPro-Regular" family="Advent Pro" pointSize="20"/>
                             <state key="normal">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="highlighted" image="radial_gradient"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
-                                    <color key="value" red="1" green="0.40789941260000001" blue="0.68063514629999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="selectionColor1">
-                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
                                     <color key="value" red="1" green="0.1764705882" blue="0.595152948943662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
@@ -475,4 +451,7 @@
             <point key="canvasLocation" x="156.5" y="113.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="radial_gradient" width="350" height="350"/>
+    </resources>
 </document>

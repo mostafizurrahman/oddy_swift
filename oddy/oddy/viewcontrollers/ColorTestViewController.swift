@@ -49,7 +49,7 @@ class ColorTestViewController: UIViewController {
     @IBOutlet weak var colorCollectionView: UICollectionView!
     @IBOutlet weak var colorContainer:IARadialButton!
     @IBOutlet weak var numberView: NumberView!
-    @IBOutlet weak var animationView: CardAnimationView!
+    @IBOutlet weak var animationView:CardAnimationView!
     
     
     
@@ -64,13 +64,14 @@ class ColorTestViewController: UIViewController {
     var resumeAnimation:Bool = false
     var colorDimensio:CGFloat = 0.0
     
-    private var jsonDataSource: JSON!
+    private var jsonDataSource = JSON()
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         if let file = Bundle(for:AppDelegate.self).path(forResource: "BlindTest", ofType: "json") {
-            let data = try! Data(contentsOf: URL(fileURLWithPath: file))
-            jsonDataSource = JSON(data:data)
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: file)) {
+                jsonDataSource = JSON(data:data)
+            }
             var array:[Int] = [Int]()
             for i in 0...jsonDataSource["blind_test_data"].count - 1{
                 array.append(i)
