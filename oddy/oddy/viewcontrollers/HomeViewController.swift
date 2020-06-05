@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         let _layer = AV.createParticles(forRect: AV.SCREEN_BOUND)
         self.view.layer.insertSublayer(_layer, at: 0)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -42,6 +43,7 @@ class HomeViewController: UIViewController {
         }
         
     
+        self.performSegue(withIdentifier: "subscribe", sender: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {

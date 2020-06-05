@@ -24,7 +24,8 @@ class GameManager: NSObject {
     var gameTitle = ""
     var isOddColor:Bool {
         get {
-            return self.gameTitle.lowercased() == "odd color"
+            return self.gameTitle.lowercased().elementsEqual("odd color") ||
+            self.gameTitle.lowercased().elementsEqual("color blind")
         }
     }
     static let shared = GameManager()
@@ -42,6 +43,24 @@ class GameManager: NSObject {
             return arc4random_uniform(2) == 0
         }
         return false
+    }
+    
+    func colorBlindResult() -> String {
+        if self.writeAnserCount > 28 {
+            return "no color blindness"
+        } else {
+            return "you may have color disorder"
+        }
+    }
+    
+    func getEyeIcon()->String?{
+        if self.gameTitle.lowercased().elementsEqual("color blind"){
+            if self.writeAnserCount > 30 {
+                return "eye"
+            }
+            return "eye1"
+        }
+        return nil
     }
     
     func setTimerCounter(){
@@ -100,9 +119,9 @@ class GameManager: NSObject {
         case 25,30,20:
             return 0
         case 15 :
-             return 5
+             return 3
         case 10 :
-            return 10
+            return 5
         default:
             return 5
         }

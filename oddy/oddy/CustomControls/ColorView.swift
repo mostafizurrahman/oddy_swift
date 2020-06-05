@@ -48,7 +48,7 @@ class ColorView: UIView {
         
     }
     
-    public func setData(data:[String:AnyObject]){
+    public func setData(data:[String:AnyObject], dimension:CGFloat){
         guard let imageName = data["data_image_name"] as? String else {
             return
         }
@@ -59,11 +59,11 @@ class ColorView: UIView {
         if let sampleAnswer = data["possible_values"] as? [String]{
             sampleAnswerArray = sampleAnswer
         }
-        self.colorContentView.frame = (self.superview?.bounds)!;
+        self.colorContentView.frame = CGRect(origin: .zero, size: CGSize(width: dimension, height: dimension));
         self.setNeedsLayout();
         self.setNeedsDisplay()
         self.colorContentView.setNeedsLayout()
         self.colorContentView.setNeedsDisplay()
-        
+        debugPrint("done")
     }
 }

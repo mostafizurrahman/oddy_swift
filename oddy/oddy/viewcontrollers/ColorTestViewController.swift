@@ -11,38 +11,22 @@ import UIKit
 extension ColorTestViewController:AnswerSelectionDelegate{
 
     func didSelectAnswer(isRight:Bool){
-        if !self.numberView.isUserInteractionEnabled {
-            return
+        if isRight {
+            self.gameManager.writeAnserCount += 1
+            self.gameManager.coinCounter += 1
         }
-        self.numberView.isUserInteractionEnabled = false
         let userAnswer = TestAnswer.init(imageNamed: currentData["data_image_name"] as! String,
                                          testIds: currentData["test_data_id"] as! String,
                                          rightAnswer:isRight)
         self.userAnswers.append(userAnswer)
-        
-        guard let indexPath = self.colorCollectionView.indexPathsForVisibleItems.first else {
-            return
-        }
-        if indexPath.row % 6 == 0 {
-//            self.stopCounterAnimation()
-            self.isAdPresented = true
-//            self.animationView.stopAnimation()
-//            if !super.showAd(adType: 1) {
-//                self.isAdPresented = false
-//                self.scrollToNext()
-//            } else {
-//                self.resumeAnimation = false
-//                self.animationView.stopAnimation()
-//            }
-        } else {
-            self.scrollToNext()
-        }
+
+        self.scrollToNext()
     }
 }
 
 class ColorTestViewController: UIViewController {
     
-    
+    typealias GM = GameManager
     
     @IBOutlet weak var imageHeightLayout: NSLayoutConstraint!
     @IBOutlet weak var answerLabel: UILabel!
@@ -53,15 +37,15 @@ class ColorTestViewController: UIViewController {
     
     
     
+    let gameManager = GM.shared
     let centeredLayout = IACenterFlowLayout()
     var testCompleted:Bool = false
     var currentData:[String:AnyObject] = [String:AnyObject]()
     var userAnswers:[TestAnswer] = [TestAnswer]()
-    var collectionCenter:CGPoint = .zero
+    
     var arrayIndex:[Int] = [Int]()
-    var visibleSample:ColorCollectionViewCell!
-    var isAdPresented:Bool = false
-    var resumeAnimation:Bool = false
+    
+    
     var colorDimensio:CGFloat = 0.0
     
     private var jsonDataSource = JSON()
@@ -89,6 +73,7 @@ class ColorTestViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.gameManager.gameTitle = "Color Blind"
         self.imageHeightLayout.constant = IAViewAnimation.SCREEN_WIDTH
             - self.colorContainer.frame.origin.x * 2
         self.view.layoutIfNeeded()
@@ -111,51 +96,28 @@ class ColorTestViewController: UIViewController {
                                               height:self.colorDimensio)
         self.centeredLayout.scrollDirection = .horizontal
 
-        self.animationView.animationDelegate = self
         self.colorCollectionView.collectionViewLayout = self.centeredLayout
         self.colorCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         let count = String(jsonDataSource["blind_test_data"].count)
         self.answerLabel.text = "1/" + count
         self.numberView.answerDelegate = self
-        self.scrollViewDidEndDecelerating(self.colorCollectionView)
+
+        self.setDataAt(cellIndex: 0)
+        //        self.scrollViewDidEndDecelerating(self.colorCollectionView)
     }
-    
-    func animationDidFinish() {
-        if !self.testCompleted {
-            let userAnswer = TestAnswer.init(imageNamed: currentData["data_image_name"] as! String,
-                                             testIds: currentData["test_data_id"] as! String)
-            self.userAnswers.append(userAnswer)
-            self.scrollToNext()
-        }
-    }
-    func animationDidSkiped() {
-        
-    }
-    func animationDidPaused() {
-        
-    }
+ 
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.numberView.isUserInteractionEnabled = true
+        
         if testCompleted {
             return
         }
-  
-//        self.animationView.configurAnimation(with: 15)
-//        self.animationView.startAnimation()
-        self.collectionCenter = CGPoint(x: self.colorCollectionView.bounds.midX,
-                                        y: self.colorCollectionView.bounds.midY )
         self.numberView.setNeedsDisplay()
-        if self.isAdPresented {
-            self.isAdPresented = false
-            self.scrollToNext()
+        if self.animationView.animationDelegate == nil {
+            self.animationView.configureGradient(delegate: self)
+            self.animationView.startAnimation(withDuration: 30)
         }
-//        if !self.isPresented {
-//            self.isPresented = true
-//            super.showAd(adType: 2)
-//        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -204,22 +166,16 @@ class ColorTestViewController: UIViewController {
     
 
     
-    fileprivate func stopCounterAnimation(){
-        if userAnswers.count !=  jsonDataSource["blind_test_data"].count{
-            resumeAnimation = true
-//            self.animationView.stopAnimation()
-        }
-    }
+
     
-    @IBAction func exitResultView(_ sender: IARadialButton) {
+    deinit {
         
-//        BCInterfaceHelper.animateOpacityView(toInvisible: self.finalResultView) { (finish) in
-//
-//        }
+        self.animationView.removeAnimations()
     }
+
     
     
-    fileprivate func scrollToNext(){
+    fileprivate func scrollToNext() {
         let visibleCells = self.colorCollectionView.visibleCells
         guard let dataCell = visibleCells.first as? ColorCollectionViewCell else {
             return
@@ -227,9 +183,6 @@ class ColorTestViewController: UIViewController {
         guard let indexPath = self.colorCollectionView.indexPath(for: dataCell) else {
             return
         }
-        
-        
-        
         let index = indexPath.row
         if index == jsonDataSource["blind_test_data"].count - 1 {
             print("end test")
@@ -247,6 +200,8 @@ class ColorTestViewController: UIViewController {
                     wrongCount += 1
                 }
             }
+            self.testCompleted = true
+            self.openGameOverDialog()
 //            self.incompleteAnswerCountLabel.text = String(format:"Incompleted answers : %lu",incompleteCount)
 //            self.correctAnswerCountLabel.text = String(format:"Right answers : %lu", rightCount)
 //            self.wrongAnswerCountLabel.text = String(format:"Wrong answers : %lu", wrongCount)
@@ -268,19 +223,29 @@ class ColorTestViewController: UIViewController {
             let nextIndexPath = IndexPath(row: index + 1, section: 0)
             self.colorCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
             self.setDataAt(cellIndex: index + 1)
-//            self.animationView.configurAnimation(with: 15)
-//            self.animationView.startAnimation()
+            self.animationView.startAnimation(withDuration: 15)
             let count = String(jsonDataSource["blind_test_data"].count)
             let current = String(index+2)
-            self.answerLabel.text = current+" / "+count
+            self.answerLabel.text = current+"/"+count
         }
-//        super.delay(0.4) {
-//            self.numberView.isUserInteractionEnabled = true
-//        }
     }
     
-
+    override func onAnimationCompleted() {
+        if !self.testCompleted {
+            guard let indexPath = self.colorCollectionView.indexPathsForVisibleItems.first else {
+                return
+            }
+            self.testCompleted = indexPath.row == jsonDataSource["blind_test_data"].count - 1
+            if self.testCompleted {
+                self.openGameOverDialog()
+            } else {
+                self.scrollToNext()
+            }
+        }
+    }
 }
+
+
 
 extension ColorTestViewController:UICollectionViewDataSource, UIScrollViewDelegate,
  UICollectionViewDelegateFlowLayout{
@@ -301,16 +266,12 @@ extension ColorTestViewController:UICollectionViewDataSource, UIScrollViewDelega
             return collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath)
         }
         let dataCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ColorCell", for: indexPath) as! ColorCollectionViewCell
-//        let _size = self.centeredLayout.itemSize
-//        dataCell.contentView.frame = CGRect(x: 0, y: 0,
-//                                            width: _size.width,
-//                                            height: _size.height)
-    
         guard let data = jsonDataSource["blind_test_data"][arrayIndex[indexPath.row]].dictionaryObject as [String:AnyObject]? else {
             return dataCell
         }
-        dataCell.colorView.setData(data: data)
-        visibleSample = dataCell
+        
+        dataCell.colorView.setData(data: data, dimension:self.colorDimensio)
+        
         if dataCell.colorView.layer.cornerRadius == 0 {
             dataCell.colorView.layer.cornerRadius = self.colorDimensio/2
             dataCell.colorView.layer.masksToBounds = true
@@ -323,9 +284,6 @@ extension ColorTestViewController:UICollectionViewDataSource, UIScrollViewDelega
         let visibleCells = self.colorCollectionView.visibleCells
         if visibleCells.count == 0 {
             self.setDataAt(cellIndex: 0)
-//            delay(0.1) {
-//                self.numberView.isUserInteractionEnabled = true
-//            }
             return
         }
         guard let dataCell = visibleCells.first as? ColorCollectionViewCell else {
@@ -338,6 +296,37 @@ extension ColorTestViewController:UICollectionViewDataSource, UIScrollViewDelega
         self.setDataAt(cellIndex: index)
         
     }
+    
+    override func dismissSelf(isPlayAgain:Bool) {
+        debugPrint("done!")
+        if isPlayAgain {
+            self.playAgain()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    fileprivate func playAgain(){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+        
+            self.answerLabel.text = "1/\(self.jsonDataSource["blind_test_data"].count)"
+            self.gameManager.coinCounter = 0
+            self.gameManager.writeAnserCount = 0
+            self.userAnswers.removeAll()
+            self.animationView.startAnimation(withDuration: 31)
+            self.testCompleted = false
+            
+            self.colorCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
+                                                  at: UICollectionView.ScrollPosition.left,
+                                                  animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 00.3) {
+                self.colorCollectionView.reloadData()
+                self.setDataAt(cellIndex: 0)
+            }
+        }
+    }
+    
 }
 
 extension Array {
