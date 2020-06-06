@@ -16,6 +16,9 @@ class GameManager: NSObject {
         didSet{
             let _coins = UserDefaults.standard.integer(forKey: "coins") + self.coinCounter
             UserDefaults.standard.set(_coins, forKey: "coins")
+            DispatchQueue.global().async {
+                FirebaseManager.shared.updateGame(conins: _coins)
+            }
         }
     }
     var writeAnserCount = 0

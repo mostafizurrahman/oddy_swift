@@ -25,7 +25,8 @@ extension ColorTestViewController:AnswerSelectionDelegate{
 }
 
 class ColorTestViewController: UIViewController {
-    
+
+    typealias FM = FirebaseManager
     typealias GM = GameManager
     
     @IBOutlet weak var imageHeightLayout: NSLayoutConstraint!
@@ -73,6 +74,11 @@ class ColorTestViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if FM.shared.colorBlindCount  > 0 {
+            FM.shared.colorBlindCount -= 1
+            FM.shared.update(gameName: FM.G_BLIND,
+                             count: FM.shared.colorBlindCount)
+        }
         self.gameManager.gameTitle = "Color Blind"
         self.imageHeightLayout.constant = IAViewAnimation.SCREEN_WIDTH
             - self.colorContainer.frame.origin.x * 2

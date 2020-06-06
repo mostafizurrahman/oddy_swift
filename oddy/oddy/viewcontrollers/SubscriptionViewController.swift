@@ -17,6 +17,8 @@ class SubscriptionViewController: UITableViewController {
     @IBOutlet weak var bannerView: BackgroundShadowView!
     @IBOutlet weak var iconView: BackgroundShadowView!
     var dataArray = NSDictionary()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         iconView.isCircle = true

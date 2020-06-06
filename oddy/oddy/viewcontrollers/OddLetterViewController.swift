@@ -14,6 +14,7 @@ protocol GameEndDelegate:NSObjectProtocol{
 }
 
 class OddLetterViewController: UIViewController {
+    typealias FM = FirebaseManager
     var sourceLetter:[String] = []
     var letterArray:[String] = []
     let columnCount = 8//GameManager.shared.isHardGame ? 10 : 8
@@ -36,6 +37,7 @@ class OddLetterViewController: UIViewController {
         self.gm.writeAnserCount = 0
         self.gm.coinCounter = 0
         self.gm.timeCounter = 0
+        
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -46,6 +48,7 @@ class OddLetterViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if self.shouldConfigure {
+            
             guard let _source = self.sourceLetter.last else {return}
             self.shouldConfigure = false
             self.letterLabel.text = _source

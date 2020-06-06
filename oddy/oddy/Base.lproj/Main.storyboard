@@ -161,7 +161,7 @@
                                         <rect key="frame" x="-10" y="-10" width="120" height="130"/>
                                         <state key="highlighted" image="radial_gradient"/>
                                         <connections>
-                                            <segue destination="wj2-lB-FGT" kind="show" id="fSn-1J-YyX"/>
+                                            <segue destination="wj2-lB-FGT" kind="show" identifier="clor_blind" id="fSn-1J-YyX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -201,7 +201,7 @@
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="highlighted" image="radial_gradient"/>
                                         <connections>
-                                            <segue destination="XRG-pn-iQY" kind="show" id="23d-Ll-WeQ"/>
+                                            <segue destination="XRG-pn-iQY" kind="show" identifier="odd_color" id="23d-Ll-WeQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -442,7 +442,7 @@
                         <outlet property="segments" destination="TiK-YD-Xt4" id="6Gf-2k-ARh"/>
                         <outlet property="titleLabel" destination="aCF-cX-YuN" id="Goj-tQ-zOO"/>
                         <segue destination="iD3-8x-hPu" kind="show" identifier="start_game" id="XvF-L5-B2a"/>
-                        <segue destination="Nj9-lc-EK8" kind="show" id="sDf-vI-YsS"/>
+                        <segue destination="Nj9-lc-EK8" kind="show" identifier="subscribe" id="sDf-vI-YsS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4Y-r5-KNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1773,7 +1773,7 @@
         <!--Subscription View Controller-->
         <scene sceneID="my4-am-SVf">
             <objects>
-                <tableViewController storyboardIdentifier="subscription" id="Nj9-lc-EK8" customClass="SubscriptionViewController" customModule="Jigsaw_Puzzle" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="subscription" id="Nj9-lc-EK8" customClass="SubscriptionViewController" customModule="ODDY" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NN1-Cv-1D8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1816,10 +1816,10 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQi-kk-4pp" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
-                                                            <rect key="frame" x="25" y="17" width="45" height="45"/>
+                                                            <rect key="frame" x="25" y="17" width="40" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="45" id="1bk-LJ-Bm2"/>
-                                                                <constraint firstAttribute="height" constant="45" id="uIB-2x-1II"/>
+                                                                <constraint firstAttribute="width" constant="40" id="1bk-LJ-Bm2"/>
+                                                                <constraint firstAttribute="height" constant="40" id="uIB-2x-1II"/>
                                                             </constraints>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" image="multiply.circle.fill" catalog="system">
@@ -1833,7 +1833,7 @@
                                                                     <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                    <real key="value" value="5"/>
+                                                                    <real key="value" value="1.5"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                     <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2018,15 +2018,15 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="430" id="Tyf-Ah-BMg">
-                                        <rect key="frame" x="0.0" y="575" width="414" height="430"/>
+                                    <tableViewCell contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="440" id="Tyf-Ah-BMg">
+                                        <rect key="frame" x="0.0" y="575" width="414" height="440"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tyf-Ah-BMg" id="6qe-8c-iWF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azU-Kw-Lav" customClass="BackgroundShadowView" customModule="ODDY" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="430"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -2217,11 +2217,49 @@
         <!--Terms View Controller-->
         <scene sceneID="zkC-7I-dI3">
             <objects>
-                <viewController id="Hgm-ah-QNl" customClass="TermsViewController" sceneMemberID="viewController">
+                <viewController id="Hgm-ah-QNl" customClass="TermsViewController" customModule="ODDY" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqF-qk-ITx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jIi-ce-4ji" customClass="IARadialButton" customModule="ODDY" customModuleProvider="target">
+                                <rect key="frame" x="16" y="52" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="8h0-3i-0KF"/>
+                                    <constraint firstAttribute="height" constant="40" id="trd-n9-oI6"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="multiply.circle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="innerRadialColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outerRaidalColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="exit:" destination="Hgm-ah-QNl" eventType="touchUpInside" id="FIF-NK-uHh"/>
+                                    <action selector="skipSubs:" destination="Nj9-lc-EK8" eventType="touchUpInside" id="jje-dn-Fcv"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jIi-ce-4ji" firstAttribute="top" secondItem="GfI-qn-noP" secondAttribute="top" constant="8" id="4BT-CM-wNp"/>
+                            <constraint firstItem="jIi-ce-4ji" firstAttribute="leading" secondItem="GfI-qn-noP" secondAttribute="leading" constant="16" id="kdq-Sl-ggY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GfI-qn-noP"/>
                     </view>
                     <navigationItem key="navigationItem" id="iE9-Gs-iOa"/>
@@ -2254,6 +2292,6 @@
         <image name="shopping" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ezX-w7-M82"/>
+        <segue reference="sDf-vI-YsS"/>
     </inferredMetricsTieBreakers>
 </document>

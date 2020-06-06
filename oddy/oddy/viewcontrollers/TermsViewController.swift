@@ -19,6 +19,7 @@ class TermsViewController: UIViewController {
 
         termsWebView = WKWebView(frame: self.view.bounds)
         self.view.addSubview(termsWebView)
+        self.view.sendSubviewToBack(termsWebView)
         if let _title = self.termsTitle {
             self.title = _title.uppercased()
         }
@@ -35,6 +36,9 @@ class TermsViewController: UIViewController {
     }
     
 
+    @IBAction func exit(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     /*
     // MARK: - Navigation
 

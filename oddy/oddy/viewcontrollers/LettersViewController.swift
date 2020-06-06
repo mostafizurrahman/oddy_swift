@@ -17,6 +17,7 @@ class LettersViewController: UIViewController {
     let screenSize = UIScreen.main.bounds.size
     
     var instrucitonView:InstructionView?
+    let subscription =  SubscriptionManager.shared
     @IBOutlet weak var letterCollectioinView: UICollectionView!
     var letterArray:[String] = []
     var hardLetters:[String:[String]] =  [String : [String]]()
@@ -245,6 +246,10 @@ extension LettersViewController:UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row > 5 && !subscription.isSubscribed{
+            self.performSegue(withIdentifier: "subscribe", sender: self)
+            return
+        }
         if self.isHard {
             
             guard let _value = self.getLetterArray(inSection: indexPath.section) else {

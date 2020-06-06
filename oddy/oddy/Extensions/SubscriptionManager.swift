@@ -25,7 +25,7 @@ class SubscriptionManager: NSObject {
     var completionHandler :(()->(PurchaseResult))? = nil
     let subNotification = Notification.Name(rawValue: "subscription_notification")
     static let shared = SubscriptionManager()
-    private(set) var isSubscribed:Bool = false
+    var isSubscribed:Bool = false
     private let productId:String = "com.zigzag.puzzle"
     private let secret = "0238079beabf42619ecef061635476f0"
     private(set) var product:SKProduct?
