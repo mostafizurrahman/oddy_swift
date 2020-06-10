@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     typealias AV = IAViewAnimation
+    typealias FM = FirebaseManager
+    typealias SM = SubscriptionManager
     @IBOutlet var hexagonWidths: [NSLayoutConstraint]!
     @IBOutlet var hexagonHeights: [NSLayoutConstraint]!
     @IBOutlet weak var centerView: UIView!
@@ -21,16 +23,18 @@ class HomeViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let _shared = FirebaseManager.shared
+        _shared.updateGame(conins: 0)
+        _shared.updateCount()
         let _layer = AV.createParticles(forRect: AV.SCREEN_BOUND)
         self.view.layer.insertSublayer(_layer, at: 0)
+        
         // Do any additional setup after loading the view.
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.centerView.layer.cornerRadius = 15
-        self.centerView.layer.masksToBounds = true
         self.view.setNeedsDisplay()
         for _view in self.view.subviews {
             _view.layoutIfNeeded()
@@ -42,6 +46,28 @@ class HomeViewController: UIViewController {
         }
         
     
+        if self.centerView.layer.cornerRadius == 0 && !SM.shared.isSubscribed {
+            self.performSegue(withIdentifier: "subscribe", sender: self)
+        }
+        
+        self.centerView.layer.cornerRadius = 15
+        self.centerView.layer.masksToBounds = true
+    }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if !SM.shared.isSubscribed {
+            if identifier == FM.G_COLOR
+                && FM.shared.oddColorCount <= 0{
+                self.performSegue(withIdentifier: "subscribe", sender: self)
+                return false
+            } else if identifier == FM.G_BLIND
+                && FM.shared.colorBlindCount <= 0 {
+                    self.performSegue(withIdentifier: "subscribe", sender: self)
+                return false
+            }
+        }
+        return true
     }
     
     override func viewWillAppear(_ animated: Bool) {

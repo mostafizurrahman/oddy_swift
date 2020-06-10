@@ -139,6 +139,7 @@ protocol AnimationDelegate : NSObjectProtocol {
     }
     
     func startAnimation(withDuration duration:TimeInterval){
+
         self.animationDuration = duration
         self.animationGroup?.duration = CFTimeInterval(self.animationDuration)
         if let _animations = self.animationGroup?.animations {
@@ -148,6 +149,8 @@ protocol AnimationDelegate : NSObjectProtocol {
         }
         if self.animationGroup == nil {
             self.createAnimationGroup()
+        } else {
+            self.animationGroup?.delegate = self
         }
         if self.updateTimer != nil {
             self.updateTimer?.invalidate()

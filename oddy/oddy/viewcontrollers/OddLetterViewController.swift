@@ -14,6 +14,7 @@ protocol GameEndDelegate:NSObjectProtocol{
 }
 
 class OddLetterViewController: UIViewController {
+    typealias FM = FirebaseManager
     var sourceLetter:[String] = []
     var letterArray:[String] = []
     let columnCount = 8//GameManager.shared.isHardGame ? 10 : 8
@@ -36,6 +37,7 @@ class OddLetterViewController: UIViewController {
         self.gm.writeAnserCount = 0
         self.gm.coinCounter = 0
         self.gm.timeCounter = 0
+        
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -46,6 +48,7 @@ class OddLetterViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if self.shouldConfigure {
+            
             guard let _source = self.sourceLetter.last else {return}
             self.shouldConfigure = false
             self.letterLabel.text = _source
@@ -71,7 +74,7 @@ class OddLetterViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         guard let _source = self.sourceLetter.last else {return}
-        self.letterContainer.isGameOver = true
+        var isGameOver = true
         if let _touch = touches.first {
             let _locatoin = _touch.location(in: self.letterContainer)
             let _boardLocation = _touch.location(in: self.letterContainer)
@@ -81,8 +84,8 @@ class OddLetterViewController: UIViewController {
                     if _view.frame.contains(_locatoin){
                         if let _label = _view.subviews.first as? UILabel {
                             if _label.text == _source {
+                                isGameOver = false
                                 self.updateGamerResult()
-                                self.animationBar.removeAnimations()
                                 self.gm.setTimerCounter()
                                 self.animationBar.startAnimation(withDuration: gm.timeCounter)
                                 self.letterContainer.configureGame()
@@ -93,11 +96,13 @@ class OddLetterViewController: UIViewController {
                 }
             } 
         }
-        if self.letterContainer.isGameOver {
+        if isGameOver {
+            
             self.onAnimationCompleted()
             self.animationBar.removeAnimations()
             self.gm.setBest(score: self.gm.writeAnserCount)
         }
+        self.letterContainer.isGameOver = isGameOver
     }
     
     
@@ -164,7 +169,6 @@ class OddLetterViewController: UIViewController {
         self.gm.writeAnserCount = 0
         self.gm.coinCounter = 0
         self.gm.timeCounter = 0
-        self.animationBar.removeAnimations()
         self.winButton.setTitle("\(self.gm.writeAnserCount)", for: UIControl.State.normal)
         self.coinButton.setTitle("\(self.gm.coinCounter)", for: UIControl.State.normal)
         self.animationBar.startAnimation(withDuration: 31)

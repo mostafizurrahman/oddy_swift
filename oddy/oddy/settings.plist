@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0</key>
+	<dict>
+		<key>switch</key>
+		<true/>
+		<key>icon</key>
+		<string>game_music</string>
+		<key>title</key>
+		<string>Game Sound</string>
+	</dict>
+	<key>1</key>
+	<dict>
+		<key>title</key>
+		<string>Privacy Policy</string>
+		<key>switch</key>
+		<false/>
+		<key>icon</key>
+		<string>privacy</string>
+		<key>action</key>
+		<string>privacy</string>
+	</dict>
+	<key>2</key>
+	<dict>
+		<key>title</key>
+		<string>Terms &amp; Conditions</string>
+		<key>switch</key>
+		<false/>
+		<key>icon</key>
+		<string>terms</string>
+		<key>action</key>
+		<string>term</string>
+	</dict>
+	<key>3</key>
+	<dict>
+		<key>title</key>
+		<string>Notificaiton</string>
+		<key>switch</key>
+		<false/>
+		<key>icon</key>
+		<string>sound</string>
+		<key>action</key>
+		<string>notification</string>
+	</dict>
+	<key>4</key>
+	<dict>
+		<key>title</key>
+		<string>Subscription</string>
+		<key>switch</key>
+		<false/>
+		<key>icon</key>
+		<string>gold</string>
+		<key>action</key>
+		<string>subscription</string>
+	</dict>
+	<key>5</key>
+	<dict>
+		<key>title</key>
+		<string>Puzzle Squares</string>
+		<key>switch</key>
+		<false/>
+		<key>icon</key>
+		<string>squars</string>
+		<key>action</key>
+		<string>alert</string>
+	</dict>
+</dict>
+</plist>

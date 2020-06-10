@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023FD66B6AD34A5A2BCC1B9F /* Pods_oddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23B39059EAAA54774773550 /* Pods_oddyTests.framework */; };
+		0AA61E15BA33C18DE1BD43DA /* Pods_oddy_oddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C773947984B847C00A2206D8 /* Pods_oddy_oddyUITests.framework */; };
+		3D0AC153E5B1FB6FF12213AA /* Pods_oddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1CB486C9A3B4E49D81A2D6 /* Pods_oddy.framework */; };
+		BE05D39A247D139200D7BDD3 /* GradientLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D399247D139200D7BDD3 /* GradientLineView.swift */; };
+		BE05D39C247D13D800D7BDD3 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D39B247D13D800D7BDD3 /* ColorCollectionViewCell.swift */; };
+		BE05D39F247D145B00D7BDD3 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D39D247D145B00D7BDD3 /* NumberView.swift */; };
+		BE05D3A0247D145B00D7BDD3 /* NumberView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE05D39E247D145B00D7BDD3 /* NumberView.xib */; };
+		BE05D3A2247D15FD00D7BDD3 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D3A1247D15FD00D7BDD3 /* SwiftyJSON.swift */; };
 		BE14FCD02469DB3300E1B2F9 /* CardAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14FCCF2469DB3300E1B2F9 /* CardAnimationView.swift */; };
 		BE18B66A2464B28200ABFE31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18B6692464B28200ABFE31 /* AppDelegate.swift */; };
 		BE18B66C2464B28200ABFE31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18B66B2464B28200ABFE31 /* SceneDelegate.swift */; };
@@ -18,6 +26,21 @@
 		BE18FB1C2467360A008F7FC5 /* OddLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */; };
 		BE18FB1E24674388008F7FC5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18FB1D24674388008F7FC5 /* CardView.swift */; };
 		BE21386F24770D9D00D2F764 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE21386E24770D9D00D2F764 /* LinearProgressView.swift */; };
+		BE32C6A1248A1F970026158F /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6A0248A1F970026158F /* FirebaseManager.swift */; };
+		BE32C6A3248A22820026158F /* GameMusic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6A2248A22820026158F /* GameMusic.swift */; };
+		BE32C6A5248A22A30026158F /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6A4248A22A30026158F /* SubscriptionManager.swift */; };
+		BE32C6A9248A22B30026158F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6A6248A22B30026158F /* SettingsViewController.swift */; };
+		BE32C6AA248A22B30026158F /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6A7248A22B30026158F /* SubscriptionViewController.swift */; };
+		BE32C6AB248A22B30026158F /* TermsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6A8248A22B30026158F /* TermsViewController.swift */; };
+		BE32C6B0248A23000026158F /* settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE32C6AC248A22FF0026158F /* settings.plist */; };
+		BE32C6B1248A23000026158F /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = BE32C6AD248A22FF0026158F /* privacy.html */; };
+		BE32C6B2248A23000026158F /* subscription.html in Resources */ = {isa = PBXBuildFile; fileRef = BE32C6AE248A22FF0026158F /* subscription.html */; };
+		BE32C6B3248A23000026158F /* term.html in Resources */ = {isa = PBXBuildFile; fileRef = BE32C6AF248A22FF0026158F /* term.html */; };
+		BE32C6B5248A35BC0026158F /* BackgroundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6B4248A35BC0026158F /* BackgroundShadowView.swift */; };
+		BE32C6B7248A38E40026158F /* SettingTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6B6248A38E40026158F /* SettingTableCell.swift */; };
+		BE32C6BA248A390A0026158F /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE32C6B8248A390A0026158F /* LoadingView.xib */; };
+		BE32C6BB248A390A0026158F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE32C6B9248A390A0026158F /* LoadingView.swift */; };
+		BE67910B248A1E6C002184CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE67910A248A1E6B002184CA /* GoogleService-Info.plist */; };
 		BE868E09246DEC3D00C83F4F /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE868E08246DEC3D00C83F4F /* GameManager.swift */; };
 		BE9696F52464D42C006BDBC8 /* InstructionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE9696F32464D42C006BDBC8 /* InstructionView.xib */; };
 		BE9696F62464D42C006BDBC8 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9696F42464D42C006BDBC8 /* InstructionView.swift */; };
@@ -49,11 +72,57 @@
 		BE96972E24657826006BDBC8 /* LettersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE96972D24657826006BDBC8 /* LettersViewController.swift */; };
 		BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */; };
 		BE969732246586BD006BDBC8 /* UtilityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE969731246586BD006BDBC8 /* UtilityExtension.swift */; };
+		BEBCC39124864D97006DB2B6 /* color_5_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BEBCC39024864D95006DB2B6 /* color_5_1.png */; };
+		BEC10123247A5544002D91B1 /* ColorTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC10122247A5544002D91B1 /* ColorTestViewController.swift */; };
+		BEC10125247A55F0002D91B1 /* TestAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC10124247A55F0002D91B1 /* TestAnswer.swift */; };
+		BEC10127247A5736002D91B1 /* IACenterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC10126247A5736002D91B1 /* IACenterFlowLayout.swift */; };
 		BEC362DD2474615E001ED842 /* OddColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC362DC2474615E001ED842 /* OddColorViewController.swift */; };
 		BEC39545246F192600C5F497 /* hard_data.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC39544246F192600C5F497 /* hard_data.json */; };
 		BEC39549247058F800C5F497 /* GameResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC39548247058F800C5F497 /* GameResultView.xib */; };
 		BEC3954B2470965800C5F497 /* GameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3954A2470965800C5F497 /* GameResultView.swift */; };
 		BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC88216246BE90400B35C68 /* LetterGameView.swift */; };
+		BED5064A24806F83001AA8EC /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5064824806F83001AA8EC /* ColorView.swift */; };
+		BED5064B24806F83001AA8EC /* ColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED5064924806F83001AA8EC /* ColorView.xib */; };
+		BED5067224806FB4001AA8EC /* color_5_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5064C24806FAD001AA8EC /* color_5_2.png */; };
+		BED5067324806FB4001AA8EC /* color_8_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5064D24806FAD001AA8EC /* color_8_1.png */; };
+		BED5067424806FB4001AA8EC /* color_1_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5064E24806FAD001AA8EC /* color_1_3.png */; };
+		BED5067524806FB4001AA8EC /* color_6_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5064F24806FAD001AA8EC /* color_6_3.png */; };
+		BED5067624806FB4001AA8EC /* color_7_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065024806FAD001AA8EC /* color_7_0.png */; };
+		BED5067724806FB4001AA8EC /* color_1_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065124806FAD001AA8EC /* color_1_2.png */; };
+		BED5067824806FB4001AA8EC /* color_2_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065224806FAE001AA8EC /* color_2_0.png */; };
+		BED5067924806FB4001AA8EC /* blind_74_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065324806FAE001AA8EC /* blind_74_0.png */; };
+		BED5067A24806FB4001AA8EC /* color_8_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065424806FAE001AA8EC /* color_8_2.png */; };
+		BED5067B24806FB4001AA8EC /* color_6_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065524806FAE001AA8EC /* color_6_2.png */; };
+		BED5067C24806FB4001AA8EC /* color_8_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065624806FAE001AA8EC /* color_8_0.png */; };
+		BED5067D24806FB4001AA8EC /* color_3_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065724806FAE001AA8EC /* color_3_1.png */; };
+		BED5067E24806FB4001AA8EC /* color_6_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065824806FAE001AA8EC /* color_6_4.png */; };
+		BED5067F24806FB4001AA8EC /* color_5_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065924806FAF001AA8EC /* color_5_0.png */; };
+		BED5068024806FB4001AA8EC /* blind_18_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065A24806FAF001AA8EC /* blind_18_0.png */; };
+		BED5068124806FB4001AA8EC /* color_8_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065B24806FAF001AA8EC /* color_8_3.png */; };
+		BED5068224806FB4001AA8EC /* color_8_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065C24806FAF001AA8EC /* color_8_4.png */; };
+		BED5068324806FB4001AA8EC /* color_car_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065D24806FAF001AA8EC /* color_car_0.png */; };
+		BED5068424806FB4001AA8EC /* color_3_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065E24806FAF001AA8EC /* color_3_0.png */; };
+		BED5068524806FB4001AA8EC /* color_1_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5065F24806FB0001AA8EC /* color_1_0.png */; };
+		BED5068624806FB4001AA8EC /* color_1_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066024806FB0001AA8EC /* color_1_4.png */; };
+		BED5068724806FB4001AA8EC /* color_5_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066124806FB0001AA8EC /* color_5_1.png */; };
+		BED5068824806FB4001AA8EC /* color_9_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066224806FB0001AA8EC /* color_9_1.png */; };
+		BED5068924806FB4001AA8EC /* color_1_5.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066324806FB0001AA8EC /* color_1_5.png */; };
+		BED5068A24806FB4001AA8EC /* color_9_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066424806FB1001AA8EC /* color_9_3.png */; };
+		BED5068B24806FB4001AA8EC /* color_6_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066524806FB1001AA8EC /* color_6_1.png */; };
+		BED5068C24806FB4001AA8EC /* color_2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066624806FB1001AA8EC /* color_2_1.png */; };
+		BED5068D24806FB4001AA8EC /* color_9_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066724806FB1001AA8EC /* color_9_4.png */; };
+		BED5068E24806FB4001AA8EC /* color_9_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066824806FB1001AA8EC /* color_9_0.png */; };
+		BED5068F24806FB4001AA8EC /* color_2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066924806FB2001AA8EC /* color_2_2.png */; };
+		BED5069024806FB4001AA8EC /* color_6_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066A24806FB2001AA8EC /* color_6_0.png */; };
+		BED5069124806FB4001AA8EC /* color_1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066B24806FB2001AA8EC /* color_1_1.png */; };
+		BED5069224806FB4001AA8EC /* color_9_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066C24806FB2001AA8EC /* color_9_2.png */; };
+		BED5069324806FB4001AA8EC /* color_blind_reason.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BED5066D24806FB3001AA8EC /* color_blind_reason.jpg */; };
+		BED5069424806FB4001AA8EC /* color_4_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066E24806FB3001AA8EC /* color_4_1.png */; };
+		BED5069524806FB4001AA8EC /* color_2_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5066F24806FB3001AA8EC /* color_2_3.png */; };
+		BED5069624806FB4001AA8EC /* color_4_0.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5067024806FB3001AA8EC /* color_4_0.png */; };
+		BED5069724806FB4001AA8EC /* color_8_5.png in Resources */ = {isa = PBXBuildFile; fileRef = BED5067124806FB4001AA8EC /* color_8_5.png */; };
+		BED5069A24806FBC001AA8EC /* ColorBlindInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = BED5069824806FBC001AA8EC /* ColorBlindInfo.json */; };
+		BED5069B24806FBC001AA8EC /* BlindTest.json in Resources */ = {isa = PBXBuildFile; fileRef = BED5069924806FBC001AA8EC /* BlindTest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +143,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		609D2FC15CB884E272A76455 /* Pods-oddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddy.debug.xcconfig"; path = "Target Support Files/Pods-oddy/Pods-oddy.debug.xcconfig"; sourceTree = "<group>"; };
+		7EB7579C778351C1C67A6AE0 /* Pods-oddy-oddyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddy-oddyUITests.debug.xcconfig"; path = "Target Support Files/Pods-oddy-oddyUITests/Pods-oddy-oddyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF1CB486C9A3B4E49D81A2D6 /* Pods_oddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23B39059EAAA54774773550 /* Pods_oddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90C1A1E28B84E54E10F2931 /* Pods-oddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddy.release.xcconfig"; path = "Target Support Files/Pods-oddy/Pods-oddy.release.xcconfig"; sourceTree = "<group>"; };
+		BE05D399247D139200D7BDD3 /* GradientLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLineView.swift; sourceTree = "<group>"; };
+		BE05D39B247D13D800D7BDD3 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE05D39D247D145B00D7BDD3 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		BE05D39E247D145B00D7BDD3 /* NumberView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumberView.xib; sourceTree = "<group>"; };
+		BE05D3A1247D15FD00D7BDD3 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		BE14FCCF2469DB3300E1B2F9 /* CardAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimationView.swift; sourceTree = "<group>"; };
 		BE18B6662464B28200ABFE31 /* ODDY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ODDY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE18B6692464B28200ABFE31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +170,21 @@
 		BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddLetterViewController.swift; sourceTree = "<group>"; };
 		BE18FB1D24674388008F7FC5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BE21386E24770D9D00D2F764 /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
+		BE32C6A0248A1F970026158F /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		BE32C6A2248A22820026158F /* GameMusic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMusic.swift; sourceTree = "<group>"; };
+		BE32C6A4248A22A30026158F /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		BE32C6A6248A22B30026158F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BE32C6A7248A22B30026158F /* SubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		BE32C6A8248A22B30026158F /* TermsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TermsViewController.swift; sourceTree = "<group>"; };
+		BE32C6AC248A22FF0026158F /* settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settings.plist; sourceTree = "<group>"; };
+		BE32C6AD248A22FF0026158F /* privacy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
+		BE32C6AE248A22FF0026158F /* subscription.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = subscription.html; sourceTree = "<group>"; };
+		BE32C6AF248A22FF0026158F /* term.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = term.html; sourceTree = "<group>"; };
+		BE32C6B4248A35BC0026158F /* BackgroundShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundShadowView.swift; sourceTree = "<group>"; };
+		BE32C6B6248A38E40026158F /* SettingTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableCell.swift; sourceTree = "<group>"; };
+		BE32C6B8248A390A0026158F /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		BE32C6B9248A390A0026158F /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		BE67910A248A1E6B002184CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BE868E08246DEC3D00C83F4F /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		BE9696F32464D42C006BDBC8 /* InstructionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstructionView.xib; sourceTree = "<group>"; };
 		BE9696F42464D42C006BDBC8 /* InstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
@@ -122,11 +216,61 @@
 		BE96972D24657826006BDBC8 /* LettersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LettersViewController.swift; sourceTree = "<group>"; };
 		BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAViewAnimation.swift; sourceTree = "<group>"; };
 		BE969731246586BD006BDBC8 /* UtilityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtension.swift; sourceTree = "<group>"; };
+		BEBCC39024864D95006DB2B6 /* color_5_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_5_1.png; sourceTree = "<group>"; };
+		BEC10122247A5544002D91B1 /* ColorTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTestViewController.swift; sourceTree = "<group>"; };
+		BEC10124247A55F0002D91B1 /* TestAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnswer.swift; sourceTree = "<group>"; };
+		BEC10126247A5736002D91B1 /* IACenterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IACenterFlowLayout.swift; sourceTree = "<group>"; };
 		BEC362DC2474615E001ED842 /* OddColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddColorViewController.swift; sourceTree = "<group>"; };
 		BEC39544246F192600C5F497 /* hard_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hard_data.json; sourceTree = "<group>"; };
 		BEC39548247058F800C5F497 /* GameResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameResultView.xib; sourceTree = "<group>"; };
 		BEC3954A2470965800C5F497 /* GameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
 		BEC88216246BE90400B35C68 /* LetterGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGameView.swift; sourceTree = "<group>"; };
+		BED5064824806F83001AA8EC /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		BED5064924806F83001AA8EC /* ColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorView.xib; sourceTree = "<group>"; };
+		BED5064C24806FAD001AA8EC /* color_5_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_5_2.png; sourceTree = "<group>"; };
+		BED5064D24806FAD001AA8EC /* color_8_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_8_1.png; sourceTree = "<group>"; };
+		BED5064E24806FAD001AA8EC /* color_1_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_1_3.png; sourceTree = "<group>"; };
+		BED5064F24806FAD001AA8EC /* color_6_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_6_3.png; sourceTree = "<group>"; };
+		BED5065024806FAD001AA8EC /* color_7_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_7_0.png; sourceTree = "<group>"; };
+		BED5065124806FAD001AA8EC /* color_1_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_1_2.png; sourceTree = "<group>"; };
+		BED5065224806FAE001AA8EC /* color_2_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_2_0.png; sourceTree = "<group>"; };
+		BED5065324806FAE001AA8EC /* blind_74_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blind_74_0.png; sourceTree = "<group>"; };
+		BED5065424806FAE001AA8EC /* color_8_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_8_2.png; sourceTree = "<group>"; };
+		BED5065524806FAE001AA8EC /* color_6_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_6_2.png; sourceTree = "<group>"; };
+		BED5065624806FAE001AA8EC /* color_8_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_8_0.png; sourceTree = "<group>"; };
+		BED5065724806FAE001AA8EC /* color_3_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_3_1.png; sourceTree = "<group>"; };
+		BED5065824806FAE001AA8EC /* color_6_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_6_4.png; sourceTree = "<group>"; };
+		BED5065924806FAF001AA8EC /* color_5_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_5_0.png; sourceTree = "<group>"; };
+		BED5065A24806FAF001AA8EC /* blind_18_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blind_18_0.png; sourceTree = "<group>"; };
+		BED5065B24806FAF001AA8EC /* color_8_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_8_3.png; sourceTree = "<group>"; };
+		BED5065C24806FAF001AA8EC /* color_8_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_8_4.png; sourceTree = "<group>"; };
+		BED5065D24806FAF001AA8EC /* color_car_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_car_0.png; sourceTree = "<group>"; };
+		BED5065E24806FAF001AA8EC /* color_3_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_3_0.png; sourceTree = "<group>"; };
+		BED5065F24806FB0001AA8EC /* color_1_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_1_0.png; sourceTree = "<group>"; };
+		BED5066024806FB0001AA8EC /* color_1_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_1_4.png; sourceTree = "<group>"; };
+		BED5066124806FB0001AA8EC /* color_5_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_5_1.png; sourceTree = "<group>"; };
+		BED5066224806FB0001AA8EC /* color_9_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_9_1.png; sourceTree = "<group>"; };
+		BED5066324806FB0001AA8EC /* color_1_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_1_5.png; sourceTree = "<group>"; };
+		BED5066424806FB1001AA8EC /* color_9_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_9_3.png; sourceTree = "<group>"; };
+		BED5066524806FB1001AA8EC /* color_6_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_6_1.png; sourceTree = "<group>"; };
+		BED5066624806FB1001AA8EC /* color_2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_2_1.png; sourceTree = "<group>"; };
+		BED5066724806FB1001AA8EC /* color_9_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_9_4.png; sourceTree = "<group>"; };
+		BED5066824806FB1001AA8EC /* color_9_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_9_0.png; sourceTree = "<group>"; };
+		BED5066924806FB2001AA8EC /* color_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_2_2.png; sourceTree = "<group>"; };
+		BED5066A24806FB2001AA8EC /* color_6_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_6_0.png; sourceTree = "<group>"; };
+		BED5066B24806FB2001AA8EC /* color_1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_1_1.png; sourceTree = "<group>"; };
+		BED5066C24806FB2001AA8EC /* color_9_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_9_2.png; sourceTree = "<group>"; };
+		BED5066D24806FB3001AA8EC /* color_blind_reason.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = color_blind_reason.jpg; sourceTree = "<group>"; };
+		BED5066E24806FB3001AA8EC /* color_4_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_4_1.png; sourceTree = "<group>"; };
+		BED5066F24806FB3001AA8EC /* color_2_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_2_3.png; sourceTree = "<group>"; };
+		BED5067024806FB3001AA8EC /* color_4_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_4_0.png; sourceTree = "<group>"; };
+		BED5067124806FB4001AA8EC /* color_8_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_8_5.png; sourceTree = "<group>"; };
+		BED5069824806FBC001AA8EC /* ColorBlindInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ColorBlindInfo.json; sourceTree = "<group>"; };
+		BED5069924806FBC001AA8EC /* BlindTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlindTest.json; sourceTree = "<group>"; };
+		C773947984B847C00A2206D8 /* Pods_oddy_oddyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oddy_oddyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBDAF9F19A1FB7D37AC70021 /* Pods-oddyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddyTests.release.xcconfig"; path = "Target Support Files/Pods-oddyTests/Pods-oddyTests.release.xcconfig"; sourceTree = "<group>"; };
+		DE4DF5423495E2B7E5526DF2 /* Pods-oddy-oddyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddy-oddyUITests.release.xcconfig"; path = "Target Support Files/Pods-oddy-oddyUITests/Pods-oddy-oddyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E0D15A16A10628CFDB308159 /* Pods-oddyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddyTests.debug.xcconfig"; path = "Target Support Files/Pods-oddyTests/Pods-oddyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D0AC153E5B1FB6FF12213AA /* Pods_oddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +286,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				023FD66B6AD34A5A2BCC1B9F /* Pods_oddyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,12 +294,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AA61E15BA33C18DE1BD43DA /* Pods_oddy_oddyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99A20713A1A763679BBD7DDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF1CB486C9A3B4E49D81A2D6 /* Pods_oddy.framework */,
+				C773947984B847C00A2206D8 /* Pods_oddy_oddyUITests.framework */,
+				B23B39059EAAA54774773550 /* Pods_oddyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABFEB56805ED516E84F882BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				609D2FC15CB884E272A76455 /* Pods-oddy.debug.xcconfig */,
+				B90C1A1E28B84E54E10F2931 /* Pods-oddy.release.xcconfig */,
+				7EB7579C778351C1C67A6AE0 /* Pods-oddy-oddyUITests.debug.xcconfig */,
+				DE4DF5423495E2B7E5526DF2 /* Pods-oddy-oddyUITests.release.xcconfig */,
+				E0D15A16A10628CFDB308159 /* Pods-oddyTests.debug.xcconfig */,
+				CBDAF9F19A1FB7D37AC70021 /* Pods-oddyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BE18B65D2464B28200ABFE31 = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +331,8 @@
 				BE18B67F2464B28400ABFE31 /* oddyTests */,
 				BE18B68A2464B28400ABFE31 /* oddyUITests */,
 				BE18B6672464B28200ABFE31 /* Products */,
+				ABFEB56805ED516E84F882BD /* Pods */,
+				99A20713A1A763679BBD7DDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,9 +356,14 @@
 				BE18B6692464B28200ABFE31 /* AppDelegate.swift */,
 				BE18B66B2464B28200ABFE31 /* SceneDelegate.swift */,
 				BE18B66F2464B28200ABFE31 /* Main.storyboard */,
+				BE67910A248A1E6B002184CA /* GoogleService-Info.plist */,
 				BE18B6722464B28400ABFE31 /* Assets.xcassets */,
 				BE18B6742464B28400ABFE31 /* LaunchScreen.storyboard */,
 				BE18B6772464B28400ABFE31 /* Info.plist */,
+				BE32C6AD248A22FF0026158F /* privacy.html */,
+				BE32C6AC248A22FF0026158F /* settings.plist */,
+				BE32C6AE248A22FF0026158F /* subscription.html */,
+				BE32C6AF248A22FF0026158F /* term.html */,
 			);
 			path = oddy;
 			sourceTree = "<group>";
@@ -212,6 +389,10 @@
 		BE9696F22464D407006BDBC8 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				BE32C6B9248A390A0026158F /* LoadingView.swift */,
+				BE32C6B8248A390A0026158F /* LoadingView.xib */,
+				BEC10126247A5736002D91B1 /* IACenterFlowLayout.swift */,
+				BE32C6B6248A38E40026158F /* SettingTableCell.swift */,
 				BE9697002464DC88006BDBC8 /* Label */,
 				BE9696F92464D46D006BDBC8 /* HexagoanView.swift */,
 				BE9696F72464D439006BDBC8 /* ShadowView.swift */,
@@ -226,6 +407,12 @@
 				BEC39548247058F800C5F497 /* GameResultView.xib */,
 				BEC3954A2470965800C5F497 /* GameResultView.swift */,
 				BE21386E24770D9D00D2F764 /* LinearProgressView.swift */,
+				BE05D399247D139200D7BDD3 /* GradientLineView.swift */,
+				BE05D39B247D13D800D7BDD3 /* ColorCollectionViewCell.swift */,
+				BE05D39D247D145B00D7BDD3 /* NumberView.swift */,
+				BE05D39E247D145B00D7BDD3 /* NumberView.xib */,
+				BED5064824806F83001AA8EC /* ColorView.swift */,
+				BED5064924806F83001AA8EC /* ColorView.xib */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -233,10 +420,16 @@
 		BE9696FD2464D58D006BDBC8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BE05D3A1247D15FD00D7BDD3 /* SwiftyJSON.swift */,
 				BE9696FE2464D5C1006BDBC8 /* ColorExtension.swift */,
 				BE96972F246578EB006BDBC8 /* IAViewAnimation.swift */,
 				BE969731246586BD006BDBC8 /* UtilityExtension.swift */,
 				BE868E08246DEC3D00C83F4F /* GameManager.swift */,
+				BEC10124247A55F0002D91B1 /* TestAnswer.swift */,
+				BE32C6A0248A1F970026158F /* FirebaseManager.swift */,
+				BE32C6A2248A22820026158F /* GameMusic.swift */,
+				BE32C6B4248A35BC0026158F /* BackgroundShadowView.swift */,
+				BE32C6A4248A22A30026158F /* SubscriptionManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +465,10 @@
 				BE96972D24657826006BDBC8 /* LettersViewController.swift */,
 				BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */,
 				BEC362DC2474615E001ED842 /* OddColorViewController.swift */,
+				BEC10122247A5544002D91B1 /* ColorTestViewController.swift */,
+				BE32C6A6248A22B30026158F /* SettingsViewController.swift */,
+				BE32C6A7248A22B30026158F /* SubscriptionViewController.swift */,
+				BE32C6A8248A22B30026158F /* TermsViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -279,8 +476,49 @@
 		BE96972A246577E6006BDBC8 /* data_contents */ = {
 			isa = PBXGroup;
 			children = (
+				BED5069924806FBC001AA8EC /* BlindTest.json */,
+				BED5069824806FBC001AA8EC /* ColorBlindInfo.json */,
 				BE96972B24657809006BDBC8 /* ImageEmog.json */,
 				BEC39544246F192600C5F497 /* hard_data.json */,
+				BED5065A24806FAF001AA8EC /* blind_18_0.png */,
+				BED5065324806FAE001AA8EC /* blind_74_0.png */,
+				BED5065F24806FB0001AA8EC /* color_1_0.png */,
+				BED5066B24806FB2001AA8EC /* color_1_1.png */,
+				BED5065124806FAD001AA8EC /* color_1_2.png */,
+				BED5064E24806FAD001AA8EC /* color_1_3.png */,
+				BED5066024806FB0001AA8EC /* color_1_4.png */,
+				BED5066324806FB0001AA8EC /* color_1_5.png */,
+				BED5065224806FAE001AA8EC /* color_2_0.png */,
+				BED5066624806FB1001AA8EC /* color_2_1.png */,
+				BED5066924806FB2001AA8EC /* color_2_2.png */,
+				BED5066F24806FB3001AA8EC /* color_2_3.png */,
+				BED5065E24806FAF001AA8EC /* color_3_0.png */,
+				BED5065724806FAE001AA8EC /* color_3_1.png */,
+				BED5067024806FB3001AA8EC /* color_4_0.png */,
+				BED5066E24806FB3001AA8EC /* color_4_1.png */,
+				BED5065924806FAF001AA8EC /* color_5_0.png */,
+				BED5066124806FB0001AA8EC /* color_5_1.png */,
+				BED5064C24806FAD001AA8EC /* color_5_2.png */,
+				BED5066A24806FB2001AA8EC /* color_6_0.png */,
+				BED5066524806FB1001AA8EC /* color_6_1.png */,
+				BED5065524806FAE001AA8EC /* color_6_2.png */,
+				BED5064F24806FAD001AA8EC /* color_6_3.png */,
+				BED5065824806FAE001AA8EC /* color_6_4.png */,
+				BED5065024806FAD001AA8EC /* color_7_0.png */,
+				BED5065624806FAE001AA8EC /* color_8_0.png */,
+				BED5064D24806FAD001AA8EC /* color_8_1.png */,
+				BED5065424806FAE001AA8EC /* color_8_2.png */,
+				BED5065B24806FAF001AA8EC /* color_8_3.png */,
+				BED5065C24806FAF001AA8EC /* color_8_4.png */,
+				BED5067124806FB4001AA8EC /* color_8_5.png */,
+				BED5066824806FB1001AA8EC /* color_9_0.png */,
+				BED5066224806FB0001AA8EC /* color_9_1.png */,
+				BED5066C24806FB2001AA8EC /* color_9_2.png */,
+				BED5066424806FB1001AA8EC /* color_9_3.png */,
+				BED5066724806FB1001AA8EC /* color_9_4.png */,
+				BEBCC39024864D95006DB2B6 /* color_5_1.png */,
+				BED5066D24806FB3001AA8EC /* color_blind_reason.jpg */,
+				BED5065D24806FAF001AA8EC /* color_car_0.png */,
 			);
 			path = data_contents;
 			sourceTree = "<group>";
@@ -292,9 +530,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE18B6902464B28400ABFE31 /* Build configuration list for PBXNativeTarget "oddy" */;
 			buildPhases = (
+				7EEB491B62FEC571AA67BD38 /* [CP] Check Pods Manifest.lock */,
 				BE18B6622464B28200ABFE31 /* Sources */,
 				BE18B6632464B28200ABFE31 /* Frameworks */,
 				BE18B6642464B28200ABFE31 /* Resources */,
+				9BD64FDAC8F46C53D3E2D93A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +549,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE18B6932464B28400ABFE31 /* Build configuration list for PBXNativeTarget "oddyTests" */;
 			buildPhases = (
+				8FA22C324E563D53392957A8 /* [CP] Check Pods Manifest.lock */,
 				BE18B6782464B28400ABFE31 /* Sources */,
 				BE18B6792464B28400ABFE31 /* Frameworks */,
 				BE18B67A2464B28400ABFE31 /* Resources */,
@@ -327,9 +568,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE18B6962464B28400ABFE31 /* Build configuration list for PBXNativeTarget "oddyUITests" */;
 			buildPhases = (
+				B7A8B59262E2BB04A4B3BD0F /* [CP] Check Pods Manifest.lock */,
 				BE18B6832464B28400ABFE31 /* Sources */,
 				BE18B6842464B28400ABFE31 /* Frameworks */,
 				BE18B6852464B28400ABFE31 /* Resources */,
+				365CDA30D6B58185AA7A64C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -389,17 +632,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BED5068424806FB4001AA8EC /* color_3_0.png in Resources */,
 				BE9697142464DCA9006BDBC8 /* Sparkle.png in Resources */,
+				BED5069424806FB4001AA8EC /* color_4_1.png in Resources */,
+				BED5068F24806FB4001AA8EC /* color_2_2.png in Resources */,
+				BED5069524806FB4001AA8EC /* color_2_3.png in Resources */,
+				BED5069024806FB4001AA8EC /* color_6_0.png in Resources */,
+				BED5067424806FB4001AA8EC /* color_1_3.png in Resources */,
+				BED5068324806FB4001AA8EC /* color_car_0.png in Resources */,
+				BED5067624806FB4001AA8EC /* color_7_0.png in Resources */,
+				BE32C6BA248A390A0026158F /* LoadingView.xib in Resources */,
 				BE9697212464DCA9006BDBC8 /* Fire.png in Resources */,
+				BED5067324806FB4001AA8EC /* color_8_1.png in Resources */,
+				BED5069724806FB4001AA8EC /* color_8_5.png in Resources */,
+				BED5067C24806FB4001AA8EC /* color_8_0.png in Resources */,
+				BED5068524806FB4001AA8EC /* color_1_0.png in Resources */,
+				BED5067B24806FB4001AA8EC /* color_6_2.png in Resources */,
 				BE9697122464DCA9006BDBC8 /* Fragment.png in Resources */,
+				BED5064B24806F83001AA8EC /* ColorView.xib in Resources */,
 				BE96972C24657809006BDBC8 /* ImageEmog.json in Resources */,
 				BEC39549247058F800C5F497 /* GameResultView.xib in Resources */,
+				BE67910B248A1E6C002184CA /* GoogleService-Info.plist in Resources */,
+				BED5069A24806FBC001AA8EC /* ColorBlindInfo.json in Resources */,
+				BED5068E24806FB4001AA8EC /* color_9_0.png in Resources */,
+				BED5068224806FB4001AA8EC /* color_8_4.png in Resources */,
+				BED5067724806FB4001AA8EC /* color_1_2.png in Resources */,
+				BED5067D24806FB4001AA8EC /* color_3_1.png in Resources */,
+				BED5068024806FB4001AA8EC /* blind_18_0.png in Resources */,
 				BEC39545246F192600C5F497 /* hard_data.json in Resources */,
+				BED5067A24806FB4001AA8EC /* color_8_2.png in Resources */,
 				BE18B6762464B28400ABFE31 /* LaunchScreen.storyboard in Resources */,
+				BED5068924806FB4001AA8EC /* color_1_5.png in Resources */,
+				BED5067524806FB4001AA8EC /* color_6_3.png in Resources */,
+				BE32C6B1248A23000026158F /* privacy.html in Resources */,
+				BED5068624806FB4001AA8EC /* color_1_4.png in Resources */,
+				BED5069624806FB4001AA8EC /* color_4_0.png in Resources */,
+				BE32C6B0248A23000026158F /* settings.plist in Resources */,
+				BED5068824806FB4001AA8EC /* color_9_1.png in Resources */,
+				BED5069B24806FBC001AA8EC /* BlindTest.json in Resources */,
+				BE32C6B2248A23000026158F /* subscription.html in Resources */,
+				BED5067E24806FB4001AA8EC /* color_6_4.png in Resources */,
+				BE05D3A0247D145B00D7BDD3 /* NumberView.xib in Resources */,
+				BED5069224806FB4001AA8EC /* color_9_2.png in Resources */,
 				BE9696F52464D42C006BDBC8 /* InstructionView.xib in Resources */,
+				BE32C6B3248A23000026158F /* term.html in Resources */,
+				BED5067F24806FB4001AA8EC /* color_5_0.png in Resources */,
+				BED5069124806FB4001AA8EC /* color_1_1.png in Resources */,
+				BED5068B24806FB4001AA8EC /* color_6_1.png in Resources */,
+				BEBCC39124864D97006DB2B6 /* color_5_1.png in Resources */,
+				BED5067224806FB4001AA8EC /* color_5_2.png in Resources */,
 				BE18B6732464B28400ABFE31 /* Assets.xcassets in Resources */,
+				BED5068C24806FB4001AA8EC /* color_2_1.png in Resources */,
 				BE96971A2464DCA9006BDBC8 /* Smoke.png in Resources */,
+				BED5067924806FB4001AA8EC /* blind_74_0.png in Resources */,
+				BED5068A24806FB4001AA8EC /* color_9_3.png in Resources */,
 				BE18B6712464B28200ABFE31 /* Main.storyboard in Resources */,
+				BED5068724806FB4001AA8EC /* color_5_1.png in Resources */,
+				BED5068124806FB4001AA8EC /* color_8_3.png in Resources */,
+				BED5067824806FB4001AA8EC /* color_2_0.png in Resources */,
+				BED5069324806FB4001AA8EC /* color_blind_reason.jpg in Resources */,
+				BED5068D24806FB4001AA8EC /* color_9_4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +711,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		365CDA30D6B58185AA7A64C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-oddy-oddyUITests/Pods-oddy-oddyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-oddy-oddyUITests/Pods-oddy-oddyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-oddy-oddyUITests/Pods-oddy-oddyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EEB491B62FEC571AA67BD38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-oddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FA22C324E563D53392957A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-oddyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BD64FDAC8F46C53D3E2D93A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-oddy/Pods-oddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-oddy/Pods-oddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-oddy/Pods-oddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7A8B59262E2BB04A4B3BD0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-oddy-oddyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE18B6622464B28200ABFE31 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -431,32 +826,49 @@
 				BE96971F2464DCA9006BDBC8 /* LTMorphingLabel+Sparkle.swift in Sources */,
 				BE18B66A2464B28200ABFE31 /* AppDelegate.swift in Sources */,
 				BE21386F24770D9D00D2F764 /* LinearProgressView.swift in Sources */,
+				BEC10125247A55F0002D91B1 /* TestAnswer.swift in Sources */,
 				BE969730246578EB006BDBC8 /* IAViewAnimation.swift in Sources */,
 				BE96971E2464DCA9006BDBC8 /* LTEmitterView.swift in Sources */,
 				BE96972624653AD1006BDBC8 /* IAGradientButton.swift in Sources */,
+				BEC10127247A5736002D91B1 /* IACenterFlowLayout.swift in Sources */,
 				BEC362DD2474615E001ED842 /* OddColorViewController.swift in Sources */,
+				BEC10123247A5544002D91B1 /* ColorTestViewController.swift in Sources */,
 				BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */,
+				BE32C6A9248A22B30026158F /* SettingsViewController.swift in Sources */,
 				BE9697182464DCA9006BDBC8 /* LTCharacterDiffResult.swift in Sources */,
+				BE05D39A247D139200D7BDD3 /* GradientLineView.swift in Sources */,
+				BE32C6A3248A22820026158F /* GameMusic.swift in Sources */,
 				BE18FB1C2467360A008F7FC5 /* OddLetterViewController.swift in Sources */,
 				BE9697192464DCA9006BDBC8 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				BE969732246586BD006BDBC8 /* UtilityExtension.swift in Sources */,
 				BE9697172464DCA9006BDBC8 /* LTCharacterLimbo.swift in Sources */,
+				BE05D3A2247D15FD00D7BDD3 /* SwiftyJSON.swift in Sources */,
 				BE96972924656C09006BDBC8 /* HomeViewController.swift in Sources */,
+				BE32C6A1248A1F970026158F /* FirebaseManager.swift in Sources */,
 				BE18FB1E24674388008F7FC5 /* CardView.swift in Sources */,
+				BE05D39F247D145B00D7BDD3 /* NumberView.swift in Sources */,
 				BE14FCD02469DB3300E1B2F9 /* CardAnimationView.swift in Sources */,
+				BE32C6B5248A35BC0026158F /* BackgroundShadowView.swift in Sources */,
 				BE9697202464DCA9006BDBC8 /* LTMorphingEffect.swift in Sources */,
 				BE868E09246DEC3D00C83F4F /* GameManager.swift in Sources */,
 				BE9697132464DCA9006BDBC8 /* LTStringDiffResult.swift in Sources */,
+				BE05D39C247D13D800D7BDD3 /* ColorCollectionViewCell.swift in Sources */,
+				BED5064A24806F83001AA8EC /* ColorView.swift in Sources */,
 				BE9696FA2464D46D006BDBC8 /* HexagoanView.swift in Sources */,
 				BE96971D2464DCA9006BDBC8 /* LTMorphingLabel.swift in Sources */,
 				BE18B66C2464B28200ABFE31 /* SceneDelegate.swift in Sources */,
+				BE32C6BB248A390A0026158F /* LoadingView.swift in Sources */,
 				BE96972E24657826006BDBC8 /* LettersViewController.swift in Sources */,
+				BE32C6AA248A22B30026158F /* SubscriptionViewController.swift in Sources */,
 				BE96971C2464DCA9006BDBC8 /* LTMorphingLabel+Burn.swift in Sources */,
 				BE96971B2464DCA9006BDBC8 /* LTEasing.swift in Sources */,
 				BE9697162464DCA9006BDBC8 /* LTMorphingLabel+Fall.swift in Sources */,
 				BE96972424652C23006BDBC8 /* IALinearButton.swift in Sources */,
+				BE32C6A5248A22A30026158F /* SubscriptionManager.swift in Sources */,
+				BE32C6B7248A38E40026158F /* SettingTableCell.swift in Sources */,
 				BE9696F82464D43A006BDBC8 /* ShadowView.swift in Sources */,
 				BE9697222464DCA9006BDBC8 /* LTMorphingLabel+Pixelate.swift in Sources */,
+				BE32C6AB248A22B30026158F /* TermsViewController.swift in Sources */,
 				BE9697152464DCA9006BDBC8 /* LTMorphingLabel+Anvil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,7 +974,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -616,7 +1028,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -628,6 +1040,7 @@
 		};
 		BE18B6912464B28400ABFE31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 609D2FC15CB884E272A76455 /* Pods-oddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -638,7 +1051,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.imagepap.oddy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.imageapp.eyevision;
 				PRODUCT_NAME = ODDY;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -647,6 +1060,7 @@
 		};
 		BE18B6922464B28400ABFE31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B90C1A1E28B84E54E10F2931 /* Pods-oddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -657,7 +1071,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.imagepap.oddy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.imageapp.eyevision;
 				PRODUCT_NAME = ODDY;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -666,6 +1080,7 @@
 		};
 		BE18B6942464B28400ABFE31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0D15A16A10628CFDB308159 /* Pods-oddyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -688,6 +1103,7 @@
 		};
 		BE18B6952464B28400ABFE31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBDAF9F19A1FB7D37AC70021 /* Pods-oddyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -710,6 +1126,7 @@
 		};
 		BE18B6972464B28400ABFE31 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB7579C778351C1C67A6AE0 /* Pods-oddy-oddyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -730,6 +1147,7 @@
 		};
 		BE18B6982464B28400ABFE31 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE4DF5423495E2B7E5526DF2 /* Pods-oddy-oddyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -72,7 +72,7 @@ extension Int {
 
 
 extension UIViewController : AnimationDelegate {
-    func onAnimationCompleted() {
+    @objc func onAnimationCompleted() {
         debugPrint("game over")
         self.openGameOverDialog()
     }
@@ -86,6 +86,7 @@ extension UIViewController : AnimationDelegate {
     }
     
     func openGameOverDialog(){
+        
         let _resultView = GameResultView(frame: self.view.bounds)
         _resultView.eyeCardView.isHidden = !GameManager.shared.isOddColor
         _resultView.resultDelegate = self
@@ -107,9 +108,15 @@ extension UIViewController : AnimationDelegate {
                 _resultView.gameTitle.start()
                 if !_resultView.eyeCardView.isHidden {
                     _resultView.eyeStatusLabel.morphingEffect = LTMorphingEffect.evaporate
-                    _resultView.eyeStatusLabel.text = "Eye Vision Similar to \(animalName)."
+                    _resultView.eyeStatusLabel.text =
+                        GameManager.shared.gameTitle.lowercased().elementsEqual("color blind") ?
+                            "You have \(GameManager.shared.colorBlindResult())"
+                        : "Eye Vision Similar to \(animalName)."
                     _resultView.eyeStatusLabel.updateProgress(progress: 0.0)
                     _resultView.eyeStatusLabel.start()
+                    if let _iconName = GameManager.shared.getEyeIcon(){
+                        _resultView.animalView.image = UIImage(named: _iconName)
+                    }
                 }
             }
         }
@@ -123,3 +130,18 @@ extension UIViewController :GameEndDelegate{
 }
 
 
+extension CGRect {
+    static func -(left:CGRect, right:CGFloat)->CGRect{
+        return  CGRect (x: left.origin.x + right + 4,
+                        y: left.origin.y + right + 4,
+                        width: left.width - right * 2 - 8,
+                        height: left.height - right * 2 - 8)
+    }
+    
+    static func +(left:CGRect, right:CGFloat)->CGRect{
+        return  CGRect (x: left.origin.x - right,
+                        y: left.origin.y - right,
+                        width: left.width + right * 2,
+                        height: left.height + right  * 2)
+    }
+}

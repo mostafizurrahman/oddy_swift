@@ -10,6 +10,8 @@ import UIKit
 
 class OddColorViewController: UIViewController {
 
+    typealias FM = FirebaseManager
+    
     typealias IAV = IAViewAnimation
     typealias GM = GameManager
     
@@ -45,7 +47,11 @@ class OddColorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if FM.shared.oddColorCount  > 0 {
+            FM.shared.oddColorCount -= 1
+            FM.shared.update(gameName: FM.G_COLOR,
+                             count: FM.shared.oddColorCount)
+        }
         
         self.skipLabel.layer.cornerRadius = self.skipLabel.frame.width / 2
         self.skipLabel.layer.borderColor = UIColor.systemPink.cgColor
