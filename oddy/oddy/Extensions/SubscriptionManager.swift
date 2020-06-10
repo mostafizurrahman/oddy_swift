@@ -26,8 +26,8 @@ class SubscriptionManager: NSObject {
     let subNotification = Notification.Name(rawValue: "subscription_notification")
     static let shared = SubscriptionManager()
     var isSubscribed:Bool = false
-    private let productId:String = "com.zigzag.puzzle"
-    private let secret = "0238079beabf42619ecef061635476f0"
+    private let productId:String = "com.imageapp.oddy"
+    private let secret = "ed9aba9a069e431882678422e16d2449"
     private(set) var product:SKProduct?
     fileprivate var request: SKProductsRequest!
     var adCounter = 0
