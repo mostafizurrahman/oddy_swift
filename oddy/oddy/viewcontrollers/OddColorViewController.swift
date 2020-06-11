@@ -26,7 +26,7 @@ class OddColorViewController: UIViewController {
     let gameManager = GM.shared
     var isGameOver = false
     var dimension = 2
-    
+    var gameCount = 1
     var rightColorIndex = -1
     var skipCount = 3
     override var prefersStatusBarHidden: Bool {
@@ -234,6 +234,18 @@ class OddColorViewController: UIViewController {
             self.gameManager.setBest(score: self.gameManager.writeAnserCount)
             self.cardAnimationView.removeAnimations()
             self.openGameOverDialog()
+            self.gameCount += 1
+            
+            
+            if self.gameCount % 2 == 0 {
+                self.gameManager.requestReview()
+            }
+            if self.gameCount % 3 == 0 {
+                if let _root = self.navigationController?
+                    .viewControllers.first as? HomeViewController {
+                    _root.showAd()
+                }
+            }
         }
     }
     

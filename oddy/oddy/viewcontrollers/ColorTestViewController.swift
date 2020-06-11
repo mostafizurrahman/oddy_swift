@@ -35,7 +35,7 @@ class ColorTestViewController: UIViewController {
     @IBOutlet weak var colorContainer:IARadialButton!
     @IBOutlet weak var numberView: NumberView!
     @IBOutlet weak var animationView:CardAnimationView!
-    
+    var gameCount = 1
     
     
     let gameManager = GM.shared
@@ -208,23 +208,14 @@ class ColorTestViewController: UIViewController {
             }
             self.testCompleted = true
             self.openGameOverDialog()
-//            self.incompleteAnswerCountLabel.text = String(format:"Incompleted answers : %lu",incompleteCount)
-//            self.correctAnswerCountLabel.text = String(format:"Right answers : %lu", rightCount)
-//            self.wrongAnswerCountLabel.text = String(format:"Wrong answers : %lu", wrongCount)
-//            let percentage:Double = Double(rightCount) / Double(jsonDataSource["blind_test_data"].count)
-//            if percentage > 0.85 {
-//
-//                self.conclusionLabel.text = "You have answered mosth of the test questions correctly. Which leads to strong color reasoning abilities of your eyes. You have better color vision. Thank you!"
-//            } else if percentage > 0.65 {
-//
-//                self.conclusionLabel.text = "Tritan-type color blindness is detected! This may be caused by age-related factors, genetic factors, as well as exposure to certain toxins such as mercury. A complete diagnosis of color vision deficiency is not possible using online testing–consult an eye care professional for more information"
-//            } else {
-//                self.conclusionLabel.text = "Deutans are people with deuteranomaly, a type of red-green color blindness in which the green cones do not detect enough green and are too sensitive to yellows, oranges, and reds. It is high time to see an eye doctor for better help. Thank you!"
-//            }
-//            BCInterfaceHelper.animateOpacityViewToVisible(self.finalResultView, anim_completion: { (finish) in
-//                self.testCompleted = true
-//                self.animationView.stopAnimation()
-//            })
+            self.gameManager.requestReview()
+            self.gameCount += 1
+            if self.gameCount % 3 == 0 {
+                if let _root = self.navigationController?
+                    .viewControllers.first as? HomeViewController {
+                    _root.showAd()
+                }
+            }
         } else {
             let nextIndexPath = IndexPath(row: index + 1, section: 0)
             self.colorCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)

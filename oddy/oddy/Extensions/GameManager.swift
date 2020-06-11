@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class GameManager: NSObject {
     
@@ -14,8 +15,9 @@ class GameManager: NSObject {
     
     var coinCounter = 0 {
         didSet{
-            let _coins = UserDefaults.standard.integer(forKey: "coins") + self.coinCounter
-            UserDefaults.standard.set(_coins, forKey: "coins")
+            let _addCoin = self.gameTitle.lowercased().elementsEqual("odd color")
+                ? self.getColorCoin() : self.getCointCount()
+            let _coins = UserDefaults.standard.integer(forKey: "coins") + _addCoin
             DispatchQueue.global().async {
                 FirebaseManager.shared.updateGame(conins: _coins)
             }
@@ -197,4 +199,14 @@ class GameManager: NSObject {
         return (_sourceColor, _diffColor)
     }
     
+    
+    
+    func requestReview(){
+        
+            if #available(iOS 10.3, *) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                    SKStoreReviewController.requestReview()
+                }
+            }
+    }
 }

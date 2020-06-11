@@ -33,6 +33,8 @@ class FirebaseManager: NSObject {
     }
     
     fileprivate func getFireData(){
+        
+        Database.database().isPersistenceEnabled = true
         firebaseRef = Database.database().reference()
         firebaseRef?.child("oddy").child("configure").observe(DataEventType.value, with: { (_snapData) in
             let fireData = _snapData.value as? [String : AnyObject] ?? [:]
@@ -54,11 +56,13 @@ class FirebaseManager: NSObject {
             .child(_deviceID.uuidString)
         
        _deviceChild?.observe(DataEventType.value, with: { (_snapData) in
+    
             if _snapData.exists() {
                 let fireData = _snapData.value as? [String : AnyObject] ?? [:]
                 let _coins = fireData["coins"] as? Int ?? 0
                 let _coinCount = _coins > conins ? _coins : conins
                 _deviceChild?.child("coins").setValue(_coinCount)
+                UserDefaults.standard.set(_coinCount, forKey: "coins")
             } else {
                 let _parent = self.firebaseRef?
                 .child("oddy")

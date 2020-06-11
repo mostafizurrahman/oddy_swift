@@ -75,6 +75,7 @@ extension UIViewController : AnimationDelegate {
     @objc func onAnimationCompleted() {
         debugPrint("game over")
         self.openGameOverDialog()
+        
     }
     
     func onAnimationStarted() {

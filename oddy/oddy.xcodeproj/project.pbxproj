@@ -10,6 +10,7 @@
 		023FD66B6AD34A5A2BCC1B9F /* Pods_oddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23B39059EAAA54774773550 /* Pods_oddyTests.framework */; };
 		0AA61E15BA33C18DE1BD43DA /* Pods_oddy_oddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C773947984B847C00A2206D8 /* Pods_oddy_oddyUITests.framework */; };
 		3D0AC153E5B1FB6FF12213AA /* Pods_oddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1CB486C9A3B4E49D81A2D6 /* Pods_oddy.framework */; };
+		BE01FDFB24917FBD00A506F0 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01FDFA24917FBD00A506F0 /* ShopViewController.swift */; };
 		BE05D39A247D139200D7BDD3 /* GradientLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D399247D139200D7BDD3 /* GradientLineView.swift */; };
 		BE05D39C247D13D800D7BDD3 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D39B247D13D800D7BDD3 /* ColorCollectionViewCell.swift */; };
 		BE05D39F247D145B00D7BDD3 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D39D247D145B00D7BDD3 /* NumberView.swift */; };
@@ -151,6 +152,7 @@
 		AF1CB486C9A3B4E49D81A2D6 /* Pods_oddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23B39059EAAA54774773550 /* Pods_oddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90C1A1E28B84E54E10F2931 /* Pods-oddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddy.release.xcconfig"; path = "Target Support Files/Pods-oddy/Pods-oddy.release.xcconfig"; sourceTree = "<group>"; };
+		BE01FDFA24917FBD00A506F0 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		BE05D399247D139200D7BDD3 /* GradientLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLineView.swift; sourceTree = "<group>"; };
 		BE05D39B247D13D800D7BDD3 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE05D39D247D145B00D7BDD3 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				BE32C6A6248A22B30026158F /* SettingsViewController.swift */,
 				BE32C6A7248A22B30026158F /* SubscriptionViewController.swift */,
 				BE32C6A8248A22B30026158F /* TermsViewController.swift */,
+				BE01FDFA24917FBD00A506F0 /* ShopViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -830,6 +833,7 @@
 			files = (
 				BEC3A193249163360092D7D2 /* InfoTableViewCell.swift in Sources */,
 				BE9696FC2464D562006BDBC8 /* IARadialButton.swift in Sources */,
+				BE01FDFB24917FBD00A506F0 /* ShopViewController.swift in Sources */,
 				BE9696F62464D42C006BDBC8 /* InstructionView.swift in Sources */,
 				BE9696FF2464D5C1006BDBC8 /* ColorExtension.swift in Sources */,
 				BEC3954B2470965800C5F497 /* GameResultView.swift in Sources */,
