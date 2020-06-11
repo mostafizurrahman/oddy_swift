@@ -18,7 +18,7 @@
 		<key>switch</key>
 		<false/>
 		<key>icon</key>
-		<string>privacy</string>
+		<string>xprivacy</string>
 		<key>action</key>
 		<string>privacy</string>
 	</dict>
@@ -29,7 +29,7 @@
 		<key>switch</key>
 		<false/>
 		<key>icon</key>
-		<string>terms</string>
+		<string>xterms</string>
 		<key>action</key>
 		<string>term</string>
 	</dict>
@@ -51,20 +51,9 @@
 		<key>switch</key>
 		<false/>
 		<key>icon</key>
-		<string>gold</string>
+		<string>xgold</string>
 		<key>action</key>
 		<string>subscription</string>
-	</dict>
-	<key>5</key>
-	<dict>
-		<key>title</key>
-		<string>Puzzle Squares</string>
-		<key>switch</key>
-		<false/>
-		<key>icon</key>
-		<string>squars</string>
-		<key>action</key>
-		<string>alert</string>
 	</dict>
 </dict>
 </plist>

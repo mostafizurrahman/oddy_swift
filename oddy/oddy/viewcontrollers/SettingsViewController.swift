@@ -43,6 +43,13 @@ class SettingsViewController: UIViewController {
     }
     
 
+    @IBAction func exit(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     
     // MARK: - Navigation
 

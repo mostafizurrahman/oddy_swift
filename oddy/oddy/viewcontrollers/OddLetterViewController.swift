@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import StoreKit
 
 protocol GameEndDelegate:NSObjectProtocol{
     func dismissSelf(isPlayAgain:Bool)
@@ -29,6 +29,8 @@ class OddLetterViewController: UIViewController {
     @IBOutlet weak var letterContainer:LetterGameView!
     
     @IBOutlet var spaceLayout:[NSLayoutConstraint]!
+    
+    var gameCount = 1
     
 //    @IBOutlet var hexagonButtons: [HexagoanView]!
     override func viewDidLoad() {
@@ -72,7 +74,11 @@ class OddLetterViewController: UIViewController {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
         super.touchesBegan(touches, with: event)
+        if self.letterContainer.isGameOver {
+            self.gm.requestReview()
+        }
         guard let _source = self.sourceLetter.last else {return}
         var isGameOver = true
         if let _touch = touches.first {
@@ -97,12 +103,26 @@ class OddLetterViewController: UIViewController {
             } 
         }
         if isGameOver {
-            
+            self.gameCount += 1
             self.onAnimationCompleted()
             self.animationBar.removeAnimations()
             self.gm.setBest(score: self.gm.writeAnserCount)
         }
         self.letterContainer.isGameOver = isGameOver
+        if isGameOver && self.gameCount % 3 == 0 {
+            
+            self.gm.requestReview()
+            
+        }
+        
+        if isGameOver && self.gameCount % 4 == 0 {
+            if let _root = self.navigationController?
+                .viewControllers.first as? HomeViewController {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.70) {
+                    _root.showAd()
+                }
+            }
+        }
     }
     
     
@@ -173,6 +193,7 @@ class OddLetterViewController: UIViewController {
         self.coinButton.setTitle("\(self.gm.coinCounter)", for: UIControl.State.normal)
         self.animationBar.startAnimation(withDuration: 31)
         self.letterContainer.configureGame()
+        self.gameCount += 1
     }
     
 }

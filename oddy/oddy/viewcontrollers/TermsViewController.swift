@@ -17,7 +17,8 @@ class TermsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        termsWebView = WKWebView(frame: self.view.bounds)
+        let _frame = CGRect(origin: CGPoint(x: 0, y: 60), size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height-60))
+        termsWebView = WKWebView(frame: _frame)
         self.view.addSubview(termsWebView)
         self.view.sendSubviewToBack(termsWebView)
         if let _title = self.termsTitle {

@@ -10,6 +10,7 @@
 		023FD66B6AD34A5A2BCC1B9F /* Pods_oddyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23B39059EAAA54774773550 /* Pods_oddyTests.framework */; };
 		0AA61E15BA33C18DE1BD43DA /* Pods_oddy_oddyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C773947984B847C00A2206D8 /* Pods_oddy_oddyUITests.framework */; };
 		3D0AC153E5B1FB6FF12213AA /* Pods_oddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1CB486C9A3B4E49D81A2D6 /* Pods_oddy.framework */; };
+		BE01FDFB24917FBD00A506F0 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE01FDFA24917FBD00A506F0 /* ShopViewController.swift */; };
 		BE05D39A247D139200D7BDD3 /* GradientLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D399247D139200D7BDD3 /* GradientLineView.swift */; };
 		BE05D39C247D13D800D7BDD3 /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D39B247D13D800D7BDD3 /* ColorCollectionViewCell.swift */; };
 		BE05D39F247D145B00D7BDD3 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE05D39D247D145B00D7BDD3 /* NumberView.swift */; };
@@ -80,6 +81,9 @@
 		BEC39545246F192600C5F497 /* hard_data.json in Resources */ = {isa = PBXBuildFile; fileRef = BEC39544246F192600C5F497 /* hard_data.json */; };
 		BEC39549247058F800C5F497 /* GameResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC39548247058F800C5F497 /* GameResultView.xib */; };
 		BEC3954B2470965800C5F497 /* GameResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3954A2470965800C5F497 /* GameResultView.swift */; };
+		BEC3A191249163050092D7D2 /* ColorBlindInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3A190249163050092D7D2 /* ColorBlindInfoViewController.swift */; };
+		BEC3A193249163360092D7D2 /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3A192249163360092D7D2 /* InfoTableViewCell.swift */; };
+		BEC3A195249167750092D7D2 /* IAVGradientBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC3A194249167750092D7D2 /* IAVGradientBullet.swift */; };
 		BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC88216246BE90400B35C68 /* LetterGameView.swift */; };
 		BED5064A24806F83001AA8EC /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5064824806F83001AA8EC /* ColorView.swift */; };
 		BED5064B24806F83001AA8EC /* ColorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED5064924806F83001AA8EC /* ColorView.xib */; };
@@ -148,6 +152,7 @@
 		AF1CB486C9A3B4E49D81A2D6 /* Pods_oddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23B39059EAAA54774773550 /* Pods_oddyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oddyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90C1A1E28B84E54E10F2931 /* Pods-oddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oddy.release.xcconfig"; path = "Target Support Files/Pods-oddy/Pods-oddy.release.xcconfig"; sourceTree = "<group>"; };
+		BE01FDFA24917FBD00A506F0 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		BE05D399247D139200D7BDD3 /* GradientLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientLineView.swift; sourceTree = "<group>"; };
 		BE05D39B247D13D800D7BDD3 /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE05D39D247D145B00D7BDD3 /* NumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
@@ -224,6 +229,9 @@
 		BEC39544246F192600C5F497 /* hard_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hard_data.json; sourceTree = "<group>"; };
 		BEC39548247058F800C5F497 /* GameResultView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameResultView.xib; sourceTree = "<group>"; };
 		BEC3954A2470965800C5F497 /* GameResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultView.swift; sourceTree = "<group>"; };
+		BEC3A190249163050092D7D2 /* ColorBlindInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorBlindInfoViewController.swift; sourceTree = "<group>"; };
+		BEC3A192249163360092D7D2 /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		BEC3A194249167750092D7D2 /* IAVGradientBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAVGradientBullet.swift; sourceTree = "<group>"; };
 		BEC88216246BE90400B35C68 /* LetterGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGameView.swift; sourceTree = "<group>"; };
 		BED5064824806F83001AA8EC /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		BED5064924806F83001AA8EC /* ColorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorView.xib; sourceTree = "<group>"; };
@@ -389,6 +397,7 @@
 		BE9696F22464D407006BDBC8 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
+				BEC3A192249163360092D7D2 /* InfoTableViewCell.swift */,
 				BE32C6B9248A390A0026158F /* LoadingView.swift */,
 				BE32C6B8248A390A0026158F /* LoadingView.xib */,
 				BEC10126247A5736002D91B1 /* IACenterFlowLayout.swift */,
@@ -413,6 +422,7 @@
 				BE05D39E247D145B00D7BDD3 /* NumberView.xib */,
 				BED5064824806F83001AA8EC /* ColorView.swift */,
 				BED5064924806F83001AA8EC /* ColorView.xib */,
+				BEC3A194249167750092D7D2 /* IAVGradientBullet.swift */,
 			);
 			path = CustomControls;
 			sourceTree = "<group>";
@@ -461,6 +471,7 @@
 		BE96972724656BE6006BDBC8 /* viewcontrollers */ = {
 			isa = PBXGroup;
 			children = (
+				BEC3A190249163050092D7D2 /* ColorBlindInfoViewController.swift */,
 				BE96972824656C09006BDBC8 /* HomeViewController.swift */,
 				BE96972D24657826006BDBC8 /* LettersViewController.swift */,
 				BE18FB1B2467360A008F7FC5 /* OddLetterViewController.swift */,
@@ -469,6 +480,7 @@
 				BE32C6A6248A22B30026158F /* SettingsViewController.swift */,
 				BE32C6A7248A22B30026158F /* SubscriptionViewController.swift */,
 				BE32C6A8248A22B30026158F /* TermsViewController.swift */,
+				BE01FDFA24917FBD00A506F0 /* ShopViewController.swift */,
 			);
 			path = viewcontrollers;
 			sourceTree = "<group>";
@@ -819,7 +831,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC3A193249163360092D7D2 /* InfoTableViewCell.swift in Sources */,
 				BE9696FC2464D562006BDBC8 /* IARadialButton.swift in Sources */,
+				BE01FDFB24917FBD00A506F0 /* ShopViewController.swift in Sources */,
 				BE9696F62464D42C006BDBC8 /* InstructionView.swift in Sources */,
 				BE9696FF2464D5C1006BDBC8 /* ColorExtension.swift in Sources */,
 				BEC3954B2470965800C5F497 /* GameResultView.swift in Sources */,
@@ -831,6 +845,7 @@
 				BE96971E2464DCA9006BDBC8 /* LTEmitterView.swift in Sources */,
 				BE96972624653AD1006BDBC8 /* IAGradientButton.swift in Sources */,
 				BEC10127247A5736002D91B1 /* IACenterFlowLayout.swift in Sources */,
+				BEC3A191249163050092D7D2 /* ColorBlindInfoViewController.swift in Sources */,
 				BEC362DD2474615E001ED842 /* OddColorViewController.swift in Sources */,
 				BEC10123247A5544002D91B1 /* ColorTestViewController.swift in Sources */,
 				BEC88217246BE90400B35C68 /* LetterGameView.swift in Sources */,
@@ -841,6 +856,7 @@
 				BE18FB1C2467360A008F7FC5 /* OddLetterViewController.swift in Sources */,
 				BE9697192464DCA9006BDBC8 /* LTMorphingLabel+Evaporate.swift in Sources */,
 				BE969732246586BD006BDBC8 /* UtilityExtension.swift in Sources */,
+				BEC3A195249167750092D7D2 /* IAVGradientBullet.swift in Sources */,
 				BE9697172464DCA9006BDBC8 /* LTCharacterLimbo.swift in Sources */,
 				BE05D3A2247D15FD00D7BDD3 /* SwiftyJSON.swift in Sources */,
 				BE96972924656C09006BDBC8 /* HomeViewController.swift in Sources */,

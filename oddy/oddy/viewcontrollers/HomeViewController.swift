@@ -7,22 +7,29 @@
 //
 
 import UIKit
+import FBAudienceNetwork
 
 class HomeViewController: UIViewController {
+    static let ADID =  "820048975192304_820049291858939"
     typealias AV = IAViewAnimation
     typealias FM = FirebaseManager
     typealias SM = SubscriptionManager
+    typealias HV = HomeViewController
     @IBOutlet var hexagonWidths: [NSLayoutConstraint]!
     @IBOutlet var hexagonHeights: [NSLayoutConstraint]!
     @IBOutlet weak var centerView: UIView!
     @IBOutlet var hexagonButtons: [HexagoanView]!
     
     
+    var interstitial:FBInterstitialAd?
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.createAd()
         let _shared = FirebaseManager.shared
         _shared.updateGame(conins: 0)
         _shared.updateCount()
@@ -109,4 +116,30 @@ class HomeViewController: UIViewController {
     }
     */
 
+    
+    func createAd(){
+        self.interstitial = FBInterstitialAd(placementID: HV.ADID)
+        self.interstitial?.delegate = self
+        self.interstitial?.load()
+    }
+    
+    
+    
+    func showAd(){
+        if self.interstitial?.isAdValid ?? false {
+            self.interstitial?.show(fromRootViewController: self)
+        }
+    }
+}
+
+extension HomeViewController:FBInterstitialAdDelegate{
+    
+    
+    func interstitialAdDidClose(_ interstitialAd: FBInterstitialAd) {
+        if let _inst = self.interstitial {
+            _inst.delegate = nil
+        }
+        self.createAd()
+    }
+    
 }
