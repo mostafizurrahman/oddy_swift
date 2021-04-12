@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -425,6 +425,7 @@
                     </constraints>
                 </view>
             </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dP9-te-pFR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" identifier="TOP" id="3pQ-VN-Xba"/>
@@ -446,8 +447,36 @@
                 <constraint firstItem="r6N-Ss-Mb5" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" identifier="TOP" id="wVj-aa-cam"/>
                 <constraint firstItem="mWl-sD-Qhb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" identifier="TOP" id="wXI-fq-G1p"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="156.5" y="113.5"/>
         </view>
     </objects>
+    <designables>
+        <designable name="2Y5-uF-ZgM">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="3Y2-xq-XLW">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="EkH-2l-6ok">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="ITG-u9-8kG">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="M7b-im-N0s">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="XsC-86-Kuz">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="h4D-cF-HHe">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="nMS-Ly-Aeu">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="rFl-gP-KGC">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
 </document>
